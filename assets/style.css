@@ -379,3 +379,4 @@ details.reel[open] summary { margin-bottom: 14px; }
 .measure { display: grid; gap: 14px; }
 @media (min-width: 760px) { .measure { grid-template-columns: repeat(3, 1fr); } }
 .measure .card b { font-family: Fraunces, serif; font-size: 1.3rem; font-weight: 500; display: block; margin-bottom: 4px; }
+body.home .now { margin-top: 40px; }
