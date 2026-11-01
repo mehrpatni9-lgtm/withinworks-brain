@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=5">
+<link rel="stylesheet" href="../assets/style.css?v=6">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 110'%3E%3Ctext x='4' y='88' font-family='Georgia' font-size='104' font-weight='600' fill='%235d6e5e'%3EW%3C/text%3E%3C/svg%3E">
 </head>
 <body class="page">
@@ -36,7 +36,7 @@ Most of them didn’t need another answer from me. They needed room to find thei
 Coaching gave me a way to offer that. This is my next chapter, and I’m glad you’re here for it.</div>
   <div class="ig-when">Planned for Mon 9 Nov</div>
 </div>
-<div class="copyrow"><button class="btn copy" type="button">Copy caption</button><textarea class="cap-src" hidden>Hi, I’m Megha, and this is why I decided to become a coach.
+<div class="copyrow"><button class="copy" type="button" title="Copy caption" aria-label="Copy caption"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button><textarea class="cap-src" hidden>Hi, I’m Megha, and this is why I decided to become a coach.
 
 I spent 25 years leading people. Fourteen in banking, then thirteen building Traveazy, where we grew from ten people to more than 300 through a pandemic and two mergers.
 
@@ -59,7 +59,7 @@ The short answer is in the slides. The longer one: coaching starts from the beli
 If you’ve been coached before, what changed for you?</div>
   <div class="ig-when">Planned for Thu 12 Nov</div>
 </div>
-<div class="copyrow"><button class="btn copy" type="button">Copy caption</button><textarea class="cap-src" hidden>The question I’ve been asked most since I became a coach.
+<div class="copyrow"><button class="copy" type="button" title="Copy caption" aria-label="Copy caption"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button><textarea class="cap-src" hidden>The question I’ve been asked most since I became a coach.
 
 The short answer is in the slides. The longer one: coaching starts from the belief that you are already creative, resourceful and whole. My job isn’t to fix you. It’s to help you hear yourself.
 
@@ -78,7 +78,7 @@ No right answer, and no need to share it. Just notice what comes up.
 The Within Question, 01.</div>
   <div class="ig-when">Planned for Mon 16 Nov</div>
 </div>
-<div class="copyrow"><button class="btn copy" type="button">Copy caption</button><textarea class="cap-src" hidden>Starting something small. Every week, one question to sit with.
+<div class="copyrow"><button class="copy" type="button" title="Copy caption" aria-label="Copy caption"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button><textarea class="cap-src" hidden>Starting something small. Every week, one question to sit with.
 
 No right answer, and no need to share it. Just notice what comes up.
 
@@ -144,7 +144,8 @@ boxes.forEach(b => {
 document.querySelectorAll('.copy').forEach(b => b.onclick = async () => {
   const text = b.parentElement.querySelector('.cap-src').value;
   try { await navigator.clipboard.writeText(text); } catch (e) { const t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); }
-  b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy caption', 1800);
+  const was = b.innerHTML; b.classList.add('done'); b.innerHTML = '<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  setTimeout(() => { b.innerHTML = was; b.classList.remove('done'); }, 1600);
 });
 document.querySelectorAll('.li-more').forEach(b => b.onclick = () => { b.previousElementSibling.classList.remove('clip'); b.remove(); });
 </script>
