@@ -3,6 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import more from './collection_more.mjs';
+import v3 from './collection_v3.mjs';
 import { chromium } from '/Users/mehrpatni/mehr-portfolio/node_modules/playwright/index.mjs';
 
 const HERE = path.dirname(new URL(import.meta.url).pathname);
@@ -35,7 +36,7 @@ const slides = {
   // 01 · About Megha · carousel 3 · her photos
   'c1-1a': `<body style="background:#222">
     <img src="${PH('01')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:grayscale(1)">
-    <div class="serif" style="position:absolute;left:0;right:0;top:230px;text-align:center;color:${C.ivory};font-weight:300;font-size:132px;letter-spacing:.06em">[ About ]</div>
+    <div class="serif" style="position:absolute;left:0;right:0;top:230px;text-align:center;color:${C.ivory};font-weight:400;font-size:132px;letter-spacing:.06em">[ About ]</div>
     ${W(true, true)}</body>`,
   'c1-1b': `<body class="grain" style="background:${C.forest};color:${C.ivory}">
     <p class="lab" style="position:absolute;left:90px;top:110px;right:90px;line-height:1.7;letter-spacing:.2em;font-size:25px">Megha Bhalla is a leadership coach in Dubai. Before coaching, she spent 25 years leading people.</p>
@@ -49,7 +50,7 @@ const slides = {
   'c1-1c': `<body class="grain" style="background:${C.paper}">
     <div style="position:absolute;inset:90px;border:1.5px solid rgba(61,58,53,.35)"></div>
     <p class="lab" style="position:absolute;left:150px;top:170px;color:${C.mocha}">[ Why coaching ]</p>
-    <p class="serif" style="position:absolute;left:150px;right:150px;top:430px;font-weight:300;font-size:68px;line-height:1.3">“Most of the people I led didn’t need another answer from me. They needed room to find their own.”</p>
+    <p class="serif" style="position:absolute;left:150px;right:150px;top:430px;font-weight:400;font-size:68px;line-height:1.3">“Most of the people I led didn’t need another answer from me. They needed room to find their own.”</p>
     ${W()}</body>`,
 
   // 02 · Words in the world · single · real photo
@@ -64,7 +65,7 @@ const slides = {
   'c1-3': `<body class="grain" style="background:#EFE9E0">
     <div class="grain" style="position:absolute;left:120px;top:170px;width:840px;height:800px;background:${C.forest};transform:rotate(-2deg);box-shadow:0 30px 60px rgba(40,35,30,.28),0 4px 10px rgba(40,35,30,.15)">
       <p class="lab" style="position:absolute;left:76px;top:76px;color:${C.mocha};font-size:20px">The Within Question &middot; 01</p>
-      <p class="serif" style="position:absolute;left:76px;right:76px;top:250px;color:${C.ivory};font-style:italic;font-weight:300;font-size:78px;line-height:1.2">Where are you still leading from an old story about yourself?</p></div>
+      <p class="serif" style="position:absolute;left:76px;right:76px;top:250px;color:${C.ivory};font-style:italic;font-weight:400;font-size:78px;line-height:1.2">Where are you still leading from an old story about yourself?</p></div>
     <p class="hand" style="position:absolute;left:170px;right:120px;top:1040px;font-size:60px;color:${C.charcoal};transform:rotate(-1deg)">and whose voice is telling it?</p>
     ${W()}</body>`,
 
@@ -73,25 +74,25 @@ const slides = {
     <p class="lab" style="position:absolute;left:90px;top:110px;color:${C.forest}">Leadership, unlearned &middot; 01</p>
     <div style="position:absolute;left:90px;top:300px;width:430px;height:680px;background:#fff;transform:rotate(-2.5deg);box-shadow:0 20px 40px rgba(30,40,32,.18);padding:56px 44px">
       <p class="lab" style="font-size:19px;color:${C.mocha}">Then</p><p class="lab" style="font-size:15px;opacity:.55;margin-top:8px;letter-spacing:.2em">as a leader</p>
-      <p class="serif" style="font-size:46px;font-weight:300;line-height:1.3;margin-top:80px">I gave the answer, quickly. It felt like help.</p></div>
+      <p class="serif" style="font-size:46px;font-weight:400;line-height:1.3;margin-top:80px">I gave the answer, quickly. It felt like help.</p></div>
     <div style="position:absolute;right:90px;top:380px;width:430px;height:680px;background:${C.forest};color:${C.ivory};transform:rotate(2deg);box-shadow:0 24px 48px rgba(30,40,32,.28);padding:56px 44px">
       <p class="lab" style="font-size:19px;color:${C.mocha}">Now</p><p class="lab" style="font-size:15px;opacity:.6;margin-top:8px;letter-spacing:.2em">as a coach</p>
-      <p class="serif" style="font-size:46px;font-weight:300;line-height:1.3;margin-top:80px">I ask, then wait. The answer they find is the one they act on.</p></div>
+      <p class="serif" style="font-size:46px;font-weight:400;line-height:1.3;margin-top:80px">I ask, then wait. The answer they find is the one they act on.</p></div>
     ${W()}</body>`,
 
   // 05 · Coaching, plainly · carousel 2 · design
   'c1-5a': `<body class="grain" style="background:#F6F1EA">
     <p class="lab" style="position:absolute;left:100px;top:110px;color:${C.mocha}">Coaching, plainly</p>
-    <p class="serif" style="position:absolute;left:100px;right:100px;top:230px;font-weight:300;font-size:118px;line-height:1.06">Coach, mentor, consultant, therapist?</p>
+    <p class="serif" style="position:absolute;left:100px;right:100px;top:230px;font-weight:400;font-size:118px;line-height:1.06">Coach, mentor, consultant, therapist?</p>
     <div style="position:absolute;left:100px;right:100px;top:870px;display:grid;grid-template-columns:1fr 1fr;border-top:1.5px solid rgba(61,58,53,.3);border-left:1.5px solid rgba(61,58,53,.3)">
-      ${['Heal', 'Learn from', 'Be advised', 'Find your own'].map((t, i) => `<div style="border-right:1.5px solid rgba(61,58,53,.3);border-bottom:1.5px solid rgba(61,58,53,.3);padding:26px 30px;font:300 34px Fraunces;${i === 3 ? `background:${C.forest};color:${C.ivory}` : ''}">${t}</div>`).join('')}</div>
-    <p class="serif" style="position:absolute;right:100px;top:1185px;font-style:italic;font-weight:300;font-size:36px;color:${C.sage}">Which do you need?</p>
+      ${['Heal', 'Learn from', 'Be advised', 'Find your own'].map((t, i) => `<div style="border-right:1.5px solid rgba(61,58,53,.3);border-bottom:1.5px solid rgba(61,58,53,.3);padding:26px 30px;font:400 34px Fraunces;${i === 3 ? `background:${C.forest};color:${C.ivory}` : ''}">${t}</div>`).join('')}</div>
+    <p class="serif" style="position:absolute;right:100px;top:1185px;font-style:italic;font-weight:400;font-size:36px;color:${C.sage}">Which do you need?</p>
     ${W()}</body>`,
   'c1-5b': `<body class="grain" style="background:#FBF8F3">
     ${[['Therapy', 'heals what makes everyday life feel unsteady.'], ['Mentoring', 'shows you a path someone has already walked.'], ['Consulting', 'studies the problem and hands you the plan.'], ['Coaching', 'helps you find your own answer, and act on it.']]
       .map(([h, t], i) => `<div style="position:absolute;left:100px;right:100px;top:${110 + i * 280}px;${i === 3 ? `background:${C.forest};color:${C.ivory};margin:-30px -40px;padding:30px 40px` : ''}">
         <p class="lab" style="font-size:19px;color:${C.mocha}">${h}</p>
-        <p class="serif" style="font-size:54px;font-weight:300;line-height:1.22;margin-top:14px">${t}</p></div>`).join('')}
+        <p class="serif" style="font-size:54px;font-weight:400;line-height:1.22;margin-top:14px">${t}</p></div>`).join('')}
     ${W()}</body>`,
 
   // 06 · Before I give advice · single · real photo, handwriting
@@ -108,7 +109,7 @@ const slides = {
   'c1-7a': `<body class="grain" style="background:${C.sage}">
     <p class="lab" style="position:absolute;left:0;right:0;top:110px;text-align:center;color:${C.ivory};font-size:20px">What a coach hears &middot; 01</p>
     <div style="position:absolute;left:110px;right:110px;top:240px;bottom:220px;background:${C.ivory};display:flex;flex-direction:column;justify-content:center;align-items:center">
-      <p class="serif" style="font-size:250px;font-style:italic;font-weight:300;color:${C.forest};line-height:1">“Should.”</p>
+      <p class="serif" style="font-size:250px;font-style:italic;font-weight:400;color:${C.forest};line-height:1">“Should.”</p>
       <p style="font-size:34px;font-weight:300;margin-top:40px;color:${C.charcoal}">The word I listen for.</p></div>
     ${W(true)}</body>`,
   'c1-7b': `<body class="grain" style="background:${C.sage}">
@@ -129,7 +130,7 @@ const slides = {
     ${W(true)}</body>`,
   'c1-8b': `<body class="grain" style="background:${C.paper}">
     <p class="serif" style="position:absolute;left:110px;top:110px;font-size:260px;line-height:1;color:${C.mocha};opacity:.5">“</p>
-    <p class="serif" style="position:absolute;left:110px;right:110px;top:330px;font-weight:300;font-style:italic;font-size:70px;line-height:1.25;color:${C.forest}">Everything we do depends for its quality on the thinking we do first.</p>
+    <p class="serif" style="position:absolute;left:110px;right:110px;top:330px;font-weight:400;font-style:italic;font-size:70px;line-height:1.25;color:${C.forest}">Everything we do depends for its quality on the thinking we do first.</p>
     <p class="lab" style="position:absolute;left:110px;top:720px;font-size:18px">Nancy Kline</p>
     <div style="position:absolute;left:110px;right:110px;top:830px;border-top:1.5px solid rgba(61,58,53,.3);padding-top:44px">
       <p style="font-size:38px;font-weight:300;line-height:1.45">As a leader I rarely gave people the room to think. Now it’s most of my job.</p></div>
@@ -145,9 +146,9 @@ const slides = {
          ['Founders', 'You built something. Now it seems to be running you.', 'right:48px;top:56px;text-align:right'],
          ['Family business heirs', 'You’re taking a seat someone else built.', 'left:48px;bottom:56px'],
          ['At a turning point', 'A new country, a new role, or a chapter you haven’t named yet.', 'right:48px;bottom:56px;text-align:right']]
-        .map(([h, t, pos]) => `<div style="position:absolute;${pos};width:330px"><p class="lab" style="font-size:18px;color:${C.forest}">${h}</p><p class="serif" style="font-size:31px;font-weight:300;line-height:1.3;margin-top:14px">${t}</p></div>`).join('')}
+        .map(([h, t, pos]) => `<div style="position:absolute;${pos};width:330px"><p class="lab" style="font-size:18px;color:${C.forest}">${h}</p><p class="serif" style="font-size:31px;font-weight:400;line-height:1.3;margin-top:14px">${t}</p></div>`).join('')}
       <div style="position:absolute;left:50%;top:50%;width:330px;height:330px;margin:-165px 0 0 -165px;border-radius:50%;background:${C.forest};color:${C.ivory};display:flex;align-items:center;justify-content:center;text-align:center">
-        <p class="serif" style="font-size:42px;font-style:italic;font-weight:300;line-height:1.2">This is<br>for you if</p></div></div>
+        <p class="serif" style="font-size:42px;font-style:italic;font-weight:400;line-height:1.2">This is<br>for you if</p></div></div>
     ${W()}</body>`,
 
   // 10 · Notes from the mat · single · real photo
@@ -155,10 +156,11 @@ const slides = {
     <img src="${ST('hall')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%">
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,8,.9) 0%,rgba(20,14,8,.75) 32%,rgba(20,14,8,0) 58%)"></div>
     <p class="lab" style="position:absolute;left:90px;top:110px;color:${C.mocha};font-size:20px">Notes from the mat &middot; 01</p>
-    <p class="serif" style="position:absolute;left:90px;right:120px;top:190px;color:${C.ivory};font-weight:300;font-size:64px;line-height:1.22">I learned to pause on the mat long before I used it in a coaching room.</p>
+    <p class="serif" style="position:absolute;left:90px;right:120px;top:190px;color:${C.ivory};font-weight:400;font-size:64px;line-height:1.22">I learned to pause on the mat long before I used it in a coaching room.</p>
     ${W(true)}</body>`,
 };
-Object.assign(slides, more(C, PH, ST, W));
+Object.assign(slides, more(C, PH, ST, W), v3(C, PH, ST, W));
+delete slides['c1-6'];
 
 const b = await chromium.launch();
 const p = await b.newPage({ viewport: { width: 1080, height: 1350 } });

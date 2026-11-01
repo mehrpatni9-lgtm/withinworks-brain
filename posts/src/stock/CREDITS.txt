@@ -12,3 +12,4 @@ cup: https://images.unsplash.com/photo-1587302186428-d3753405ffed (white ceramic
 calendar: https://images.unsplash.com/photo-1640116565640-51de47c7791b (a calendar sitting on top of a table)
 notepad: https://images.unsplash.com/photo-1609338177398-ef256b01b1b4 (brown framed eyeglasses on white printer paper)
 glasses: https://images.unsplash.com/photo-1587929501535-1e2d559e8488 (black framed eyeglasses on black book)
+lounge: https://images.unsplash.com/photo-1646947053493-9fdf3e9df08c (a view of an airport through a window)
