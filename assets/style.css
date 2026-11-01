@@ -292,3 +292,5 @@ footer { padding: 36px 0 60px; font-size: 0.9rem; color: var(--text-faint); }
 .feed > *, .post-wrap, .ig, .ig-media { min-width: 0; }
 .ig-track img { height: auto; min-width: 0; }
 .thumbs img { border: 1px solid rgba(255,255,255,.25); }
+.feed-wide { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
+@media (min-width: 1000px) { .feed { max-width: none; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; } }
