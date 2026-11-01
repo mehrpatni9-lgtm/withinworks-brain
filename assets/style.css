@@ -327,6 +327,6 @@ footer { padding: 36px 0 60px; font-size: 0.9rem; color: var(--text-faint); }
 .ref img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; display: block; border: 1px solid var(--rule); }
 .ref figcaption b { display: block; color: var(--text); font-weight: 500; }
 .ref-grid.no img { filter: grayscale(.4); opacity: .85; }
-.check { font-size: 0.85rem; color: var(--mocha-deep, #8a6a4f); margin: 4px 0 0; }
+.check { font-size: 0.85rem; color: var(--mocha-deep, #8a6a4f); margin: 10px 0 0; }
 .ig-cap.clip { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; padding-bottom: 0; white-space: normal; }
 .ig-more { display: block; background: none; border: 0; padding: 2px 12px 12px; color: #737373; font: 14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; cursor: pointer; }
