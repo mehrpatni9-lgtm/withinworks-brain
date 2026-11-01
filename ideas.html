@@ -27,7 +27,7 @@
 <div class="card"><h3>So far</h3><ul class="clean feedlist" id="ideas"></ul></div></div></div></section>
 <div class="shell"><nav class="doors"><a href="./">Brain</a><a href="content/">Instagram</a><a href="linkedin/">LinkedIn</a><a href="strategy.html">Strategy</a><a href="megha.html">Megha</a><a href="voice.html">Voice</a><a href="audience.html">Audience</a><a href="brand.html">Brand</a><a href="offers.html">Offers</a><a href="tech.html">Tech</a><a href="photos.html">Photos</a><a href="research.html">Research</a><a href="ideas.html" class="here">Ideas</a></nav></div>
 <footer><div class="shell">WithinWorks Leadership &middot; Kept by Mehr Patni &middot; Private working page</div></footer>
-<script src="assets/brain.js"></script><script>
+<script src="assets/brain.js?v=2"></script><script>
 function draw(entries) {
   const ideas = entries.filter(e => ['Idea', 'Resource', 'Review'].includes(e.kind)).reverse();
   document.getElementById('ideas').innerHTML = ideas.length ? ideas.map(e => {

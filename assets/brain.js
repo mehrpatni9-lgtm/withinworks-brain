@@ -13,10 +13,11 @@ const BRAIN = (() => {
 
   function who() {
     const q = new URLSearchParams(location.search).get('from');
-    if (q && PEOPLE.includes(q)) ls.set('who', q);
-    return ls.get('who') || 'Megha';
+    // Megha's link carries ?from=Megha; anyone opening the Brain without it is Mehr.
+    if (q && PEOPLE.includes(q)) ls.set('who2', q);
+    return ls.get('who2') || 'Mehr';
   }
-  function setWho(name) { ls.set('who', name); }
+  function setWho(name) { ls.set('who2', name); }
 
   // Entries sent from this browser, shown at once while the sheet catches up.
   function pending() { return ls.get('pending') || []; }

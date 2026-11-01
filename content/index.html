@@ -89,7 +89,7 @@ A new series on what leading taught me, and what coaching asked me to unlearn.</
 </article></div></div></div></section>
 <div class="shell"><nav class="doors"><a href="../">Brain</a><a href="../content/" class="here">Instagram</a><a href="../linkedin/">LinkedIn</a><a href="../strategy.html">Strategy</a><a href="../megha.html">Megha</a><a href="../voice.html">Voice</a><a href="../audience.html">Audience</a><a href="../brand.html">Brand</a><a href="../offers.html">Offers</a><a href="../tech.html">Tech</a><a href="../photos.html">Photos</a><a href="../research.html">Research</a><a href="../ideas.html">Ideas</a></nav></div>
 <footer><div class="shell">WithinWorks Leadership &middot; Kept by Mehr Patni &middot; Private working page</div></footer>
-<script src="../assets/brain.js"></script>
+<script src="../assets/brain.js?v=2"></script>
 <script>
 document.querySelectorAll('.ig-media').forEach(m => {
   const t = m.querySelector('.ig-track'), n = t.children.length;
@@ -110,7 +110,8 @@ function paint() {
   const st = BRAIN.statusMap(entries);
   boxes.forEach(b => {
     const s = st[b.dataset.id], status = b.querySelector('.status');
-    if (!status.dataset.busy) { status.className = 'status'; status.textContent = s === 'approved' ? 'Approved' : s === 'comment' ? 'Comment received' : ''; }
+    if (!status.dataset.busy) { status.className = 'status'; const last = entries.filter(e => e.item.split(' | ')[0] === b.dataset.id && (e.kind === 'Approved' || e.kind === 'Comment')).pop();
+      status.textContent = s === 'approved' ? 'Approved by ' + (entries.filter(e => e.kind === 'Approved' && e.item.split(' | ')[0] === b.dataset.id).pop() || {}).from : s === 'comment' ? 'Comment from ' + last.from : ''; }
     const notes = entries.filter(e => e.kind === 'Comment' && e.item.split(' | ')[0] === b.dataset.id);
     b.querySelector('.thread').innerHTML = notes.map(n => `<div><b>${BRAIN.esc(n.from)}</b> <span>${BRAIN.ago(n.time)}</span><br>${BRAIN.esc(n.text)}</div>`).join('');
   });

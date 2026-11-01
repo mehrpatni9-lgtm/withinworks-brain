@@ -30,7 +30,7 @@
 </div>
 
 <footer><div class="shell">WithinWorks Leadership &middot; Kept by Mehr Patni &middot; Private working page</div></footer>
-<script src="assets/brain.js"></script><script>
+<script src="assets/brain.js?v=2"></script><script>
 BRAIN.feed().then(e => { const st = BRAIN.statusMap(e); const ids = ['s1-1','s1-2','s1-3','s1-4','s1-5'];
   const ok = ids.filter(i => st[i] === 'approved').length, com = ids.filter(i => st[i] === 'comment').length;
   if (ok || com) document.getElementById('now-status').textContent = `${ok} of 5 approved` + (com ? `, ${com} with comments` : ''); });
