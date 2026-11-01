@@ -2,6 +2,7 @@
 // Run: node collection.mjs [prefix]
 import fs from 'fs';
 import path from 'path';
+import more from './collection_more.mjs';
 import { chromium } from '/Users/mehrpatni/mehr-portfolio/node_modules/playwright/index.mjs';
 
 const HERE = path.dirname(new URL(import.meta.url).pathname);
@@ -16,7 +17,7 @@ const GRAIN = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
 // The split W, bottom left on every slide. Left half sage (ivory on dark grounds), right half mocha.
 const W = (dark = false, name = false) => `<div style="position:absolute;left:64px;bottom:56px;display:flex;align-items:center;gap:16px">
   <svg width="58" height="53" viewBox="0 0 120 110"><defs><clipPath id="l"><rect width="58" height="110"/></clipPath><clipPath id="r"><rect x="58" width="62" height="110"/></clipPath></defs>
-  <text x="4" y="88" font-family="Fraunces" font-size="104" font-weight="600" fill="${dark ? C.ivory : C.sage}" clip-path="url(#l)">W</text>
+  <text x="4" y="88" font-family="Fraunces" font-size="104" font-weight="600" fill="${dark ? '#93A894' : C.sage}" clip-path="url(#l)">W</text>
   <text x="4" y="88" font-family="Fraunces" font-size="104" font-weight="600" fill="${C.mocha}" clip-path="url(#r)">W</text></svg>
   ${name ? `<span style="font:400 17px Jost;letter-spacing:.3em;text-transform:uppercase;color:${dark ? C.ivory : C.charcoal};opacity:.8">WithinWorks Leadership</span>` : ''}</div>`;
 
@@ -157,6 +158,7 @@ const slides = {
     <p class="serif" style="position:absolute;left:90px;right:120px;top:190px;color:${C.ivory};font-weight:300;font-size:64px;line-height:1.22">I learned to pause on the mat long before I used it in a coaching room.</p>
     ${W(true)}</body>`,
 };
+Object.assign(slides, more(C, PH, ST, W));
 
 const b = await chromium.launch();
 const p = await b.newPage({ viewport: { width: 1080, height: 1350 } });

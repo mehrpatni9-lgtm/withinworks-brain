@@ -7,3 +7,8 @@ chairs: https://images.unsplash.com/photo-1765447041709-9f1efbc81606 (Two chairs
 cups: https://images.unsplash.com/photo-1777748345629-ffa632a06cfc (Two empty coffee cups on saucers on a table)
 door: https://images.unsplash.com/photo-1635305587352-d8d25f4d1661 (the sun is shining through the open doors of a building)
 hall: https://images.unsplash.com/photo-1760624492217-6e4ff7813e59 (Modern wooden interior with natural light patterns)
+book2: https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c (book near eyeglasses and cappuccino)
+cup: https://images.unsplash.com/photo-1587302186428-d3753405ffed (white ceramic mug with brown liquid)
+calendar: https://images.unsplash.com/photo-1640116565640-51de47c7791b (a calendar sitting on top of a table)
+notepad: https://images.unsplash.com/photo-1609338177398-ef256b01b1b4 (brown framed eyeglasses on white printer paper)
+glasses: https://images.unsplash.com/photo-1587929501535-1e2d559e8488 (black framed eyeglasses on black book)
