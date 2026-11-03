@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=9">
+<link rel="stylesheet" href="assets/style.css?v=10">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 110'%3E%3Ctext x='4' y='88' font-family='Georgia' font-size='104' font-weight='600' fill='%235d6e5e'%3EW%3C/text%3E%3C/svg%3E">
 </head>
 <body class="page">
@@ -24,10 +24,16 @@
 <textarea name="text" placeholder="What&rsquo;s on your mind?" required></textarea>
 <input name="link" type="url" placeholder="Link, if there is one">
 <div class="act"><button class="btn ok" type="submit">Add</button><span class="status" id="fstatus"></span></div></form>
-<div class="card"><h3>So far</h3><ul class="clean feedlist" id="ideas"></ul></div></div></div></section>
+<div class="card"><h3>So far</h3><ul class="clean feedlist" id="ideas"></ul></div></div></div></section><section><div class="shell"><div class="card tint"><h3>Send from your Claude</h3>
+<p>Your WithinWorks project in Claude can send ideas, links and notes straight here. Paste this once into the project&rsquo;s instructions. After that, say &ldquo;Add to the Brain&rdquo; and tap the link it gives you.</p>
+<div class="copyrow" style="padding:6px 0 10px"><button class="btn copy-ins" type="button" style="min-height:36px;padding:6px 16px;font-size:.85rem">Copy instructions</button></div>
+<textarea class="ins-src" hidden>WithinWorks Brain: when I say "Add to the Brain" followed by an idea, link, note or feedback, reply with a single link built exactly like this:
+https://docs.google.com/forms/d/e/1FAIpQLSdfxZI3qGRSJ1joR2pl1VKlteFtpU3ob5d1lTukNKt2hpPS9A/formResponse?entry.829302562=KIND&amp;entry.1308432967=TITLE&amp;entry.1336080496=TEXT&amp;entry.542877254=Megha&amp;submit=Submit
+KIND is Idea, Resource or Review. TITLE is a short title, or the link if I shared one. TEXT is my full note in my words. Encode spaces and symbols for a URL. Then say: "Tap to send this to your Brain." Tapping it sends it straight away.</textarea>
+<p style="font-size:.9rem;color:var(--text-faint)">It arrives here within a few minutes, and Mehr is told by email.</p></div></div></section>
 <div class="shell"><nav class="doors"><a href="./">Brain</a><a href="content/">Instagram</a><a href="linkedin/">LinkedIn</a><a href="reels.html">Reels</a><a href="strategy.html">Strategy</a><a href="megha.html">Megha</a><a href="voice.html">Voice</a><a href="audience.html">Audience</a><a href="brand.html">Brand</a><a href="offers.html">Offers</a><a href="tech.html">Tech</a><a href="photos.html">Photos</a><a href="research.html">Research</a><a href="ideas.html" class="here">Ideas</a></nav></div>
 <footer><div class="shell">WithinWorks Leadership &middot; Kept by Mehr Patni &middot; Private working page</div></footer>
-<script src="assets/brain.js?v=2"></script><script>
+<script src="assets/brain.js?v=3"></script><script>
 function draw(entries) {
   const ideas = entries.filter(e => ['Idea', 'Resource', 'Review'].includes(e.kind)).reverse();
   document.getElementById('ideas').innerHTML = ideas.length ? ideas.map(e => {
@@ -44,6 +50,7 @@ document.getElementById('feedform').addEventListener('submit', async e => {
   catch (err) { st.className = 'status err'; st.textContent = 'Not sent. Try again.'; }
   btn.disabled = false;
 });
+document.querySelectorAll('.copy-ins').forEach(b => b.onclick = async () => { const t = document.querySelector('.ins-src').value; try { await navigator.clipboard.writeText(t); } catch (e) {} b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy instructions', 1800); });
 </script>
 </body>
 </html>

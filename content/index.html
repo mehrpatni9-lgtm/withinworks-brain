@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=9">
+<link rel="stylesheet" href="../assets/style.css?v=10">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 110'%3E%3Ctext x='4' y='88' font-family='Georgia' font-size='104' font-weight='600' fill='%235d6e5e'%3EW%3C/text%3E%3C/svg%3E">
 </head>
 <body class="page">
@@ -176,7 +176,7 @@ Not sure which one you need? Ask me. I’ll tell you honestly, even if it isn’
 </article></div></div></div></section>
 <div class="shell"><nav class="doors"><a href="../">Brain</a><a href="../content/" class="here">Instagram</a><a href="../linkedin/">LinkedIn</a><a href="../reels.html">Reels</a><a href="../strategy.html">Strategy</a><a href="../megha.html">Megha</a><a href="../voice.html">Voice</a><a href="../audience.html">Audience</a><a href="../brand.html">Brand</a><a href="../offers.html">Offers</a><a href="../tech.html">Tech</a><a href="../photos.html">Photos</a><a href="../research.html">Research</a><a href="../ideas.html">Ideas</a></nav></div>
 <footer><div class="shell">WithinWorks Leadership &middot; Kept by Mehr Patni &middot; Private working page</div></footer>
-<script src="../assets/brain.js?v=2"></script>
+<script src="../assets/brain.js?v=3"></script>
 <script>
 document.querySelectorAll('.ig-media').forEach(m => {
   const t = m.querySelector('.ig-track'), n = t.children.length;
@@ -200,7 +200,12 @@ function paint() {
     if (!status.dataset.busy) { status.className = 'status'; const last = entries.filter(e => e.item.split(' | ')[0] === b.dataset.id && (e.kind === 'Approved' || e.kind === 'Comment')).pop();
       status.textContent = s === 'approved' ? 'Approved by ' + (entries.filter(e => e.kind === 'Approved' && e.item.split(' | ')[0] === b.dataset.id).pop() || {}).from : s === 'comment' ? 'Comment from ' + last.from : ''; }
     const notes = entries.filter(e => e.kind === 'Comment' && e.item.split(' | ')[0] === b.dataset.id);
-    b.querySelector('.thread').innerHTML = notes.map(n => `<div><b>${BRAIN.esc(n.from)}</b> <span>${BRAIN.ago(n.time)}</span><br>${BRAIN.esc(n.text)}</div>`).join('');
+    const done = new Set(entries.filter(e => e.kind === 'Done' && e.item.split(' | ')[0] === b.dataset.id).map(e => e.text));
+    const mehr = BRAIN.who() === 'Mehr';
+    b.querySelector('.thread').innerHTML = notes.map(n => `<div${done.has(n.time) ? ' class="done"' : ''}><b>${BRAIN.esc(n.from)}</b> <span>${BRAIN.ago(n.time)}</span>`
+      + (done.has(n.time) ? ' <em class="tag">Done</em>' : (mehr && n.from !== 'Mehr' ? ` <button class="mark" data-t="${BRAIN.esc(n.time)}">Mark done</button>` : ''))
+      + `<br>${BRAIN.esc(n.text)}</div>`).join('');
+    if (!status.dataset.busy && s === 'comment' && notes.length && notes.every(n => done.has(n.time))) status.textContent = 'Updated';
   });
 }
 boxes.forEach(b => {
@@ -212,6 +217,12 @@ boxes.forEach(b => {
   </div>`;
   const status = b.querySelector('.status'), box = b.querySelector('.box'), ta = box.querySelector('textarea');
   b.addEventListener('click', async e => {
+    if (e.target.classList.contains('mark')) {
+      e.target.disabled = true; e.target.textContent = 'Saving...';
+      try { await BRAIN.send('Done', b.dataset.id + ' | ' + b.dataset.title, e.target.dataset.t); entries = await BRAIN.feed(); paint(); }
+      catch (err) { e.target.disabled = false; e.target.textContent = 'Mark done'; }
+      return;
+    }
     const a = e.target.dataset && e.target.dataset.a;
     if (!a) return;
     if (a === 'comment') { box.classList.toggle('open'); if (box.classList.contains('open')) ta.focus(); return; }
