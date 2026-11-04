@@ -48,7 +48,7 @@ const frames = {
     <div style="position:absolute;left:0;right:0;margin:auto;top:915px;width:400px;background:#fff;padding:14px 14px 20px;transform:rotate(-2deg);box-shadow:0 22px 44px rgba(60,50,40,.22)">
       <img src="${PH('03')}" style="width:100%;height:auto;display:block"></div>
     ${STAMP("ACC", "ICF", 265, 1190, -10)}${STAMP("CPCC", "Co-Active", 640, 1165, 8)}
-    <p class="serif" style="position:absolute;left:150px;right:150px;top:1400px;text-align:center;font-size:40px;font-weight:400;line-height:1.3;color:${C.charcoal};text-wrap:balance">Follow this space to learn more about <i style="color:${C.forest}">executive and transformational coaching.</i></p>
+    <p class="serif" style="position:absolute;left:150px;right:150px;top:1400px;text-align:center;font-size:40px;font-weight:400;line-height:1.3;color:${C.charcoal};text-wrap:balance">Follow this space to learn more about <i style="color:${C.forest}">Executive and Transformational coaching.</i></p>
     ${W(false, true)}</body>`,
 };
 
