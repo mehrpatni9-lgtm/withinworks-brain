@@ -13,11 +13,11 @@ const BRAIN = (() => {
 
   function who() {
     const q = new URLSearchParams(location.search).get('from');
-    // Megha's link carries ?from=Megha; anyone opening the Brain without it is Mehr.
-    if (q && PEOPLE.includes(q)) ls.set('who2', q);
-    return ls.get('who2') || 'Mehr';
+    // Everyone is Megha by default. Mehr's own browser was marked once with ?from=Mehr.
+    if (q && PEOPLE.includes(q)) ls.set('who3', q);
+    return ls.get('who3') || 'Megha';
   }
-  function setWho(name) { ls.set('who2', name); }
+  function setWho(name) { ls.set('who3', name); }
 
   // Entries sent from this browser, shown at once while the sheet catches up.
   function pending() { return ls.get('pending') || []; }

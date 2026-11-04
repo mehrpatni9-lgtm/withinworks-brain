@@ -31,10 +31,10 @@ const SUGGEST = (() => {
       const rej = new Set(entries.filter(e => e.kind === 'Rejected' && idOf(e) === id).map(e => e.text));
       // Live caption: the original, replaced by each accepted suggestion in turn.
       let live = src.dataset.original;
-      sugg.filter(s => acc.has(s.time)).forEach(s => { live = parse(s.text).text; });
+      sugg.filter(s => acc.has(s.time) && parse(s.text).text).forEach(s => { live = parse(s.text).text; });
       src.value = live;
       const pending = sugg.filter(s => !acc.has(s.time) && !rej.has(s.time));
-      const latest = pending[pending.length - 1];
+      const latest = pending.filter(s => parse(s.text).text).pop();
       if (latest) {
         cap.classList.remove('clip'); const more = cap.nextElementSibling; if (more && more.matches('.ig-more, .li-more')) more.remove();
         cap.innerHTML = prefix(article) + `<span class="tracked">${show(diff(live, parse(latest.text).text))}</span>`;
@@ -46,8 +46,11 @@ const SUGGEST = (() => {
       if (box) box.innerHTML = sugg.slice().reverse().map(s => {
         const state = acc.has(s.time) ? '<em class="tag">Accepted</em>' : rej.has(s.time) ? '<em class="tag no">Rejected</em>'
           : (mehr ? `<button class="pill" data-acc="${BRAIN.esc(s.time)}">Accept</button><button class="pill" data-rej="${BRAIN.esc(s.time)}">Reject</button>` : '<em class="tag wait">Waiting for Mehr</em>');
-        return `<div class="sugg${acc.has(s.time) || rej.has(s.time) ? ' done' : ''}"><b>${BRAIN.esc(s.from)}</b> <span>suggested an edit &middot; ${BRAIN.ago(s.time)}</span> ${state}</div>`;
+        const d = parse(s.text), what = d.text && d.note ? 'caption and a note' : d.text ? 'caption' : 'a note';
+        return `<div class="sugg${acc.has(s.time) || rej.has(s.time) ? ' done' : ''}"><b>${BRAIN.esc(s.from)}</b> <span>suggested an edit (${what}) &middot; ${BRAIN.ago(s.time)}</span> ${state}${d.note ? `<p class="sg-quote">${BRAIN.esc(d.note)}</p>` : ''}</div>`;
       }).join('');
+      const st = article.querySelector('.review .status');
+      if (st && !st.dataset.busy && sugg.length && !pending.length && !/^Approved/.test(st.textContent)) st.textContent = 'Updated';
     });
   }
 
@@ -59,14 +62,15 @@ const SUGGEST = (() => {
     if (t.dataset.a === 'suggest') {
       const ed = article.querySelector('.sugg-box');
       ed.classList.toggle('open');
-      if (ed.classList.contains('open')) { const ta = ed.querySelector('textarea'); ta.value = article.querySelector('.cap-src').value; ta.focus(); }
+      if (ed.classList.contains('open')) { const ta = ed.querySelector('.sg-cap'); ta.value = article.querySelector('.cap-src').value; ed.querySelector('.sg-note').value = ''; ta.focus(); }
       return;
     }
     let kind, text;
     if (t.dataset.a === 'send-sugg') {
-      const ta = article.querySelector('.sugg-box textarea'), base = article.querySelector('.cap-src').value;
-      if (!ta.value.trim() || ta.value.trim() === base.trim()) { ta.focus(); return; }
-      kind = 'Suggestion'; text = JSON.stringify({ text: ta.value.trim() });
+      const ta = article.querySelector('.sg-cap'), note = article.querySelector('.sg-note').value.trim(), base = article.querySelector('.cap-src').value;
+      const changed = ta.value.trim() && ta.value.trim() !== base.trim();
+      if (!changed && !note) { ta.focus(); return; }
+      kind = 'Suggestion'; text = JSON.stringify(Object.assign(changed ? { text: ta.value.trim() } : {}, note ? { note } : {}));
     } else if (t.dataset.acc) { kind = 'Accepted'; text = t.dataset.acc; }
     else if (t.dataset.rej) { kind = 'Rejected'; text = t.dataset.rej; }
     else return;
