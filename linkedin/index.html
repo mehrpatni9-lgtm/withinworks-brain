@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=13">
+<link rel="stylesheet" href="../assets/style.css?v=14">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 110'%3E%3Ctext x='4' y='88' font-family='Georgia' font-size='104' font-weight='600' fill='%235d6e5e'%3EW%3C/text%3E%3C/svg%3E">
 </head>
 <body class="page">
@@ -93,7 +93,7 @@ No need to answer it here. Just notice what comes up when you read it.</textarea
 </article></div></div></div></section>
 <div class="shell"><nav class="doors"><a href="../">Brain</a><a href="../content/">Instagram</a><a href="../linkedin/" class="here">LinkedIn</a><a href="../reels.html">Reels</a><a href="../strategy.html">Strategy</a><a href="../megha.html">Megha</a><a href="../voice.html">Voice</a><a href="../audience.html">Audience</a><a href="../brand.html">Brand</a><a href="../offers.html">Offers</a><a href="../tech.html">Tech</a><a href="../photos.html">Photos</a><a href="../research.html">Research</a><a href="../ideas.html">Ideas</a></nav></div>
 <footer><div class="shell">WithinWorks Leadership &middot; Kept by Mehr Patni &middot; Private working page</div></footer>
-<script src="../assets/brain.js?v=5"></script><script src="../assets/suggest.js?v=3"></script>
+<script src="../assets/brain.js?v=5"></script><script src="../assets/suggest.js?v=4"></script>
 <script>
 document.querySelectorAll('.ig-media').forEach(m => {
   const t = m.querySelector('.ig-track'), n = t.children.length;
@@ -131,10 +131,8 @@ boxes.forEach(b => {
     <button class="btn" data-a="suggest">Suggest edit</button>
     <span class="status" role="status"></span>
     <div class="box" hidden><textarea></textarea></div>
-    <div class="box sugg-box"><p class="sugg-help">Caption: edit the words directly</p><textarea class="sg-cap" rows="6"></textarea>
-    <p class="sugg-help" style="margin-top:12px">Anything else, like a change on the slides (optional)</p><textarea class="sg-note" rows="3" placeholder="For example: a different photo on slide 2"></textarea>
-    <div><button class="btn ok" data-a="send-sugg">Send</button></div></div>
-  </div><div class="sugg-list"></div>`;
+    <div class="box sugg-box"><p class="sugg-help">Anything else, like a change on the slides? (optional)</p><textarea class="sg-note" rows="2" placeholder="For example: a different photo on slide 2"></textarea></div>
+  </div><p class="sugg-hint" role="status"></p><div class="sugg-list"></div>`;
   const status = b.querySelector('.status'), box = b.querySelector('.box:not(.sugg-box)'), ta = box.querySelector('textarea');
   b.addEventListener('click', async e => {
     if (e.target.classList.contains("pill") && e.target.dataset.t) {

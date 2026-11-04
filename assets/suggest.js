@@ -24,7 +24,7 @@ const SUGGEST = (() => {
     const mehr = BRAIN.who() === 'Mehr';
     document.querySelectorAll('article.post-wrap').forEach(article => {
       const id = article.id, src = article.querySelector('.cap-src'), cap = capEl(article);
-      if (!src || !cap) return;
+      if (!src || !cap || editing.has(id)) return;
       if (!src.dataset.original) src.dataset.original = src.value;
       const sugg = entries.filter(e => e.kind === 'Suggestion' && idOf(e) === id);
       const acc = new Set(entries.filter(e => e.kind === 'Accepted' && idOf(e) === id).map(e => e.text));
@@ -33,8 +33,10 @@ const SUGGEST = (() => {
       let live = src.dataset.original;
       sugg.filter(s => acc.has(s.time) && parse(s.text).text).forEach(s => { live = parse(s.text).text; });
       src.value = live;
-      const pending = sugg.filter(s => !acc.has(s.time) && !rej.has(s.time));
+      const open = sugg.filter(s => !acc.has(s.time) && !rej.has(s.time));
+      const pending = open.length ? [open[open.length - 1]] : []; // a newer suggestion replaces an older one
       const latest = pending.filter(s => parse(s.text).text).pop();
+      article.dataset.pending = latest ? parse(latest.text).text : '';
       if (latest) {
         cap.classList.remove('clip'); const more = cap.nextElementSibling; if (more && more.matches('.ig-more, .li-more')) more.remove();
         cap.innerHTML = prefix(article) + `<span class="tracked">${show(diff(live, parse(latest.text).text))}</span>`;
@@ -43,7 +45,7 @@ const SUGGEST = (() => {
       }
       // Suggestion cards in the thread
       const box = article.querySelector('.sugg-list');
-      if (box) box.innerHTML = sugg.slice().reverse().map(s => {
+      if (box) box.innerHTML = sugg.filter(s => acc.has(s.time) || rej.has(s.time) || pending.includes(s)).reverse().map(s => {
         const state = acc.has(s.time) ? '<em class="tag">Accepted</em>' : rej.has(s.time) ? '<em class="tag no">Rejected</em>'
           : (mehr ? `<button class="pill" data-acc="${BRAIN.esc(s.time)}">Accept</button><button class="pill" data-rej="${BRAIN.esc(s.time)}">Reject</button>` : '<em class="tag wait">Waiting for Mehr</em>');
         const d = parse(s.text), what = d.text && d.note ? 'caption and a note' : d.text ? 'caption' : 'a note';
@@ -54,33 +56,61 @@ const SUGGEST = (() => {
     });
   }
 
-  // Clicks: open the editor, send a suggestion, accept or reject.
+  // Editing works like a Word doc: tap Suggest edit, type in the caption itself, click away and it saves.
+  const editing = new Set();
+  function startEdit(article) {
+    const cap = capEl(article), src = article.querySelector('.cap-src');
+    if (!cap || editing.has(article.id)) return;
+    editing.add(article.id);
+    const pend = article.dataset.pending || src.value;
+    cap.classList.remove('clip'); const more = cap.nextElementSibling; if (more && more.matches('.ig-more, .li-more')) more.remove();
+    cap.innerHTML = prefix(article) + `<span class="edit" contenteditable="true" spellcheck="true"></span>`;
+    const ed = cap.querySelector('.edit'); ed.innerText = pend;
+    article.querySelector('.sugg-box').classList.add('open');
+    article.querySelector('.sg-note').value = '';
+    ed.focus(); const r = document.createRange(); r.selectNodeContents(ed); r.collapse(false); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    setHint(article, 'Editing. Click anywhere outside to save.');
+  }
+  function setHint(article, t) { const h = article.querySelector('.sugg-hint'); if (h) h.textContent = t; }
+
+  async function save(article) {
+    if (!editing.has(article.id)) return;
+    const cap = capEl(article), ed = cap.querySelector('.edit'), src = article.querySelector('.cap-src');
+    const text = (ed ? ed.innerText : '').replace(/\n{3,}/g, '\n\n').trim(), note = article.querySelector('.sg-note').value.trim();
+    const before = (article.dataset.pending || src.value).trim();
+    editing.delete(article.id);
+    article.querySelector('.sugg-box').classList.remove('open');
+    const changed = text && text !== before;
+    if (!changed && !note) { setHint(article, ''); document.dispatchEvent(new Event('brain:refresh')); return; }
+    setHint(article, 'Saving...');
+    const review = article.querySelector('.review');
+    try {
+      await BRAIN.send('Suggestion', article.id + ' | ' + review.dataset.title, JSON.stringify(Object.assign(changed || article.dataset.pending ? { text: changed ? text : before } : {}, note ? { note } : {})));
+      setHint(article, 'Saved');
+      setTimeout(() => setHint(article, ''), 2500);
+    } catch (err) { setHint(article, 'Not saved. Check your connection and try again.'); }
+    document.dispatchEvent(new Event('brain:refresh'));
+  }
+
+  // Save when focus leaves the caption and its note
+  document.addEventListener('focusout', e => {
+    const article = e.target.closest && e.target.closest('article.post-wrap');
+    if (!article || !editing.has(article.id)) return;
+    setTimeout(() => { if (!article.contains(document.activeElement)) save(article); }, 250);
+  });
+
   document.addEventListener('click', async e => {
     const t = e.target, article = t.closest && t.closest('article.post-wrap');
     if (!article) return;
-    const review = article.querySelector('.review'), title = review.dataset.title, id = article.id;
-    if (t.dataset.a === 'suggest') {
-      const ed = article.querySelector('.sugg-box');
-      ed.classList.toggle('open');
-      if (ed.classList.contains('open')) { const ta = ed.querySelector('.sg-cap'); ta.value = article.querySelector('.cap-src').value; ed.querySelector('.sg-note').value = ''; ta.focus(); }
-      return;
-    }
+    if (t.dataset.a === 'suggest') { editing.has(article.id) ? save(article) : startEdit(article); return; }
     let kind, text;
-    if (t.dataset.a === 'send-sugg') {
-      const ta = article.querySelector('.sg-cap'), note = article.querySelector('.sg-note').value.trim(), base = article.querySelector('.cap-src').value;
-      const changed = ta.value.trim() && ta.value.trim() !== base.trim();
-      if (!changed && !note) { ta.focus(); return; }
-      kind = 'Suggestion'; text = JSON.stringify(Object.assign(changed ? { text: ta.value.trim() } : {}, note ? { note } : {}));
-    } else if (t.dataset.acc) { kind = 'Accepted'; text = t.dataset.acc; }
+    if (t.dataset.acc) { kind = 'Accepted'; text = t.dataset.acc; }
     else if (t.dataset.rej) { kind = 'Rejected'; text = t.dataset.rej; }
     else return;
-    t.disabled = true; const label = t.textContent; t.textContent = 'Saving...';
-    try {
-      await BRAIN.send(kind, id + ' | ' + title, text);
-      if (kind === 'Suggestion') article.querySelector('.sugg-box').classList.remove('open');
-      document.dispatchEvent(new Event('brain:refresh'));
-    } catch (err) { t.textContent = 'Not sent, try again'; setTimeout(() => { t.textContent = label; }, 2000); }
-    t.disabled = false; if (t.textContent === 'Saving...') t.textContent = label;
+    t.disabled = true; t.textContent = 'Saving...';
+    try { await BRAIN.send(kind, article.id + ' | ' + article.querySelector('.review').dataset.title, text); }
+    catch (err) { t.disabled = false; t.textContent = 'Try again'; return; }
+    document.dispatchEvent(new Event('brain:refresh'));
   });
 
   return { paint, diff };
