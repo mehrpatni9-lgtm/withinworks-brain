@@ -71,7 +71,29 @@ const BRAIN = (() => {
     const seen = new Set(rows.map(r => r.kind + r.item + r.text));
     const fresh = pending().filter(p => !seen.has(p.kind + p.item + p.text) && Date.now() - new Date(p.time) < 864e5);
     ls.set('pending', fresh);
-    return rows.concat(fresh).sort((a, b) => a.time.localeCompare(b.time));
+    return expandVoice(rows.concat(fresh)).sort((a, b) => a.time.localeCompare(b.time));
+  }
+
+  // Voice feedback arrives as one entry from Megha's assistant, one line per post:
+  //   03 | approve        01 | caption | new caption text        05 | note | comment
+  // Each line becomes a normal approval, caption suggestion or comment on that post.
+  function expandVoice(list) {
+    const map = window.POSTMAP || {}, out = [];
+    list.forEach(e => {
+      if (e.kind !== 'Voice') return out.push(e);
+      e.text.split(/\n+/).forEach((line, i) => {
+        const [code, what, ...rest] = line.split('|').map(x => x.trim());
+        if ((code || '').toLowerCase() === 'idea' && what) return out.push({ time: new Date(new Date(e.time).getTime() + i + 1).toISOString(), from: e.from, kind: 'Idea', item: '', text: [what, ...rest].join(' | ') });
+        const id = map[(code || '').toUpperCase().replace(/^(\d)$/, '0$1')] || map[code];
+        if (!id || !what) return;
+        const body = rest.join(' | '), t = new Date(new Date(e.time).getTime() + i + 1).toISOString(), item = id + ' | voice';
+        const w = what.toLowerCase();
+        if (w.startsWith('approve')) out.push({ time: t, from: e.from, kind: 'Approved', item, text: '' });
+        else if (w.startsWith('caption')) out.push({ time: t, from: e.from, kind: 'Suggestion', item, text: JSON.stringify({ text: body.replace(/\\n/g, '\n') }) });
+        else out.push({ time: t, from: e.from, kind: 'Comment', item, text: body || what });
+      });
+    });
+    return out;
   }
 
   // Latest decision per calendar item id ("m1-3 | ...").
