@@ -49,7 +49,7 @@ const SUGGEST = (() => {
         const state = acc.has(s.time) ? '<em class="tag">Accepted</em>' : rej.has(s.time) ? '<em class="tag no">Rejected</em>'
           : (mehr ? `<button class="pill" data-acc="${BRAIN.esc(s.time)}">Accept</button><button class="pill" data-rej="${BRAIN.esc(s.time)}">Reject</button>` : '<em class="tag wait">Waiting for Mehr</em>');
         const d = parse(s.text), what = d.text && d.note ? 'caption and a note' : d.text ? 'caption' : 'a note';
-        return `<div class="sugg${acc.has(s.time) || rej.has(s.time) ? ' done' : ''}"><b>${BRAIN.esc(s.from)}</b> <span>suggested an edit (${what}) &middot; ${BRAIN.ago(s.time)}</span> ${state}${d.note ? `<p class="sg-quote">${BRAIN.esc(d.note)}</p>` : ''}</div>`;
+        return `<div class="sugg${acc.has(s.time) || rej.has(s.time) ? ' done' : ''}"><b>${BRAIN.esc(s.from)}</b> <span>suggested an edit &middot; ${BRAIN.ago(s.time)}</span> ${state}${d.note ? `<p class="sg-quote">${BRAIN.esc(d.note)}</p>` : ''}</div>`;
       }).join('');
       const st = article.querySelector('.review .status');
       if (st && !st.dataset.busy && sugg.length && !pending.length && !/^Approved/.test(st.textContent)) st.textContent = 'Updated';
@@ -66,29 +66,25 @@ const SUGGEST = (() => {
     cap.classList.remove('clip'); const more = cap.nextElementSibling; if (more && more.matches('.ig-more, .li-more')) more.remove();
     cap.innerHTML = prefix(article) + `<span class="edit" contenteditable="true" spellcheck="true"></span>`;
     const ed = cap.querySelector('.edit'); ed.innerText = pend;
-    article.querySelector('.sugg-box').classList.add('open');
-    article.querySelector('.sg-note').value = '';
+    const btn = article.querySelector('[data-a="suggest"]'); if (btn) btn.textContent = 'Save';
     ed.focus(); const r = document.createRange(); r.selectNodeContents(ed); r.collapse(false); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
-    setHint(article, 'Editing. Click anywhere outside to save.');
   }
   function setHint(article, t) { const h = article.querySelector('.sugg-hint'); if (h) h.textContent = t; }
 
   async function save(article) {
     if (!editing.has(article.id)) return;
     const cap = capEl(article), ed = cap.querySelector('.edit'), src = article.querySelector('.cap-src');
-    const text = (ed ? ed.innerText : '').replace(/\n{3,}/g, '\n\n').trim(), note = article.querySelector('.sg-note').value.trim();
+    const text = (ed ? ed.innerText : '').replace(/\n{3,}/g, '\n\n').trim(), note = '';
     const before = (article.dataset.pending || src.value).trim();
     editing.delete(article.id);
-    article.querySelector('.sugg-box').classList.remove('open');
+    const btn = article.querySelector('[data-a="suggest"]'); if (btn) btn.textContent = 'Suggest edit';
     const changed = text && text !== before;
-    if (!changed && !note) { setHint(article, ''); document.dispatchEvent(new Event('brain:refresh')); return; }
-    setHint(article, 'Saving...');
+    if (!changed && !note) { document.dispatchEvent(new Event('brain:refresh')); return; }
+    
     const review = article.querySelector('.review');
     try {
       await BRAIN.send('Suggestion', article.id + ' | ' + review.dataset.title, JSON.stringify(Object.assign(changed || article.dataset.pending ? { text: changed ? text : before } : {}, note ? { note } : {})));
-      setHint(article, 'Saved');
-      setTimeout(() => setHint(article, ''), 2500);
-    } catch (err) { setHint(article, 'Not saved. Check your connection and try again.'); }
+    } catch (err) { alert('That did not save. Please check your connection and try again.'); }
     document.dispatchEvent(new Event('brain:refresh'));
   }
 
