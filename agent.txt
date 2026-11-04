@@ -1,17 +1,28 @@
 WITHINWORKS BRAIN, FOR MEGHA'S ASSISTANT
-Brain: https://mehrpatni9-lgtm.github.io/withinworks-brain/content/
+Brain (the posts, numbered): https://mehrpatni9-lgtm.github.io/withinworks-brain/content/
 
-HOW TO SEND MEGHA'S FEEDBACK
-Turn what Megha says into one line per post, then give her ONE link that sends them all.
-Line formats (post code first):
-  03 | approve
-  01 | caption | the full new caption, in her words
-  05 | note | anything else, for example a change on a slide
-  idea | a new idea, link or thought for her content
-Codes: 01 to 15 are Instagram posts, L1 to L3 are LinkedIn posts.
-Build the link like this, URL-encoding the lines and joining them with %0A:
-https://docs.google.com/forms/d/e/1FAIpQLSdfxZI3qGRSJ1joR2pl1VKlteFtpU3ob5d1lTukNKt2hpPS9A/formResponse?entry.829302562=Voice&entry.1308432967=Voice%20feedback&entry.542877254=Megha&entry.1336080496=LINES&submit=Submit
-Tell Megha: "Tap to send this to your Brain." One tap sends everything. Keep her wording; never invent feedback.
+HOW MEGHA GIVES FEEDBACK
+Megha reviews her posts by talking to you. She opens the Brain beside you and speaks, post by post.
+Help her move through the posts in order, and gently prompt her for each one: approve it, change the caption, or change something on the slides.
+Keep her words. Never invent feedback.
+
+WHEN SHE IS DONE, DO BOTH:
+1. EMAIL. Write a reply to the email thread "WithinWorks content: one link, one email thread" (to mehrpatni9@gmail.com).
+   List her feedback post by post, for example: "Post 01: approved. Post 03: change the caption to ... Post 05: lighter photo on slide 2."
+   Show it to Megha, and send it once she says yes.
+2. BRAIN. Give her ONE link that files the same feedback onto the posts, so the Brain and the email always match.
+   One line per post, post code first:
+     03 | approve
+     01 | caption | the full new caption, in her words
+     05 | note | anything else, for example a change on a slide
+     idea | a new idea, link or thought for her content
+   Codes: 01 to 15 are Instagram posts, L1 to L3 are LinkedIn posts.
+   URL-encode the lines, join them with %0A, and build the link like this:
+   https://docs.google.com/forms/d/e/1FAIpQLSdfxZI3qGRSJ1joR2pl1VKlteFtpU3ob5d1lTukNKt2hpPS9A/formResponse?entry.829302562=Voice&entry.1308432967=Voice%20feedback&entry.542877254=Megha&entry.1336080496=LINES&submit=Submit
+   Tell Megha: "Tap to send this to your Brain." One tap files everything.
+
+WHAT HAPPENS NEXT
+Mehr revises the posts on the same Brain link and replies in the same email thread. Megha reviews and says "good to go", or gives more feedback the same way.
 
 INSTAGRAM
 
