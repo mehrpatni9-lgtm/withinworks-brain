@@ -15,6 +15,7 @@ const BRAIN = (() => {
     const q = new URLSearchParams(location.search).get('from');
     // Everyone is Megha by default. Mehr's own browser was marked once with ?from=Mehr.
     if (q && PEOPLE.includes(q)) ls.set('who3', q);
+    if (DEMO && !q) return 'Mehr';
     return ls.get('who3') || 'Megha';
   }
   function setWho(name) { ls.set('who3', name); }
@@ -23,6 +24,7 @@ const BRAIN = (() => {
   function pending() { return ls.get('pending') || []; }
 
   async function send(kind, item, text) {
+    if (DEMO) { const p = pending(); p.push({ time: new Date().toISOString(), from: who(), kind, item, text: text || '', demo: 1 }); ls.set('pending', p.slice(-50)); return; }
     const body = new URLSearchParams();
     body.append(ENTRY.item, item);
     body.append(ENTRY.kind, kind);
@@ -48,7 +50,17 @@ const BRAIN = (() => {
     return rows;
   }
 
+  // ?demo=1 shows sample edits from Megha and sends nothing, for previewing how feedback looks.
+  const DEMO = new URLSearchParams(location.search).has('demo');
+  const DEMO_ROWS = [
+    { time: '2026-11-04T09:00:00Z', from: 'Megha', kind: 'Suggestion', item: 'c1-1 | About Megha', text: JSON.stringify({ text: 'Hello, I’m Megha. A little of who I am, and why coaching means so much to me. Welcome, I’m so glad you’re here.' }) },
+    { time: '2026-11-04T09:02:00Z', from: 'Megha', kind: 'Approved', item: 'c1-2 | Words in the world', text: '' },
+    { time: '2026-11-04T09:04:00Z', from: 'Megha', kind: 'Comment', item: 'c1-5 | Coaching, plainly', text: 'Could slide 2 feel a little warmer? Maybe a softer colour behind Coaching.' },
+    { time: '2026-11-04T09:06:00Z', from: 'Megha', kind: 'Suggestion', item: 'c1-3 | The Within Question', text: JSON.stringify({ text: 'One question a week to sit with. You don’t need to answer it here. Just notice what comes up.' }) },
+    { time: '2026-11-04T09:20:00Z', from: 'Mehr', kind: 'Accepted', item: 'c1-3 | The Within Question', text: '2026-11-04T09:06:00Z' },
+  ];
   async function feed() {
+    if (DEMO) return DEMO_ROWS.concat(pending().filter(p => p.demo));
     let rows = [];
     try {
       const res = await fetch(FEED + '&t=' + Date.now());
