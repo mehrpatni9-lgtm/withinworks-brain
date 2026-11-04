@@ -83,6 +83,7 @@ const BRAIN = (() => {
       if (e.kind !== 'Voice') return out.push(e);
       e.text.split(/\n+/).forEach((line, i) => {
         const [code, what, ...rest] = line.split('|').map(x => x.trim());
+        if ((code || '').toLowerCase() === 'all' && /approve/i.test(what || '')) { Object.keys(map).filter(k => /^\d+$/.test(k)).forEach((k, j) => out.push({ time: new Date(new Date(e.time).getTime() + i * 50 + j + 1).toISOString(), from: e.from, kind: 'Approved', item: map[k] + ' | voice', text: '' })); return; }
         if ((code || '').toLowerCase() === 'idea' && what) return out.push({ time: new Date(new Date(e.time).getTime() + i + 1).toISOString(), from: e.from, kind: 'Idea', item: '', text: [what, ...rest].join(' | ') });
         const id = map[(code || '').toUpperCase().replace(/^(\d)$/, '0$1')] || map[code];
         if (!id || !what) return;

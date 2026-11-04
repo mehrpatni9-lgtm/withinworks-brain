@@ -400,3 +400,4 @@ body.home .now { margin-top: 40px; }
 .sugg-hint { font-size: 0.82rem; color: var(--sage); min-height: 1em; margin: 6px 0 0; }
 .review.post .btn.tick { min-width: 34px; width: 34px; padding: 0; font-size: 1rem; line-height: 1; background: #fff; color: var(--sage); border-color: var(--sage); }
 .review.post .btn.tick:hover, .review.post .btn.tick.on { background: var(--sage); color: #fff; }
+.eyebrow .rev { margin-left: 10px; padding: 2px 9px; border-radius: 99px; background: var(--mocha); color: #fff; font-size: 0.68rem; letter-spacing: 0.08em; }
