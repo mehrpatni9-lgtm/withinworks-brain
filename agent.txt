@@ -7,7 +7,7 @@ Help her move through the posts in order, and gently prompt her for each one: ap
 Keep her words. Never invent feedback.
 
 WHEN SHE IS DONE, DO BOTH:
-1. EMAIL. Write a reply to the email thread "WithinWorks content: one link, one email thread" (to mehrpatni9@gmail.com).
+1. EMAIL. Write a reply to the email thread "Your WithinWorks posts, and how to give feedback" (to mehrpatni9@gmail.com).
    List her feedback post by post, for example: "Post 01: approved. Post 03: change the caption to ... Post 05: lighter photo on slide 2."
    Show it to Megha, and send it once she says yes.
 2. BRAIN. Give her ONE link that files the same feedback onto the posts, so the Brain and the email always match.
