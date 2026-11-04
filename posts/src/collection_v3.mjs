@@ -3,12 +3,13 @@
 export default (C, PH, ST, W) => ({
   // About, slide 2: who she is
   'c1-1b': `<body class="grain" style="background:${C.forest};color:${C.ivory}">
-    <p class="serif" style="position:absolute;left:96px;right:96px;top:110px;font-size:58px;font-weight:400;line-height:1.22">I’m a leadership coach in Dubai. Before this, I spent 25 years leading people.</p>
+    <p class="lab" style="position:absolute;left:96px;right:96px;top:92px;font-size:19px;color:${C.mocha}">ACC &middot; CPCC &middot; 100 hours of coaching</p>
+    <p class="serif" style="position:absolute;left:96px;right:96px;top:150px;font-size:54px;font-weight:400;line-height:1.22">I’m an executive and transformational coach in Dubai. Before this, I spent 25 years leading people.</p>
     <div style="position:absolute;right:86px;top:420px;width:430px;background:${C.ivory};padding:16px 16px 76px;transform:rotate(2.5deg);box-shadow:0 22px 46px rgba(0,0,0,.4)">
       <img src="${PH('08')}" style="width:100%;height:470px;object-fit:cover;object-position:64% center;display:block">
       <p class="hand" style="position:absolute;left:24px;bottom:18px;font-size:38px;color:${C.charcoal}">my most loyal colleague</p></div>
     <div style="position:absolute;left:96px;top:440px;width:440px">
-      ${[['Banking', 'Fourteen years, Citibank and Barclays'], ['Building', 'Thirteen years at Traveazy, ten people to 300'], ['Biggest inspiration', 'My father'], ['Mum of', 'Two daughters, 21 and 16'], ['Pet lover', 'Guilty, see right'], ['Passport', '45 countries, still curious'], ['Every day', 'Yoga and meditation']]
+      ${[['Banking', 'Fourteen years, Citibank and Barclays'], ['Building', 'Co-founded an online travel company, ten people to 300'], ['Biggest inspiration', 'My father'], ['Mum of', 'Two daughters, 21 and 16'], ['Pet lover', 'Guilty, see right'], ['Passport', '45 countries, still curious'], ['Every day', 'Spirituality and mindfulness']]
         .map(([k, v]) => `<div style="border-top:1px solid rgba(250,248,245,.22);padding:15px 0 13px"><p class="lab" style="font-size:15px;color:${C.mocha}">${k}</p><p style="font-size:29px;font-weight:300;margin-top:6px;line-height:1.25">${v}</p></div>`).join('')}</div>
     ${W(true)}</body>`,
 
@@ -16,9 +17,9 @@ export default (C, PH, ST, W) => ({
   'c1-1c': `<body class="grain" style="background:${C.paper}">
     <div style="position:absolute;inset:90px;border:1.5px solid rgba(61,58,53,.35)"></div>
     <p class="lab" style="position:absolute;left:150px;top:170px;color:${C.mocha}">[ Why coaching ]</p>
-    <p class="serif" style="position:absolute;left:150px;right:150px;top:290px;font-weight:400;font-size:48px;line-height:1.36">Coaching found me at a turning point of my own. For the first time in years, someone asked me questions instead of expecting answers.</p>
-    <p class="serif" style="position:absolute;left:150px;right:150px;top:640px;font-style:italic;font-weight:400;font-size:48px;line-height:1.36;color:${C.forest}">I heard myself think. I saw choices I hadn’t let myself see.</p>
-    <p class="serif" style="position:absolute;left:150px;right:150px;top:880px;font-weight:400;font-size:48px;line-height:1.36">That is the power of it, and why I do this work now.</p>
+    <p class="serif" style="position:absolute;left:150px;right:150px;top:290px;font-weight:400;font-size:48px;line-height:1.36">Coaching started for me as a tool for my own growth.</p>
+    <p class="serif" style="position:absolute;left:150px;right:150px;top:470px;font-style:italic;font-weight:400;font-size:48px;line-height:1.36;color:${C.forest}">It gave me answers that were within me all along. All this while, I had been looking for them outside, in situations and in people.</p>
+    <p class="serif" style="position:absolute;left:150px;right:150px;top:800px;font-weight:400;font-size:48px;line-height:1.36">That is the power of it, and why I do this work now.</p>
     ${W()}</body>`,
 
   // How coaching works, cover: with Megha

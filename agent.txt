@@ -13,7 +13,7 @@ Write one line per post she mentioned, in this exact form, in her words:
   Post 01, new caption: the full new caption
   Post 05: a lighter photo on slide 2
   Idea: anything new she wants to see
-Codes: Post 01 to Post 15 are Instagram, Post L1 to L3 are LinkedIn. She can also simply say "all good to go".
+Codes: Post 01 to Post 15 are Instagram, Post L1 to L3 are LinkedIn, Post S1 onwards are Instagram stories. She can also simply say "all good to go".
 Show Megha the draft, and send it when she says yes. Nothing else is needed: Mehr's system files each line onto the right post.
 
 WHAT HAPPENS NEXT
@@ -23,8 +23,8 @@ INSTAGRAM
 
 01 | About Megha
   Slide 1: Black and white photo of Megha, the word [ About ]
-  Slide 2: Who she is: leadership coach in Dubai, 25 years leading people; banking, Traveazy, her father, two daughters, pet lover, 45 countries, yoga and meditation; photo with her dog
-  Slide 3: Why coaching: it found her at a turning point; someone asked her questions instead of expecting answers
+  Slide 2: Who she is: ACC, CPCC, 100 hours of coaching on top; executive and transformational coach in Dubai, 25 years leading people; banking, co-founded an online travel company, her father, two daughters, pet lover, 45 countries, spirituality and mindfulness; photo with her dog
+  Slide 3: Why coaching: it started as a tool for her own growth; it gave her answers that were within her all along, while she had been looking for them outside, in situations and in people
   Caption: Hello, I’m Megha. A little of who I am, and why coaching matters so much to me. I’m glad you’re here.
 
 02 | Words in the world
@@ -100,3 +100,8 @@ L2 | What is coaching
 
 L3 | The Within Question 01
   Text: One question a week, starting today. / Where are you still leading from an old story about yourself? / No need to answer it here. Just notice what comes up when you read it.
+
+STORIES
+
+S1 | Credentials
+  Frame 1: Photo of Megha on the sofa, handwritten "the work behind the work"; below, held quietly: ACC (Associate Certified Coach, ICF), CPCC (Certified Professional Co-Active Coach), 100 hours of coaching. Not an announcement.

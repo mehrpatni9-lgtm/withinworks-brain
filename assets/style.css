@@ -401,3 +401,18 @@ body.home .now { margin-top: 40px; }
 .review.post .btn.tick { min-width: 34px; width: 34px; padding: 0; font-size: 1rem; line-height: 1; background: #fff; color: var(--sage); border-color: var(--sage); }
 .review.post .btn.tick:hover, .review.post .btn.tick.on { background: var(--sage); color: #fff; }
 .eyebrow .rev { margin-left: 10px; padding: 2px 9px; border-radius: 99px; background: var(--mocha); color: #fff; font-size: 0.68rem; letter-spacing: 0.08em; }
+
+/* Instagram stories: a 9:16 phone frame */
+.story-feed { max-width: 380px; }
+.story { position: relative; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; background: #111; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+.story-track { position: absolute; inset: 0; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
+.story-track img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: start; }
+.story-bars { position: absolute; z-index: 2; left: 8px; right: 8px; top: 8px; display: flex; gap: 4px; }
+.story-bars i { flex: 1; height: 2px; border-radius: 2px; background: rgba(255,255,255,.85); }
+.story-head { position: absolute; z-index: 2; left: 12px; top: 20px; display: flex; align-items: center; gap: 8px; color: #fff; font-size: 13px; text-shadow: 0 1px 3px rgba(0,0,0,.4); }
+.story-head img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
+.story-head small { opacity: .75; }
+.story-foot { position: absolute; z-index: 2; left: 12px; right: 12px; bottom: 14px; display: flex; align-items: center; gap: 14px; color: #fff; }
+.story-foot span { flex: 1; border: 1px solid rgba(255,255,255,.7); border-radius: 22px; padding: 9px 14px; font-size: 13px; }
+.story-foot svg { width: 24px; height: 24px; fill: none; stroke: #fff; stroke-width: 1.6; }
+.story-wrap [data-a="suggest"] { display: none; }
