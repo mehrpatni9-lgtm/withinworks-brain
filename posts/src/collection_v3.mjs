@@ -3,7 +3,7 @@
 export default (C, PH, ST, W) => ({
   // About, slide 2: who she is
   'c1-1b': `<body class="grain" style="background:${C.forest};color:${C.ivory}">
-    <p class="serif" style="position:absolute;left:96px;right:96px;top:110px;font-size:42px;font-weight:400;line-height:1.3;letter-spacing:.06em;text-transform:uppercase">Executive and Transformational Coach in Dubai</p>
+    <p class="serif" style="position:absolute;left:96px;right:96px;top:110px;font-size:52px;font-weight:400;line-height:1.2">Executive and Transformational Coach in Dubai</p>
     <div style="position:absolute;right:86px;top:380px;width:430px;background:${C.ivory};padding:16px 16px 76px;transform:rotate(2.5deg);box-shadow:0 22px 46px rgba(0,0,0,.4)">
       <img src="${PH('08')}" style="width:100%;height:420px;object-fit:cover;object-position:29% center;display:block">
       <p class="hand" style="position:absolute;left:24px;bottom:18px;font-size:38px;color:${C.charcoal}">my most loyal colleague</p></div>

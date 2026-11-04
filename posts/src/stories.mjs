@@ -30,26 +30,25 @@ body { width: 1080px; height: 1920px; overflow: hidden; position: relative; font
 // 100 tally marks in 20 bundles of five, a little uneven, like a hand kept count.
 let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280 - 0.5;
 const TALLY = Array.from({ length: 20 }, (_, g) => {
-  const x = (g % 4) * 215 + 10, y = Math.floor(g / 4) * 128 + 10, ink = g % 3 === 2 ? C.mocha : C.forest;
+  const x = (g % 5) * 172 + 14, y = Math.floor(g / 5) * 128 + 10, ink = g % 3 === 2 ? C.mocha : C.forest;
   const line = (x1, y1, x2, y2) => `<path d="M${x1} ${y1} Q${(x1 + x2) / 2 + rnd() * 6} ${(y1 + y2) / 2} ${x2} ${y2}" stroke="${ink}" stroke-width="${5 + rnd() * 1.5}" stroke-linecap="round" fill="none"/>`;
   return [0, 1, 2, 3].map(i => line(x + i * 34 + rnd() * 5, y + rnd() * 8, x + i * 34 + 4 + rnd() * 6, y + 112 + rnd() * 8)).join('')
     + line(x - 12, y + 92 + rnd() * 8, x + 128, y + 22 + rnd() * 8);
 }).join('');
 
 // A round rubber stamp, slightly faded.
-const STAMP = (big, small, x, y, r) => `<div style="position:absolute;left:${x}px;top:${y}px;width:200px;height:200px;border-radius:50%;border:5px solid ${C.mocha};outline:2px solid ${C.mocha};outline-offset:-16px;transform:rotate(${r}deg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:${C.mocha};opacity:.88">
+const STAMP = (big, small, x, y, r) => `<div style="position:absolute;left:${x}px;top:${y}px;width:180px;height:180px;border-radius:50%;border:5px solid ${C.mocha};outline:2px solid ${C.mocha};outline-offset:-16px;transform:rotate(${r}deg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:${C.mocha};background:${C.paper};box-shadow:0 8px 18px rgba(60,50,40,.18)">
   <p class="serif" style="font-size:${big.length > 3 ? 50 : 60}px;font-weight:500;line-height:1">${big}</p><p class="lab" style="font-size:15px;margin-top:8px">${small}</p></div>`;
 
 const frames = {
   // Credentials, held lightly: 100 hand-drawn tallies, and two ink stamps. A fact, not an announcement.
   's1-1': `<body class="grain" style="background:${C.paper}">
-    <p class="hand" style="position:absolute;left:110px;width:520px;top:330px;font-size:104px;line-height:.95;color:${C.forest};transform:rotate(-3deg)">100 hours<br>of listening.</p>
-    <div style="position:absolute;right:96px;top:250px;width:330px;background:#fff;padding:14px 14px 18px;transform:rotate(5deg);box-shadow:0 18px 36px rgba(60,50,40,.22)">
-      <img src="${PH('03')}" style="width:100%;height:330px;object-fit:cover;object-position:center 25%;display:block"></div>
-    <svg style="position:absolute;left:0;right:0;margin:auto;top:670px" width="860" height="470" viewBox="0 0 860 650" preserveAspectRatio="xMidYMid meet">${TALLY}</svg>
-    <p class="serif" style="position:absolute;left:110px;right:110px;top:1180px;font-size:50px;font-weight:400;line-height:1.25;color:${C.charcoal}">And a few new letters <i>after my name.</i></p>
-    ${STAMP('ACC', 'ICF', 560, 1270, -9)}${STAMP('CPCC', 'Co-Active', 790, 1258, 7)}
-    <p style="position:absolute;left:110px;width:420px;top:1290px;font-size:30px;font-weight:300;line-height:1.4;color:${C.charcoal}">Follow this space to learn more about executive and transformational coaching.</p>
+    <p class="hand" style="position:absolute;left:110px;right:110px;top:255px;font-size:92px;line-height:1;color:${C.forest};transform:rotate(-2deg)">100 hours of listening.</p>
+    <svg style="position:absolute;left:110px;top:400px" width="740" height="440" viewBox="0 0 860 512">${TALLY}</svg>
+    <div style="position:absolute;left:0;right:0;margin:auto;top:915px;width:400px;background:#fff;padding:14px 14px 20px;transform:rotate(-2deg);box-shadow:0 22px 44px rgba(60,50,40,.22)">
+      <img src="${PH('03')}" style="width:100%;height:auto;display:block"></div>
+    ${STAMP("ACC", "ICF", 265, 1190, -10)}${STAMP("CPCC", "Co-Active", 640, 1165, 8)}
+    <p class="serif" style="position:absolute;left:150px;right:150px;top:1400px;text-align:center;font-size:40px;font-weight:400;line-height:1.3;color:${C.charcoal};text-wrap:balance">Follow this space to learn more about <i style="color:${C.forest}">executive and transformational coaching.</i></p>
     ${W(false, true)}</body>`,
 };
 
