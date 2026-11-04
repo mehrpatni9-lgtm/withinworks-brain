@@ -27,7 +27,7 @@ export default (C, PH, ST, W) => ({
     <div style="position:absolute;left:100px;right:100px;top:170px;background:${C.ivory};padding:22px 22px 70px">
       <img src="${PH('07')}" style="width:100%;height:560px;object-fit:cover;object-position:58% 35%;display:block">
       <p class="serif" style="font-size:84px;font-weight:400;line-height:1.08;color:${C.forest};padding:52px 40px 0">How coaching with me works</p>
-      <p style="font-size:36px;font-weight:300;line-height:1.45;padding:22px 40px 0">Three questions people ask before we begin.</p></div>
+      <p class="serif" style="font-size:44px;font-style:italic;font-weight:300;line-height:1.3;color:${C.charcoal};padding:22px 40px 0">A process, not a pill.</p></div>
     ${W()}</body>`,
 
   // The new role starter pack, rethought: the missing piece is the coaching point
