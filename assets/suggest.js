@@ -18,7 +18,7 @@ const SUGGEST = (() => {
   const show = parts => parts.map(([k, w]) => k === '=' ? BRAIN.esc(w) : k === '-' ? `<del>${BRAIN.esc(w)}</del>` : `<ins>${BRAIN.esc(w)}</ins>`).join('');
 
   function capEl(article) { return article.querySelector('.ig-cap, .li-text'); }
-  function prefix(article) { return article.querySelector('.ig-cap') ? '<b>meghabhalla</b>' : ''; }
+  function prefix(article) { return article.querySelector('.ig-cap') ? '<b>megha.withinworks</b>' : ''; }
 
   function paint(entries) {
     const mehr = BRAIN.who() === 'Mehr';
