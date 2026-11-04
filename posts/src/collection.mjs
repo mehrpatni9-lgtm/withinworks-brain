@@ -16,10 +16,13 @@ const C = { sage: '#5D6E5E', mocha: '#B08D6F', forest: '#2F3A32', ivory: '#FAF8F
 const GRAIN = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.2 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`;
 
 // The split W, bottom left on every slide. Left half sage (ivory on dark grounds), right half mocha.
-const W = (dark = false, name = false) => `<div style="position:absolute;left:64px;bottom:56px;display:flex;align-items:center;gap:16px">
+// The W. On ivory it stands alone (sage and mocha). Where a colour or photo would swallow half of it,
+// it sits in a forest box, sage and cream, the same mark as the reels: the logo is never compromised.
+const W = (dark = false, name = false, box = false) => `<div style="position:absolute;left:64px;bottom:56px;display:flex;align-items:center;gap:16px">
+  ${box ? `<div style="width:84px;height:84px;border-radius:16px;background:${C.forest};display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.18)"><div style="margin:6px 0 0 4px">` : ''}
   <svg width="58" height="53" viewBox="0 0 120 110"><defs><clipPath id="l"><rect width="58" height="110"/></clipPath><clipPath id="r"><rect x="58" width="62" height="110"/></clipPath></defs>
-  <text x="4" y="88" font-family="Fraunces" font-size="104" font-weight="600" fill="${dark ? '#93A894' : C.sage}" clip-path="url(#l)">W</text>
-  <text x="4" y="88" font-family="Fraunces" font-size="104" font-weight="600" fill="${C.mocha}" clip-path="url(#r)">W</text></svg>
+  <text x="4" y="88" font-family="Fraunces" font-size="104" font-weight="600" fill="${box || dark ? '#93A894' : C.sage}" clip-path="url(#l)">W</text>
+  <text x="4" y="88" font-family="Fraunces" font-size="104" font-weight="600" fill="${box ? '#EDE4D3' : C.mocha}" clip-path="url(#r)">W</text></svg>${box ? '</div></div>' : ''}
   ${name ? `<span style="font:400 17px Jost;letter-spacing:.3em;text-transform:uppercase;color:${dark ? C.ivory : C.charcoal};opacity:.8">WithinWorks Leadership</span>` : ''}</div>`;
 
 const base = `
@@ -37,7 +40,7 @@ const slides = {
   'c1-1a': `<body style="background:#222">
     <img src="${PH('01')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:grayscale(1)">
     <div class="serif" style="position:absolute;left:0;right:0;top:230px;text-align:center;color:${C.ivory};font-weight:400;font-size:132px;letter-spacing:.06em">[ About ]</div>
-    ${W(true, true)}</body>`,
+    ${W(true, true, true)}</body>`,
   'c1-1b': `<body class="grain" style="background:${C.forest};color:${C.ivory}">
     <p class="lab" style="position:absolute;left:90px;top:110px;right:90px;line-height:1.7;letter-spacing:.2em;font-size:25px">Megha Bhalla is a leadership coach in Dubai. Before coaching, she spent 25 years leading people.</p>
     <div style="position:absolute;left:90px;top:400px;width:520px;background:${C.ivory};padding:18px 18px 70px;transform:rotate(-1.5deg);box-shadow:0 18px 40px rgba(0,0,0,.35)">
@@ -59,7 +62,7 @@ const slides = {
     <div style="position:absolute;left:252px;top:290px;width:436px;height:620px;padding:56px 44px;display:flex;flex-direction:column;justify-content:space-between;background:rgba(250,248,245,.94);box-shadow:0 0 60px rgba(255,250,235,.45)">
       <p class="serif" style="font-size:47px;line-height:1.18;font-weight:400;color:${C.forest}">Most leaders don’t need answers.<br><br><i style="font-weight:300">They need better questions.</i></p>
       <p style="font:400 13px Jost;letter-spacing:.3em;text-transform:uppercase;color:${C.sage}">WithinWorks Leadership</p></div>
-    ${W(true)}</body>`,
+    ${W(true, false, true)}</body>`,
 
   // 03 · The Within Question · single · design
   'c1-3': `<body class="grain" style="background:#EFE9E0">
@@ -111,14 +114,14 @@ const slides = {
     <div style="position:absolute;left:110px;right:110px;top:240px;bottom:220px;background:${C.ivory};display:flex;flex-direction:column;justify-content:center;align-items:center">
       <p class="serif" style="font-size:250px;font-style:italic;font-weight:400;color:${C.forest};line-height:1">“Should.”</p>
       <p style="font-size:34px;font-weight:300;margin-top:40px;color:${C.charcoal}">The word I listen for.</p></div>
-    ${W(true)}</body>`,
+    ${W(true, false, true)}</body>`,
   'c1-7b': `<body class="grain" style="background:${C.sage}">
     <p class="lab" style="position:absolute;left:0;right:0;top:110px;text-align:center;color:${C.ivory};font-size:20px">What a coach hears &middot; 01</p>
     <div style="position:absolute;left:100px;right:100px;top:240px;bottom:220px;background:${C.ivory};padding:84px 72px;display:flex;flex-direction:column;justify-content:center">
       <p style="font-size:42px;font-weight:300;line-height:1.45">When someone says “I should”, I get curious. Whose should is it?</p>
       <p style="font-size:42px;font-weight:300;line-height:1.45;margin-top:34px">Often it belongs to someone else: a parent, a first boss, a version of you from ten years ago.</p>
       <p style="font-size:42px;font-weight:400;line-height:1.45;margin-top:34px;color:${C.forest}">Once you hear whose voice it is, you get to decide if you still agree.</p></div>
-    ${W(true)}</body>`,
+    ${W(true, false, true)}</body>`,
 
   // 08 · A book on my table · carousel 2 · real photo
   'c1-8a': `<body style="background:#222">
@@ -157,7 +160,7 @@ const slides = {
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,8,.9) 0%,rgba(20,14,8,.75) 32%,rgba(20,14,8,0) 58%)"></div>
     <p class="lab" style="position:absolute;left:90px;top:110px;color:${C.mocha};font-size:20px">Notes from the mat &middot; 01</p>
     <p class="serif" style="position:absolute;left:90px;right:120px;top:190px;color:${C.ivory};font-weight:400;font-size:64px;line-height:1.22">I learned to pause on the mat long before I used it in a coaching room.</p>
-    ${W(true)}</body>`,
+    ${W(true, false, true)}</body>`,
 };
 Object.assign(slides, more(C, PH, ST, W), v3(C, PH, ST, W));
 delete slides['c1-6'];
