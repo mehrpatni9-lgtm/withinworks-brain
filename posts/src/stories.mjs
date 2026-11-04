@@ -43,12 +43,14 @@ const STAMP = (big, small, x, y, r) => `<div style="position:absolute;left:${x}p
 const frames = {
   // Credentials, held lightly: 100 hand-drawn tallies, and two ink stamps. A fact, not an announcement.
   's1-1': `<body class="grain" style="background:${C.paper}">
-    <p class="hand" style="position:absolute;left:110px;right:110px;top:255px;font-size:92px;line-height:1;color:${C.forest};transform:rotate(-2deg)">100 hours of listening.</p>
-    <svg style="position:absolute;left:110px;top:400px" width="740" height="440" viewBox="0 0 860 512">${TALLY}</svg>
-    <div style="position:absolute;left:0;right:0;margin:auto;top:915px;width:400px;background:#fff;padding:14px 14px 20px;transform:rotate(-2deg);box-shadow:0 22px 44px rgba(60,50,40,.22)">
+    <p class="hand" style="position:absolute;left:110px;right:110px;top:250px;font-size:76px;line-height:1.02;color:${C.forest};transform:rotate(-2deg)">Rigorous training,<br>deep practice,<br>and active listening.</p>
+    <svg style="position:absolute;left:150px;top:520px" width="540" height="321" viewBox="0 0 860 512">${TALLY}</svg>
+    <div style="position:absolute;left:0;right:0;margin:auto;top:870px;width:400px;background:#fff;padding:14px 14px 20px;transform:rotate(-2deg);box-shadow:0 22px 44px rgba(60,50,40,.22)">
       <img src="${PH('03')}" style="width:100%;height:auto;display:block"></div>
-    ${STAMP("ACC", "ICF", 265, 1190, -10)}${STAMP("CPCC", "Co-Active", 640, 1165, 8)}
-    <p class="serif" style="position:absolute;left:150px;right:150px;top:1400px;text-align:center;font-size:40px;font-weight:400;line-height:1.3;color:${C.charcoal};text-wrap:balance">Follow this space to learn more about <i style="color:${C.forest}">Executive and Transformational coaching.</i></p>
+    ${STAMP("ACC", "ICF", 265, 1145, -10)}${STAMP("CPCC", "Co-Active", 640, 1120, 8)}
+    <p class="serif" style="position:absolute;left:150px;right:150px;top:1345px;text-align:center;font-size:40px;font-weight:400;line-height:1.3;color:${C.charcoal};text-wrap:balance">Follow this space to learn more about <i style="color:${C.forest}">Executive and Transformational coaching.</i></p>
+    <div style="position:absolute;left:0;right:0;margin:auto;top:1462px;width:max-content;background:#fff;border-radius:16px;padding:16px 26px;display:flex;align-items:center;gap:12px;box-shadow:0 6px 18px rgba(60,50,40,.16);font:600 30px Jost;letter-spacing:.01em;color:#3478F6">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3478F6" stroke-width="2.4" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1l-1.2 1.2"/><path d="M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1.2-1.2"/></svg>WITHINWORKSLEADERSHIP.COM</div>
     ${W(false, true)}</body>`,
 };
 
