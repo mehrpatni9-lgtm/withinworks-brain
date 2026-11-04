@@ -28,7 +28,7 @@ export default (C, PH, ST, W) => ({
       <img src="${PH('07')}" style="width:100%;height:560px;object-fit:cover;object-position:58% 35%;display:block">
       <p class="serif" style="font-size:84px;font-weight:400;line-height:1.08;color:${C.forest};padding:52px 40px 0">How coaching with me works</p>
       <p class="serif" style="font-size:44px;font-style:italic;font-weight:300;line-height:1.3;color:${C.charcoal};padding:22px 40px 0">A process, not a pill.</p></div>
-    ${W(false, false, true)}</body>`,
+    ${W(false, false, 'solid')}</body>`,
 
   // The new role starter pack, rethought: the missing piece is the coaching point
   'c1-13': `<body class="grain" style="background:#F4F0E8">
@@ -50,5 +50,5 @@ export default (C, PH, ST, W) => ({
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,16,22,.82) 0%,rgba(14,16,22,.55) 34%,rgba(14,16,22,0) 58%)"></div>
     <p class="lab" style="position:absolute;left:90px;top:110px;color:${C.mocha};font-size:20px">Turning points &middot; 01</p>
     <p class="serif" style="position:absolute;left:90px;right:110px;top:190px;color:${C.ivory};font-weight:400;font-size:62px;line-height:1.22">A new country changes everything around you. Then, quietly, it asks who you are here.</p>
-    ${W(true, false, true)}</body>`,
+    ${W(true, false, 'photo')}</body>`,
 });
