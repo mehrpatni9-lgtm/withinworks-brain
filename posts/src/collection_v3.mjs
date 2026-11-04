@@ -8,7 +8,7 @@ export default (C, PH, ST, W) => ({
       <img src="${PH('08')}" style="width:100%;height:420px;object-fit:cover;object-position:29% center;display:block">
       <p class="hand" style="position:absolute;left:24px;bottom:18px;font-size:38px;color:${C.charcoal}">my most loyal colleague</p></div>
     <div style="position:absolute;left:96px;top:290px;width:430px">
-      ${[['Credentials', 'ACC, CPCC, 100 hours of coaching'], ['Banking', '14 years, Citibank and Barclays'], ['Building', 'Co-founded an online travel company'], ['Biggest inspiration', 'My father'], ['Mum of', 'Two daughters, 21 and 16'], ['Travel', '45 countries, still curious'], ['Anchored in', 'Spirituality and mindfulness']]
+      ${[['Credentials', 'ICF certified coach, ACC, CPCC'], ['Banking', '14 years, Citibank and Barclays'], ['Building', 'Co-founded an online travel company'], ['Biggest inspiration', 'My father'], ['Mum of', 'Two daughters, 21 and 16'], ['Travel', '45 countries, still curious'], ['Anchored in', 'Spirituality and mindfulness']]
         .map(([k, v]) => `<div style="padding:24px 0 22px"><p class="lab" style="font-size:15px;color:${C.mocha}">${k}</p><p style="font-size:29px;font-weight:300;margin-top:6px;line-height:1.25">${v}</p></div>`).join('')}</div>
     ${W(true)}</body>`,
 
@@ -18,7 +18,7 @@ export default (C, PH, ST, W) => ({
     <p class="lab" style="position:absolute;left:150px;top:170px;color:${C.mocha}">[ Why coaching ]</p>
     <p class="serif" style="position:absolute;left:150px;right:150px;top:290px;font-weight:400;font-size:48px;line-height:1.36">Coaching started for me as a tool for my own growth.</p>
     <p class="serif" style="position:absolute;left:150px;right:150px;top:470px;font-style:italic;font-weight:400;font-size:48px;line-height:1.36;color:${C.forest}">It gave me answers that were within me all along. All this while, I had been looking for them outside, in situations and in people.</p>
-    <p class="serif" style="position:absolute;left:150px;right:150px;top:800px;font-weight:400;font-size:48px;line-height:1.36">Today, I hold that same space for leaders, so they can find theirs.</p>
+    <p class="serif" style="position:absolute;left:150px;right:150px;top:800px;font-weight:400;font-size:48px;line-height:1.36">Today, I hold that same space for others, so they can find theirs.</p>
     ${W()}</body>`,
 
   // How coaching works, cover: with Megha

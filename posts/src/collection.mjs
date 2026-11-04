@@ -57,7 +57,7 @@ const slides = {
   'c1-2': `<body style="background:#111">
     <img src="${ST('busstop')}" style="position:absolute;left:-445px;top:-621px;width:1836px;height:2448px">
     <div style="position:absolute;left:252px;top:290px;width:436px;height:620px;padding:56px 44px;display:flex;flex-direction:column;justify-content:space-between;background:rgba(250,248,245,.94);box-shadow:0 0 60px rgba(255,250,235,.45)">
-      <p class="serif" style="font-size:47px;line-height:1.18;font-weight:400;color:${C.forest}">Most leaders don’t need another answer.<br><br><i style="font-weight:300">They need a better question.</i></p>
+      <p class="serif" style="font-size:47px;line-height:1.18;font-weight:400;color:${C.forest}">Most leaders don’t need answers.<br><br><i style="font-weight:300">They need better questions.</i></p>
       <p style="font:400 13px Jost;letter-spacing:.3em;text-transform:uppercase;color:${C.sage}">WithinWorks Leadership</p></div>
     ${W(true)}</body>`,
 
