@@ -57,6 +57,7 @@ export default (C, PH, ST, W) => ({
       <p style="font-size:42px;font-weight:300;line-height:1.48;margin-top:24px">Courage, honesty and something real you want to change. Some weeks you will stumble and begin again. That is part of the process.</p>
       <p class="serif" style="font-size:58px;font-weight:500;color:${C.forest};margin-top:64px">Is it confidential?</p>
       <p style="font-size:42px;font-weight:300;line-height:1.48;margin-top:24px">Always. What you share stays between us.</p></div>
+    <p class="serif" style="position:absolute;left:90px;right:90px;bottom:120px;text-align:center;color:${C.ivory};font-size:40px;font-weight:400;line-height:1.3">Book a discovery call on<br><i>www.withinworksleadership.com</i></p>
     ${W()}</body>`,
 
   // 12 · Three people in the room · carousel 2 · diagram
