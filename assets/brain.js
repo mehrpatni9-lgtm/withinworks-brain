@@ -65,7 +65,7 @@ const BRAIN = (() => {
   // Latest decision per calendar item id ("m1-3 | ...").
   function statusMap(entries) {
     const m = {};
-    entries.filter(e => e.kind === 'Approved' || e.kind === 'Comment')
+    entries.filter(e => e.kind === 'Approved' || e.kind === 'Comment' || e.kind === 'Suggestion')
       .forEach(e => { const id = e.item.split(' | ')[0]; m[id] = e.kind === 'Approved' ? 'approved' : (m[id] === 'approved' ? 'approved' : 'comment'); });
     return m;
   }
