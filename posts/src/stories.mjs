@@ -38,7 +38,7 @@ const TALLY = Array.from({ length: 20 }, (_, g) => {
 
 // A round rubber stamp, slightly faded.
 const STAMP = (big, small, x, y, r) => `<div style="position:absolute;left:${x}px;top:${y}px;width:180px;height:180px;border-radius:50%;border:5px solid ${C.mocha};outline:2px solid ${C.mocha};outline-offset:-16px;transform:rotate(${r}deg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:${C.mocha};background:${C.paper};box-shadow:0 8px 18px rgba(60,50,40,.18)">
-  <p class="serif" style="font-size:${big.length > 3 ? 50 : 60}px;font-weight:500;line-height:1">${big}</p><p class="lab" style="font-size:15px;margin-top:8px">${small}</p></div>`;
+  <p class="serif" style="font-size:${big.length > 3 ? 50 : 60}px;font-weight:500;line-height:1">${big}</p><p class="lab" style="font-size:14px;line-height:1.35;letter-spacing:.14em;text-align:center;margin-top:8px">${small}</p></div>`;
 
 const frames = {
   // Credentials, held lightly: 100 hand-drawn tallies, and two ink stamps. A fact, not an announcement.
@@ -48,7 +48,7 @@ const frames = {
     <svg style="position:absolute;left:0;right:0;margin:auto;top:575px" width="440" height="262" viewBox="0 0 860 512">${TALLY}</svg>
     <div style="position:absolute;left:0;right:0;margin:auto;top:870px;width:400px;background:#fff;padding:14px 14px 20px;transform:rotate(-2deg);box-shadow:0 22px 44px rgba(60,50,40,.22)">
       <img src="${PH('03')}" style="width:100%;height:auto;display:block"></div>
-    ${STAMP("ACC", "ICF", 265, 1145, -10)}${STAMP("CPCC", "Co-Active", 640, 1120, 8)}
+    ${STAMP("ACC", "ICF<br>Certified", 265, 1145, -10)}${STAMP("CPCC", "Co-Active<br>Certified", 640, 1120, 8)}
     <p class="serif" style="position:absolute;left:100px;right:100px;top:1340px;text-align:center;font-size:34px;font-weight:400;line-height:1.35;color:${C.charcoal}">Follow this space to learn more about<br><i style="font-size:44px;color:${C.forest}">Executive and Transformational coaching.</i></p>
     <div style="position:absolute;left:0;right:0;margin:auto;top:1462px;width:max-content;background:#fff;border-radius:16px;padding:16px 26px;display:flex;align-items:center;gap:12px;box-shadow:0 6px 18px rgba(60,50,40,.16);font:600 30px Jost;letter-spacing:.01em;color:#3478F6">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3478F6" stroke-width="2.4" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1l-1.2 1.2"/><path d="M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1.2-1.2"/></svg>WITHINWORKSLEADERSHIP.COM</div>
