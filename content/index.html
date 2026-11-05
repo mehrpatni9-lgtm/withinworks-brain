@@ -23,7 +23,7 @@
 <p class="eyebrow" style="margin-bottom:10px">01 &middot; About Megha<span class="rev">Revised 4 Nov</span></p>
 <div class="ig">
   <div class="ig-head"><img src="../assets/megha.jpg" alt=""><span><b>megha.withinworks</b><small>Dubai</small></span><span class="dots">&middot;&middot;&middot;</span></div>
-  <div class="ig-media"><div class="ig-track"><img src="../posts/c1-1a.jpg?v=1793814608" alt="" loading="lazy" width="1080" height="1350"><img src="../posts/c1-1b.jpg?v=1793814608" alt="" loading="lazy" width="1080" height="1350"><img src="../posts/c1-1c.jpg?v=1793814609" alt="" loading="lazy" width="1080" height="1350"></div><span class="ig-count">1/3</span><button class="ig-arrow prev" aria-label="Previous" hidden>&#8249;</button><button class="ig-arrow next" aria-label="Next">&#8250;</button></div>
+  <div class="ig-media"><div class="ig-track"><img src="../posts/c1-1a.jpg?v=1793868461" alt="" loading="lazy" width="1080" height="1350"><img src="../posts/c1-1b.jpg?v=1793814608" alt="" loading="lazy" width="1080" height="1350"><img src="../posts/c1-1c.jpg?v=1793814609" alt="" loading="lazy" width="1080" height="1350"></div><span class="ig-count">1/3</span><button class="ig-arrow prev" aria-label="Previous" hidden>&#8249;</button><button class="ig-arrow next" aria-label="Next">&#8250;</button></div>
   <div class="ig-bar"><svg viewBox="0 0 24 24" class=""><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg><svg viewBox="0 0 24 24" class=""><path d="M20.5 12a8.5 8.5 0 0 1-12.4 7.5L3.5 21l1.5-4.4A8.5 8.5 0 1 1 20.5 12z"/></svg><svg viewBox="0 0 24 24" class=""><path d="M22 3 9.2 10.1M22 3l-7 18-3.8-8.6L2 9.5 22 3z"/></svg><span class="ig-pips"><i></i><i></i><i></i></span><svg viewBox="0 0 24 24" class="save"><path d="M19 21l-7-5.2L5 21V3h14z"/></svg></div>
   <div class="ig-cap clip"><b>megha.withinworks</b>Most of us carry more answers than we realise. My work is to help people find them.
 
@@ -220,6 +220,8 @@ function paint() {
     if (!status.dataset.busy) { status.className = 'status'; const last = entries.filter(e => e.item.split(' | ')[0] === b.dataset.id && (e.kind === 'Approved' || e.kind === 'Comment' || e.kind === 'Suggestion')).pop();
       status.textContent = s === 'approved' ? 'Approved by ' + (entries.filter(e => e.kind === 'Approved' && e.item.split(' | ')[0] === b.dataset.id).pop() || {}).from : s === 'comment' ? (last.kind === 'Suggestion' ? 'Suggestion from ' : 'Comment from ') + last.from : ''; }
     const tk = b.querySelector('.tick'); if (tk) tk.classList.toggle('on', s === 'approved');
+    // approved posts drop their comment thread and suggestions from view (they stay in the sheet)
+    b.querySelector('.thread').hidden = s === 'approved'; const sl = b.querySelector('.sugg-list'); if (sl) sl.hidden = s === 'approved';
     const notes = entries.filter(e => e.kind === 'Comment' && e.item.split(' | ')[0] === b.dataset.id);
     const done = new Set(entries.filter(e => e.kind === 'Done' && e.item.split(' | ')[0] === b.dataset.id).map(e => e.text));
     const mehr = BRAIN.who() === 'Mehr';

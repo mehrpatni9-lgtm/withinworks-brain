@@ -60,6 +60,8 @@ function paint() {
     if (!status.dataset.busy) { status.className = 'status'; const last = entries.filter(e => e.item.split(' | ')[0] === b.dataset.id && (e.kind === 'Approved' || e.kind === 'Comment' || e.kind === 'Suggestion')).pop();
       status.textContent = s === 'approved' ? 'Approved by ' + (entries.filter(e => e.kind === 'Approved' && e.item.split(' | ')[0] === b.dataset.id).pop() || {}).from : s === 'comment' ? (last.kind === 'Suggestion' ? 'Suggestion from ' : 'Comment from ') + last.from : ''; }
     const tk = b.querySelector('.tick'); if (tk) tk.classList.toggle('on', s === 'approved');
+    // approved posts drop their comment thread and suggestions from view (they stay in the sheet)
+    b.querySelector('.thread').hidden = s === 'approved'; const sl = b.querySelector('.sugg-list'); if (sl) sl.hidden = s === 'approved';
     const notes = entries.filter(e => e.kind === 'Comment' && e.item.split(' | ')[0] === b.dataset.id);
     const done = new Set(entries.filter(e => e.kind === 'Done' && e.item.split(' | ')[0] === b.dataset.id).map(e => e.text));
     const mehr = BRAIN.who() === 'Mehr';
