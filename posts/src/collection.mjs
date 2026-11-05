@@ -19,14 +19,14 @@ const GRAIN = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
 // The W, never boxed. Its two halves change colour with the ground so it always reads:
 // ivory: sage and mocha; solid mocha or sage: forest and cream; photos: light sage and mocha over a soft shadow.
 const W = (dark = false, name = false, tone = '') => {
-  const solid = tone === 'solid', photo = tone === 'photo';
+  const solid = tone === 'solid', photo = tone === 'photo' || tone === 'bare', shade = tone === 'photo';
   const left = solid ? C.forest : (dark || photo) ? '#93A894' : C.sage, right = solid ? '#F3EEE6' : C.mocha;
   return `<div style="position:absolute;left:64px;bottom:56px;display:flex;align-items:center;gap:16px">
-  ${photo ? `<div style="position:absolute;left:-80px;top:-75px;width:${name ? 560 : 220}px;height:205px;background:radial-gradient(ellipse at ${name ? '22%' : '50%'} 50%, rgba(20,24,20,.72), rgba(20,24,20,.35) 40%, rgba(20,24,20,0) 72%);pointer-events:none"></div>` : ''}
+  ${shade ? `<div style="position:absolute;left:-80px;top:-75px;width:${name ? 560 : 220}px;height:205px;background:radial-gradient(ellipse at ${name ? '22%' : '50%'} 50%, rgba(20,24,20,.72), rgba(20,24,20,.35) 40%, rgba(20,24,20,0) 72%);pointer-events:none"></div>` : ''}
   <svg width="58" height="53" viewBox="0 0 120 110" style="position:relative"><defs><clipPath id="l"><rect width="58" height="110"/></clipPath><clipPath id="r"><rect x="58" width="62" height="110"/></clipPath></defs>
   <text x="4" y="88" font-family="Fraunces" font-size="104" font-weight="600" fill="${left}" clip-path="url(#l)">W</text>
   <text x="4" y="88" font-family="Fraunces" font-size="104" font-weight="600" fill="${right}" clip-path="url(#r)">W</text></svg>
-  ${name ? `<span style="position:relative;font:400 17px Jost;letter-spacing:.3em;text-transform:uppercase;color:${dark || photo ? C.ivory : C.charcoal};opacity:.85">WithinWorks Leadership</span>` : ''}</div>`;
+  ${name ? `<span style="position:relative;font:400 17px Jost;letter-spacing:.3em;text-transform:uppercase;color:${dark || photo ? C.ivory : C.charcoal};opacity:${tone === 'bare' ? 1 : .85}">WithinWorks Leadership</span>` : ''}</div>`;
 };
 
 const base = `
@@ -44,7 +44,7 @@ const slides = {
   'c1-1a': `<body style="background:#222">
     <img src="${PH('01')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:grayscale(1)">
     <div class="serif" style="position:absolute;left:0;right:0;top:230px;text-align:center;color:${C.ivory};font-weight:400;font-size:132px;letter-spacing:.06em">[ About ]</div>
-    ${W(true, true, 'photo')}</body>`,
+    ${W(true, true, 'bare')}</body>`,
   'c1-1b': `<body class="grain" style="background:${C.forest};color:${C.ivory}">
     <p class="lab" style="position:absolute;left:90px;top:110px;right:90px;line-height:1.7;letter-spacing:.2em;font-size:25px">Megha Bhalla is a leadership coach in Dubai. Before coaching, she spent 25 years leading people.</p>
     <div style="position:absolute;left:90px;top:400px;width:520px;background:${C.ivory};padding:18px 18px 70px;transform:rotate(-1.5deg);box-shadow:0 18px 40px rgba(0,0,0,.35)">
