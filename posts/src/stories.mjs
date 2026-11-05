@@ -44,8 +44,8 @@ const frames = {
   // Credentials, held lightly: 100 hand-drawn tallies, and two ink stamps. A fact, not an announcement.
   's1-1': `<body class="grain" style="background:${C.paper}">
     <p class="serif" style="position:absolute;left:90px;right:90px;top:230px;text-align:center;font-size:86px;font-weight:400;line-height:1.12;letter-spacing:-.01em;color:${C.charcoal}">Rigorous training,<br>deep practice,<br>and <i style="color:${C.forest}">active listening.</i></p>
-    <p class="serif" style="position:absolute;left:0;right:0;top:600px;text-align:center;font-size:190px;font-weight:500;font-style:italic;line-height:1;letter-spacing:-.02em;color:${C.forest};opacity:.16;white-space:nowrap">100 hours</p>
-    <svg style="position:absolute;left:0;right:0;margin:auto;top:575px" width="440" height="262" viewBox="0 0 860 512">${TALLY}</svg>
+    <p class="lab" style="position:absolute;left:0;right:0;top:560px;text-align:center;font-size:20px;letter-spacing:.24em;color:${C.mocha}">100 hours completed</p>
+    <svg style="position:absolute;left:0;right:0;margin:auto;top:605px" width="420" height="250" viewBox="0 0 860 512">${TALLY}</svg>
     <div style="position:absolute;left:0;right:0;margin:auto;top:870px;width:400px;background:#fff;padding:14px 14px 20px;transform:rotate(-2deg);box-shadow:0 22px 44px rgba(60,50,40,.22)">
       <img src="${PH('03')}" style="width:100%;height:auto;display:block"></div>
     ${STAMP("ACC", "ICF<br>Certified", 265, 1145, -10)}${STAMP("CPCC", "Co-Active<br>Certified", 640, 1120, 8)}
