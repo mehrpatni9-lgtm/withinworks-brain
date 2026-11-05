@@ -53,6 +53,9 @@ const frames = {
     ${W(false, true)}</body>`,
 };
 
+// Inverted trial: the same story on forest green.
+frames['s1-1g'] = frames['s1-1'].split(C.forest).join('#C8D3C5').split(C.paper).join(C.forest).split(C.charcoal).join(C.ivory).split(C.sage).join('#93A894');
+
 const b = await chromium.launch();
 const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
 const only = process.argv[2];
