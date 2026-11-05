@@ -42,16 +42,14 @@ const STAMP = (big, small, x, y, r) => `<div style="position:absolute;left:${x}p
 
 const frames = {
   // Credentials, held lightly: 100 hand-drawn tallies, and two ink stamps. A fact, not an announcement.
-  's1-1': `<body class="grain" style="background:${C.paper}">
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:230px;text-align:center;font-size:86px;font-weight:400;line-height:1.12;letter-spacing:-.01em;color:${C.charcoal}">Rigorous training,<br>deep practice,<br>and <i style="color:${C.forest}">active listening.</i></p>
-    <p class="lab" style="position:absolute;left:0;right:0;top:560px;text-align:center;font-size:20px;letter-spacing:.24em;color:${C.mocha}">100 hours completed</p>
-    <svg style="position:absolute;left:0;right:0;margin:auto;top:605px" width="420" height="250" viewBox="0 0 860 512">${TALLY}</svg>
-    <div style="position:absolute;left:0;right:0;margin:auto;top:870px;width:400px;background:#fff;padding:14px 14px 20px;transform:rotate(-2deg);box-shadow:0 22px 44px rgba(60,50,40,.22)">
+  's1-1': `<body class="grain" style="background:${C.paper};height:1920px">
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:240px;text-align:center;font-size:76px;font-weight:400;line-height:1.12;letter-spacing:-.01em;color:${C.charcoal}">Rigorous training,<br>deep practice,<br>and <i style="color:${C.forest}">active listening.</i></p>
+    <p class="lab" style="position:absolute;left:0;right:0;top:548px;text-align:center;font-size:20px;letter-spacing:.24em;color:${C.mocha}">100 hours completed</p>
+    <svg style="position:absolute;left:0;right:0;margin:auto;top:592px" width="336" height="200" viewBox="0 0 860 512">${TALLY}</svg>
+    <div style="position:absolute;left:0;right:0;margin:auto;top:845px;width:360px;background:#fff;padding:14px 14px 20px;transform:rotate(-2deg);box-shadow:0 22px 44px rgba(60,50,40,.22)">
       <img src="${PH('03')}" style="width:100%;height:auto;display:block"></div>
-    ${STAMP("ACC", "ICF<br>Certified", 265, 1145, -10)}${STAMP("CPCC", "Co-Active<br>Certified", 640, 1120, 8)}
-    <p class="serif" style="position:absolute;left:100px;right:100px;top:1340px;text-align:center;font-size:34px;font-weight:400;line-height:1.35;color:${C.charcoal}">Follow this space to learn more about<br><i style="font-size:44px;color:${C.forest}">Executive and Transformational coaching.</i></p>
-    <div style="position:absolute;left:0;right:0;margin:auto;top:1462px;width:max-content;background:#fff;border-radius:16px;padding:16px 26px;display:flex;align-items:center;gap:12px;box-shadow:0 6px 18px rgba(60,50,40,.16);font:600 30px Jost;letter-spacing:.01em;color:#3478F6">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3478F6" stroke-width="2.4" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1l-1.2 1.2"/><path d="M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1.2-1.2"/></svg>WITHINWORKSLEADERSHIP.COM</div>
+    ${STAMP("ACC", "ICF<br>Certified", 290, 1100, -10)}${STAMP("CPCC", "Co-Active<br>Certified", 615, 1075, 8)}
+    <p class="serif" style="position:absolute;left:100px;right:100px;top:1315px;text-align:center;font-size:34px;font-weight:400;line-height:1.35;color:${C.charcoal}">Follow this space to learn more about<br><i style="font-size:44px;color:${C.forest}">Executive and Transformational coaching.</i></p>
     ${W(false, true)}</body>`,
 };
 
