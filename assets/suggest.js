@@ -1,6 +1,6 @@
 // Suggesting mode for captions, like tracked changes in Word.
 // Megha suggests a new caption; it shows inline as deletions and insertions.
-// Mehr accepts or rejects. The latest accepted suggestion becomes the live caption (and what the copy icon copies).
+// Her edits apply directly (Mehr, 7 Nov: no red and green). The applied caption is what the copy icon copies.
 const SUGGEST = (() => {
   const idOf = e => e.item.split(' | ')[0];
   const parse = t => { try { return JSON.parse(t); } catch (e) { return { text: t }; } };
@@ -29,28 +29,24 @@ const SUGGEST = (() => {
       const sugg = entries.filter(e => e.kind === 'Suggestion' && idOf(e) === id);
       const acc = new Set(entries.filter(e => e.kind === 'Accepted' && idOf(e) === id).map(e => e.text));
       const rej = new Set(entries.filter(e => e.kind === 'Rejected' && idOf(e) === id).map(e => e.text));
-      // Live caption: the original, replaced by each accepted suggestion in turn.
+      // Megha's caption edits are applied straight away, no tracked changes. When the built caption already carries
+      // her edit (we bake it in, with light polish), the built caption wins; otherwise her latest text is shown as is.
+      const norm = t => t.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+      const close = (a, b) => { const A = norm(a), B = norm(b); if (!A || !B) return false; const d = diff(A, B), same = d.filter(([k, w]) => k === '=' && w.trim()).length;
+        return same / Math.max(A.split(' ').length, B.split(' ').length) >= 0.8; };
+      const live_s = sugg.filter(s => !rej.has(s.time) && parse(s.text).text);
+      const latest = live_s[live_s.length - 1];
       let live = src.dataset.original;
-      sugg.filter(s => acc.has(s.time) && parse(s.text).text).forEach(s => { live = parse(s.text).text; });
-      src.value = live;
-      const open = sugg.filter(s => !acc.has(s.time) && !rej.has(s.time));
-      const pending = open.length ? [open[open.length - 1]] : []; // a newer suggestion replaces an older one
-      const latest = pending.filter(s => parse(s.text).text).pop();
-      article.dataset.pending = latest ? parse(latest.text).text : '';
-      if (latest) {
-        cap.classList.remove('clip'); const more = cap.nextElementSibling; if (more && more.matches('.ig-more, .li-more')) more.remove();
-        cap.innerHTML = prefix(article) + `<span class="tracked">${show(diff(live, parse(latest.text).text))}</span>`;
-      } else {
-        cap.innerHTML = prefix(article) + BRAIN.esc(live);
-      }
-      // Suggestion cards in the thread
+      if (latest && !close(live, parse(latest.text).text)) live = parse(latest.text).text;
+      src.value = live; article.dataset.pending = '';
+      cap.innerHTML = prefix(article) + BRAIN.esc(live);
+      // Suggestion cards in the thread: a quiet record that her edit went in
       const box = article.querySelector('.sugg-list');
-      if (box) box.innerHTML = sugg.filter(s => acc.has(s.time) || rej.has(s.time) || pending.includes(s)).reverse().map(s => {
-        const state = acc.has(s.time) ? '<em class="tag">Accepted</em>' : rej.has(s.time) ? '<em class="tag no">Rejected</em>'
-          : (mehr ? `<button class="pill" data-acc="${BRAIN.esc(s.time)}">Accept</button><button class="pill" data-rej="${BRAIN.esc(s.time)}">Reject</button>` : '<em class="tag wait">Waiting for Mehr</em>');
-        const d = parse(s.text), what = d.text && d.note ? 'caption and a note' : d.text ? 'caption' : 'a note';
-        return `<div class="sugg${acc.has(s.time) || rej.has(s.time) ? ' done' : ''}"><b>${BRAIN.esc(s.from)}</b> <span>suggested an edit &middot; ${BRAIN.ago(s.time)}</span> ${state}${d.note ? `<p class="sg-quote">${BRAIN.esc(d.note)}</p>` : ''}</div>`;
+      if (box) box.innerHTML = sugg.slice().reverse().map(s => {
+        const d = parse(s.text), state = rej.has(s.time) ? '<em class="tag no">Not used</em>' : '<em class="tag">Applied</em>';
+        return `<div class="sugg done"><b>${BRAIN.esc(s.from)}</b> <span>edited the ${d.text ? 'caption' : 'post'} &middot; ${BRAIN.ago(s.time)}</span> ${state}${d.note ? `<p class="sg-quote">${BRAIN.esc(d.note)}</p>` : ''}</div>`;
       }).join('');
+      const pending = [];
       const st = article.querySelector('.review .status');
       if (st && !st.dataset.busy && sugg.length && !pending.length && !/^Approved/.test(st.textContent)) st.textContent = 'Updated';
     });
