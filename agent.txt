@@ -101,6 +101,9 @@ L2 | What is coaching
 L3 | The Within Question 01
   Text: One question a week, starting today. / Where are you still leading from an old story about yourself? / No need to answer it here. Just notice what comes up when you read it.
 
+L4 | Diwali note
+  Text: Every home is lit up today. / At Diwali we clean every corner and fill it with light. Our working lives have corners too: a decision we keep postponing, a conversation we keep avoiding. / A short note for the season, and the ways I work with leaders when they are ready to look at theirs. / Wishing you a Diwali full of light.
+
 STORIES
 
 S1 | Credentials

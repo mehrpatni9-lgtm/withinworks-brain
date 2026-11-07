@@ -131,6 +131,9 @@ const formats = {
     caps: 1116, logoX: 64, logoPos: 'bottom:56px' }],
 };
 
+// Run directly to render; imported (by the Diwali PDF) it only lends its motifs.
+export { M, tile, C };
+if (process.argv[1] && import.meta.url === 'file://' + process.argv[1]) {
 const b = await chromium.launch();
 for (const [name, [w, h, L]] of Object.entries(formats)) {
   const p = await b.newPage({ viewport: { width: w, height: h } });
@@ -142,3 +145,4 @@ for (const [name, [w, h, L]] of Object.entries(formats)) {
 fs.unlinkSync(path.join(HERE, '_tmp_diwali.html'));
 await b.close();
 console.log('rendered');
+}
