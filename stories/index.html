@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20">
+<link rel="stylesheet" href="../assets/style.css?v=21">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 110'%3E%3Ctext x='4' y='88' font-family='Georgia' font-size='104' font-weight='600' fill='%235d6e5e'%3EW%3C/text%3E%3C/svg%3E">
 </head>
 <body class="page">
@@ -63,7 +63,7 @@ function paint() {
       status.textContent = s === 'approved' ? 'Approved by ' + (entries.filter(e => e.kind === 'Approved' && e.item.split(' | ')[0] === b.dataset.id).pop() || {}).from : s === 'comment' ? (last.kind === 'Suggestion' ? 'Suggestion from ' : 'Comment from ') + last.from : ''; }
     const tk = b.querySelector('.tick'); if (tk) tk.classList.toggle('on', s === 'approved');
     // approved posts drop their comment thread and suggestions from view (they stay in the sheet)
-    b.querySelector('.thread').hidden = s === 'approved'; const sl = b.querySelector('.sugg-list'); if (sl) sl.hidden = s === 'approved';
+    const sl = b.querySelector('.sugg-list'); if (sl) sl.hidden = s === 'approved';
     const notes = entries.filter(e => e.kind === 'Comment' && e.item.split(' | ')[0] === b.dataset.id);
     const done = new Set(entries.filter(e => e.kind === 'Done' && e.item.split(' | ')[0] === b.dataset.id).map(e => e.text));
     const mehr = BRAIN.who() === 'Mehr';
@@ -71,10 +71,14 @@ function paint() {
       + (done.has(n.time) ? ' <em class="tag">Done</em>' : (mehr && n.from !== 'Mehr' ? ` <button class="pill" data-t="${BRAIN.esc(n.time)}">Mark done</button>` : ''))
       + `<br>${BRAIN.esc(n.text)}</div>`).join('');
     if (!status.dataset.busy && s === 'comment' && notes.length && notes.every(n => done.has(n.time))) status.textContent = 'Updated';
+    // comments fold away: open while a post is in review, folded once it is approved; a tap opens or closes them
+    const wrap = b.querySelector('.cwrap'); wrap.hidden = !notes.length;
+    wrap.querySelector('summary').textContent = notes.length + (notes.length === 1 ? ' comment' : ' comments');
+    if (b.dataset.st !== (s || '')) { wrap.open = s !== 'approved'; b.dataset.st = s || ''; }
   });
 }
 boxes.forEach(b => {
-  b.innerHTML = `<div class="thread"></div><div class="act">
+  b.innerHTML = `<details class="cwrap"><summary></summary><div class="thread"></div></details><div class="act">
     <button class="btn tick" data-a="approve" title="Approve" aria-label="Approve">&#10003;</button>
     <button class="btn" data-a="comment">Comment</button>
     <button class="btn" data-a="suggest">Suggest edit</button>
