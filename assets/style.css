@@ -447,3 +447,8 @@ body.home .now { margin-top: 40px; }
 .cwrap > summary::-webkit-details-marker { display: none; }
 .cwrap > summary::before { content: ''; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(-45deg); transition: transform .2s; }
 .cwrap[open] > summary::before { transform: rotate(45deg); }
+
+/* more / less on long comments */
+.c-text { margin: 4px 0 0; }
+.c-text.clip { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.c-more { background: none; border: 0; padding: 4px 0 0; color: var(--sage); font: 0.85rem Jost, sans-serif; cursor: pointer; }

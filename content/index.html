@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=21">
+<link rel="stylesheet" href="../assets/style.css?v=22">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 110'%3E%3Ctext x='4' y='88' font-family='Georgia' font-size='104' font-weight='600' fill='%235d6e5e'%3EW%3C/text%3E%3C/svg%3E">
 </head>
 <body class="page">
@@ -220,6 +220,7 @@ document.querySelectorAll('.ig-media').forEach(m => {
 });
 
 const boxes = [...document.querySelectorAll('.review[data-id]')];
+const OPENC = new Set(); // long comments the reader has opened stay open across refreshes
 let entries = [];
 function paint() {
   const st = BRAIN.statusMap(entries);
@@ -237,7 +238,7 @@ function paint() {
     const applied = n => b.dataset.rev && n.time.slice(0, 10) <= b.dataset.rev;
     b.querySelector('.thread').innerHTML = notes.map(n => `<div${done.has(n.time) || applied(n) ? ' class="done"' : ''}><b>${BRAIN.esc(n.from)}</b> <span>${BRAIN.ago(n.time)}</span>`
       + (done.has(n.time) ? ' <em class="tag">Done</em>' : applied(n) ? ' <em class="tag">Changes made</em>' : (mehr && n.from !== 'Mehr' ? ` <button class="pill" data-t="${BRAIN.esc(n.time)}">Mark done</button>` : ''))
-      + `<br>${BRAIN.esc(n.text)}</div>`).join('');
+      + (n.text.length > 180 ? `<p class="c-text${OPENC.has(n.time) ? '' : ' clip'}">${BRAIN.esc(n.text)}</p><button class="c-more" type="button" data-ct="${BRAIN.esc(n.time)}">${OPENC.has(n.time) ? 'less' : 'more'}</button></div>` : `<br>${BRAIN.esc(n.text)}</div>`)).join('');
     if (!status.dataset.busy && s === 'comment' && notes.length && notes.every(n => done.has(n.time) || applied(n))) status.textContent = 'Updated, changes made';
     // comments fold away: open while a post is in review, folded once it is approved; a tap opens or closes them
     const wrap = b.querySelector('.cwrap'); wrap.hidden = !notes.length;
@@ -287,7 +288,11 @@ document.querySelectorAll('.copy').forEach(b => b.onclick = async () => {
   const was = b.innerHTML; b.classList.add('done'); b.innerHTML = '<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
   setTimeout(() => { b.innerHTML = was; b.classList.remove('done'); }, 1600);
 });
-document.querySelectorAll('.li-more, .ig-more').forEach(b => b.onclick = () => { b.previousElementSibling.classList.remove('clip'); b.remove(); });
+// more / less on every caption and long comment: one tap opens it, one tap folds it back
+document.addEventListener('click', e => { const b = e.target.closest('.li-more, .ig-more, .c-more'); if (!b) return;
+  const t = b.previousElementSibling, open = t.classList.toggle('clip') === false;
+  if (b.dataset.ct) open ? OPENC.add(b.dataset.ct) : OPENC.delete(b.dataset.ct);
+  b.textContent = open ? 'less' : (b.classList.contains('li-more') ? '…see more' : 'more'); });
 document.querySelectorAll('.ig-cap.clip').forEach(c => { if (c.scrollHeight <= c.clientHeight + 2) { c.classList.remove('clip'); c.nextElementSibling.remove(); } });
 </script>
 </body>
