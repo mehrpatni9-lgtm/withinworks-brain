@@ -102,8 +102,7 @@ export default (C, PH, ST, W) => ({
     ${W(true, false, 'photo')}</body>`,
   'c1-15b': `<body class="grain" style="background:${C.paper}">
     <p class="lab" style="position:absolute;left:100px;top:120px;color:${C.mocha}">What that hour is like</p>
-    <p class="serif" style="position:absolute;left:100px;right:100px;top:300px;font-weight:400;font-size:54px;line-height:1.38">You bring something real. A decision, a relationship at work, a feeling you can’t name yet.</p>
-    <p class="serif" style="position:absolute;left:100px;right:100px;top:640px;font-weight:400;font-size:54px;line-height:1.38">I deeply listen and I curiously ask.</p>
-    <p class="serif" style="position:absolute;left:100px;right:100px;top:900px;font-style:italic;font-weight:400;font-size:54px;line-height:1.38;color:${C.forest}">You leave with your actionables and a new perspective.</p>
+    <p class="serif" style="position:absolute;left:100px;right:100px;top:420px;font-weight:400;font-size:70px;line-height:1.25">I deeply listen<br>and I curiously ask.</p>
+    <p class="serif" style="position:absolute;left:100px;right:100px;top:690px;font-style:italic;font-weight:400;font-size:60px;line-height:1.3;color:${C.forest}">You leave with your actionables<br>and a new perspective.</p>
     ${W()}</body>`,
 });
