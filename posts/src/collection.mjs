@@ -150,7 +150,7 @@ const slides = {
       <div style="position:absolute;left:50%;top:0;bottom:0;border-left:1.5px solid rgba(61,58,53,.45)"></div>
       <div style="position:absolute;top:50%;left:0;right:0;border-top:1.5px solid rgba(61,58,53,.45)"></div>
       ${[['Senior leaders', 'You lead well, and lately you’re asking where you’re leading to.', 'left:48px;top:56px'],
-         ['Founders', 'You built something. Now it seems to be running you.', 'right:48px;top:56px;text-align:right'],
+         ['Founders', 'Rebuilding as the ground beneath leadership keeps shifting.', 'right:48px;top:56px;text-align:right'],
          ['Family business heirs', 'You’re taking a seat someone else built.', 'left:48px;bottom:56px'],
          ['At a turning point', 'A new country, a new role, or a chapter you haven’t named yet.', 'right:48px;bottom:56px;text-align:right']]
         .map(([h, t, pos]) => `<div style="position:absolute;${pos};width:330px"><p class="lab" style="font-size:18px;color:${C.forest}">${h}</p><p class="serif" style="font-size:31px;font-weight:400;line-height:1.3;margin-top:14px">${t}</p></div>`).join('')}

@@ -49,6 +49,6 @@ export default (C, PH, ST, W) => ({
     <img src="${ST('lounge')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 65%">
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,16,22,.82) 0%,rgba(14,16,22,.55) 34%,rgba(14,16,22,0) 58%)"></div>
     <p class="lab" style="position:absolute;left:90px;top:110px;color:${C.mocha};font-size:20px">Turning points &middot; 01</p>
-    <p class="serif" style="position:absolute;left:90px;right:110px;top:190px;color:${C.ivory};font-weight:400;font-size:62px;line-height:1.22">A new country changes everything around you. Then, quietly, it asks who you are here.</p>
+    <p class="serif" style="position:absolute;left:90px;right:110px;top:190px;color:${C.ivory};font-weight:400;font-size:62px;line-height:1.22">A new chapter changes everything around you. Then, quietly, it asks who you are here.</p>
     ${W(true, false, 'photo')}</body>`,
 });

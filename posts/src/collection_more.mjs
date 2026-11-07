@@ -63,17 +63,16 @@ export default (C, PH, ST, W) => ({
   // 12 · Three people in the room · carousel 2 · diagram
   'c1-12a': `<body class="grain" style="background:${C.wash}">
     <p class="lab" style="position:absolute;left:100px;top:110px;color:${C.forest}">When your company pays for coaching</p>
-    <p class="serif" style="position:absolute;left:100px;right:100px;top:180px;font-weight:400;font-size:80px;line-height:1.1">There are three people in the room.</p>
+    <p class="serif" style="position:absolute;left:100px;right:100px;top:175px;font-weight:400;font-size:58px;line-height:1.18">Three people in the room: you, your company, and your coach, <i style="color:${C.forest}">each with a part to play.</i></p>
     <svg style="position:absolute;left:0;top:470px" width="1080" height="700"><line x1="540" y1="130" x2="260" y2="560" stroke="${C.sage}" stroke-width="2"/><line x1="540" y1="130" x2="820" y2="560" stroke="${C.sage}" stroke-width="2"/><line x1="260" y1="560" x2="820" y2="560" stroke="${C.sage}" stroke-width="2" stroke-dasharray="8 10"/></svg>
-    ${[['You', 'the client', 540, 600, C.forest, C.ivory], ['Your company', 'the sponsor', 260, 1030, '#fff', C.charcoal], ['Me', 'the coach', 820, 1030, '#fff', C.charcoal]]
+    ${[['You', 'the client', 540, 600, C.forest, C.ivory], ['Your company', 'the sponsor', 260, 1030, '#fff', C.charcoal], ['Your coach', 'that’s me', 820, 1030, '#fff', C.charcoal]]
       .map(([h, t, x, y, bg, fg]) => `<div style="position:absolute;left:${x - 125}px;top:${y - 125}px;width:250px;height:250px;border-radius:50%;background:${bg};color:${fg};border:2px solid ${C.forest};display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
         <p class="serif" style="font-size:44px;line-height:1.05">${h}</p><p class="lab" style="font-size:15px;margin-top:10px;opacity:.75">${t}</p></div>`).join('')}
     ${W()}</body>`,
   'c1-12b': `<body class="grain" style="background:${C.wash}">
-    ${[['Your company', 'shares why it’s investing, and agrees the goals with us at the start.'], ['You', 'set the agenda in every session. It’s your coaching.'], ['Me', 'I keep what you say confidential. The sponsor hears progress, never the conversation.']]
-      .map(([h, t], i) => `<div style="position:absolute;left:100px;right:100px;top:${190 + i * 360}px;border-top:1.5px solid rgba(47,58,50,.35);padding-top:34px">
-        <p class="lab" style="font-size:19px;color:${C.forest}">${h}</p>
-        <p class="serif" style="font-size:52px;font-weight:400;line-height:1.25;margin-top:18px">${t}</p></div>`).join('')}
+    ${[['You', 'bring the willingness to grow.'], ['Your company', 'brings the context, the goals, the stakes.'], ['Your coach', 'brings the space to think clearly, and the right questions.']]
+      .map(([h, t], i) => `<div style="position:absolute;left:100px;right:100px;top:${190 + i * 340}px;border-top:1.5px solid rgba(47,58,50,.35);padding-top:38px">
+        <p class="serif" style="font-size:56px;font-weight:400;line-height:1.25"><span style="color:${C.forest};font-style:italic">${h}</span> ${t}</p></div>`).join('')}
     ${W()}</body>`,
 
   // 13 · The new role starter pack · single · objects on paper
@@ -104,7 +103,7 @@ export default (C, PH, ST, W) => ({
   'c1-15b': `<body class="grain" style="background:${C.paper}">
     <p class="lab" style="position:absolute;left:100px;top:120px;color:${C.mocha}">What that hour is like</p>
     <p class="serif" style="position:absolute;left:100px;right:100px;top:300px;font-weight:400;font-size:54px;line-height:1.38">You bring something real. A decision, a relationship at work, a feeling you can’t name yet.</p>
-    <p class="serif" style="position:absolute;left:100px;right:100px;top:640px;font-weight:400;font-size:54px;line-height:1.38">I listen, and I ask. Most of the thinking is yours.</p>
-    <p class="serif" style="position:absolute;left:100px;right:100px;top:900px;font-style:italic;font-weight:400;font-size:54px;line-height:1.38;color:${C.forest}">You leave with your own next step, and the reasons it’s yours.</p>
+    <p class="serif" style="position:absolute;left:100px;right:100px;top:640px;font-weight:400;font-size:54px;line-height:1.38">I deeply listen and I curiously ask.</p>
+    <p class="serif" style="position:absolute;left:100px;right:100px;top:900px;font-style:italic;font-weight:400;font-size:54px;line-height:1.38;color:${C.forest}">You leave with your actionables and a new perspective.</p>
     ${W()}</body>`,
 });
