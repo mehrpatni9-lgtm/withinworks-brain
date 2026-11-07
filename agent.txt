@@ -105,3 +105,5 @@ STORIES
 
 S1 | Credentials
   Frame 1: Handwritten "Rigorous training, deep practice, and active listening." at the top, over hand-drawn tally marks. Below, a photo of Megha at her desk with two round badges overlapping its corners: ACC (ICF) and CPCC (Co-Active). Then: "Follow this space to learn more about executive and transformational coaching." Link sticker: withinworksleadership.com. WithinWorks Leadership logo with the full name, bottom left.
+
+S2 | Diwali
