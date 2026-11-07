@@ -65,7 +65,7 @@ const facts = {
       <p class="serif" style="position:relative;text-align:center;font-size:62px;font-style:italic;font-weight:300;line-height:1.2;color:${C.forest}">Can the story change when the perspective changes?</p></div>
     <p class="lab" style="position:absolute;left:90px;top:600px;color:${C.forest}">Other stories, same facts</p>
     ${['It was a working session for one team, nothing more.', 'Someone forgot. It happens.', 'It’s a chance to ask what I want to be part of.']
-      .map((t, i) => `<p class="hand" style="position:absolute;left:90px;right:90px;top:${660 + i * 110}px;font-size:50px;line-height:1.1;color:${C.charcoal}">${i + 1}. ${t}</p>`).join('')}`),
+      .map((t, i) => `<p class="hand" style="position:absolute;left:90px;right:90px;top:${660 + i * 110}px;font-size:50px;line-height:1.1;color:${C.charcoal}">${t}</p>`).join('')}`),
 
   'lf-5': P('green', `
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 85%, rgba(226,176,110,.10), rgba(226,176,110,0) 70%)"></div>
@@ -75,10 +75,9 @@ const facts = {
 };
 
 // ---- A process, not a pill -------------------------------------------------------------
-const step = (n, label, title, text, top) => `<div style="position:absolute;left:90px;right:90px;top:${top}px;display:flex;gap:36px">
-  <p class="serif" style="flex:none;width:90px;font-size:64px;font-weight:300;line-height:1;color:${C.mocha}">${n}</p>
-  <div><p class="lab">${label}</p><p class="serif" style="font-size:44px;font-weight:400;line-height:1.15;margin-top:10px;color:${C.forest}">${title}</p>
-  <p class="body" style="font-size:29px;margin-top:12px">${text}</p></div></div>`;
+const step = (label, title, text, top) => `<div style="position:absolute;left:90px;right:120px;top:${top}px">
+  <p class="lab">${label}</p><p class="serif" style="font-size:52px;font-weight:300;line-height:1.12;margin-top:12px;color:${C.forest}">${title}</p>
+  <p class="body" style="font-size:30px;margin-top:14px">${text}</p></div>`;
 const pill = {
   'lp-1': P('green', `
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 75% 75%, rgba(226,176,110,.10), rgba(226,176,110,0) 70%)"></div>
@@ -88,10 +87,14 @@ const pill = {
     <div style="position:absolute;right:90px;top:820px">${icon('chakri', 230, '#E3C49C').replace(/<rect[^>]*opacity=".55"\/>/, '')}</div>`, true),
 
   'lp-2': P('paper', `
-    <p class="lab" style="position:absolute;left:90px;top:100px">[ The process ]</p>
-    ${step('01', 'Start here', 'A discovery call', '45 minutes to explore what’s possible for you, and whether this feels like the right partnership.', 190)}
-    ${step('02', 'The core work', 'Six sessions', '60 minutes each, ideally every two weeks, in person, online or both. From self-awareness to aligned action.', 470)}
-    ${step('03', 'Between sessions', 'Small steps', 'The real change happens in your week, not in the room. Each session ends with what you will try next.', 750)}`),
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:100px;font-size:64px;font-weight:300;line-height:1.12;color:${C.forest}">How it <i>unfolds</i></p>
+    ${[['home', 'Start here', 'A discovery call', '45 minutes to explore what’s possible for you, and whether this feels like the right partnership.'],
+       ['lotus', 'The core work', 'Six sessions', '60 minutes each, ideally every two weeks, in person, online or both.'],
+       ['sun', 'Between sessions', 'Small steps', 'The real change happens in your week. Each session ends with what you will try next.']]
+      .map(([m, label, title, text], i) => `<div style="position:absolute;left:90px;right:90px;top:${260 + i * 300}px;display:flex;gap:44px;align-items:flex-start">
+        <div style="flex:none">${icon(m, 200)}</div>
+        <div style="padding-top:8px"><p class="lab">${label}</p><p class="serif" style="font-size:48px;font-weight:300;line-height:1.1;margin-top:10px;color:${C.forest}">${title}</p>
+        <p class="body" style="font-size:28px;line-height:1.5;margin-top:12px">${text}</p></div></div>`).join('')}`),
 
   'lp-3': P('paper', `
     <p class="lab" style="position:absolute;left:90px;top:100px">[ What it asks of you ]</p>
