@@ -48,7 +48,7 @@ It took me a long time to notice that the advice rarely stuck. What helped was t
 That is what I trained for when I became a coach: to stop handing people my answers, and help them hear their own.
 
 I’m Megha, and this is WithinWorks. This page is where I’ll think out loud about leadership, change, and the questions underneath them.</textarea></div>
-<div class="review post" data-id="l1-1" data-title="L1: Why I became a coach (LinkedIn)" style="background:none;border:0;padding:14px 0 0"></div>
+<div class="review post" data-id="l1-1" data-rev="" data-title="L1: Why I became a coach (LinkedIn)" style="background:none;border:0;padding:14px 0 0"></div>
 </article><article class="post-wrap" id="l1-2">
 <p class="eyebrow" style="margin-bottom:10px">L2 &middot; <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--text-faint)">Document, 3 pages</span></p>
 <div class="li">
@@ -71,7 +71,7 @@ The shortest true answer is that I ask the questions and you do most of the thin
 Advice solves the problem in front of you. Seeing your own patterns changes how you meet the next one.
 
 Three pages, if you’d like the slower version.</textarea></div>
-<div class="review post" data-id="l1-2" data-title="L2: What is coaching (LinkedIn)" style="background:none;border:0;padding:14px 0 0"></div>
+<div class="review post" data-id="l1-2" data-rev="" data-title="L2: What is coaching (LinkedIn)" style="background:none;border:0;padding:14px 0 0"></div>
 </article><article class="post-wrap" id="l1-3">
 <p class="eyebrow" style="margin-bottom:10px">L3 &middot; <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--text-faint)">Single image</span></p>
 <div class="li">
@@ -89,7 +89,7 @@ No need to answer it here. Just notice what comes up when you read it.</div>
 Where are you still leading from an old story about yourself?
 
 No need to answer it here. Just notice what comes up when you read it.</textarea></div>
-<div class="review post" data-id="l1-3" data-title="L3: The Within Question 01 (LinkedIn)" style="background:none;border:0;padding:14px 0 0"></div>
+<div class="review post" data-id="l1-3" data-rev="" data-title="L3: The Within Question 01 (LinkedIn)" style="background:none;border:0;padding:14px 0 0"></div>
 </article></div></div></div></section>
 <div class="shell"><nav class="doors"><a href="../">Brain</a><a href="../content/">Instagram</a><a href="../linkedin/" class="here">LinkedIn</a><a href="../stories/">Stories</a><a href="../reel-cuts/">Reels</a><a href="../strategy.html">Strategy</a><a href="../megha.html">Megha</a><a href="../voice.html">Voice</a><a href="../audience.html">Audience</a><a href="../brand.html">Brand</a><a href="../offers.html">Offers</a><a href="../tech.html">Tech</a><a href="../photos.html">Photos</a><a href="../research.html">Research</a><a href="../ideas.html">Ideas</a></nav></div>
 <footer><div class="shell">WithinWorks Leadership &middot; Kept by Mehr Patni &middot; Private working page</div></footer>
@@ -122,10 +122,12 @@ function paint() {
     const notes = entries.filter(e => e.kind === 'Comment' && e.item.split(' | ')[0] === b.dataset.id);
     const done = new Set(entries.filter(e => e.kind === 'Done' && e.item.split(' | ')[0] === b.dataset.id).map(e => e.text));
     const mehr = BRAIN.who() === 'Mehr';
-    b.querySelector('.thread').innerHTML = notes.map(n => `<div${done.has(n.time) ? ' class="done"' : ''}><b>${BRAIN.esc(n.from)}</b> <span>${BRAIN.ago(n.time)}</span>`
-      + (done.has(n.time) ? ' <em class="tag">Done</em>' : (mehr && n.from !== 'Mehr' ? ` <button class="pill" data-t="${BRAIN.esc(n.time)}">Mark done</button>` : ''))
+    // a comment made on or before the post's last revision has been worked in
+    const applied = n => b.dataset.rev && n.time.slice(0, 10) <= b.dataset.rev;
+    b.querySelector('.thread').innerHTML = notes.map(n => `<div${done.has(n.time) || applied(n) ? ' class="done"' : ''}><b>${BRAIN.esc(n.from)}</b> <span>${BRAIN.ago(n.time)}</span>`
+      + (done.has(n.time) ? ' <em class="tag">Done</em>' : applied(n) ? ' <em class="tag">Changes made</em>' : (mehr && n.from !== 'Mehr' ? ` <button class="pill" data-t="${BRAIN.esc(n.time)}">Mark done</button>` : ''))
       + `<br>${BRAIN.esc(n.text)}</div>`).join('');
-    if (!status.dataset.busy && s === 'comment' && notes.length && notes.every(n => done.has(n.time))) status.textContent = 'Updated';
+    if (!status.dataset.busy && s === 'comment' && notes.length && notes.every(n => done.has(n.time) || applied(n))) status.textContent = 'Updated, changes made';
     // comments fold away: open while a post is in review, folded once it is approved; a tap opens or closes them
     const wrap = b.querySelector('.cwrap'); wrap.hidden = !notes.length;
     wrap.querySelector('summary').textContent = notes.length + (notes.length === 1 ? ' comment' : ' comments');

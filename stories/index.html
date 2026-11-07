@@ -26,7 +26,7 @@
   <div class="story-track"><img src="../posts/s1-1.jpg?v=1793869988" alt="" loading="lazy" width="1080" height="1920"></div>
   <div class="story-foot"><span>Send message</span><svg viewBox="0 0 24 24" class=""><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg><svg viewBox="0 0 24 24" class=""><path d="M22 3 9.2 10.1M22 3l-7 18-3.8-8.6L2 9.5 22 3z"/></svg></div>
 </div>
-<div class="review post" data-id="s1-1" data-title="Credentials (story)" style="background:none;border:0;padding:14px 0 0"></div>
+<div class="review post" data-id="s1-1" data-rev="2026-11-04" data-title="Credentials (story)" style="background:none;border:0;padding:14px 0 0"></div>
 </article><article class="post-wrap story-wrap" id="sd-1">
 <p class="eyebrow" style="margin-bottom:10px">S2 &middot; Diwali, 8 Nov</p>
 <div class="story"><div class="story-bars"><i></i></div>
@@ -34,7 +34,7 @@
   <div class="story-track"><img src="../posts/diwali-story.jpg?v=1794043823" alt="" loading="lazy" width="1080" height="1920"></div>
   <div class="story-foot"><span>Send message</span><svg viewBox="0 0 24 24" class=""><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.6 5 7 5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg><svg viewBox="0 0 24 24" class=""><path d="M22 3 9.2 10.1M22 3l-7 18-3.8-8.6L2 9.5 22 3z"/></svg></div>
 </div>
-<div class="review post" data-id="sd-1" data-title="Diwali (story)" style="background:none;border:0;padding:14px 0 0"></div>
+<div class="review post" data-id="sd-1" data-rev="" data-title="Diwali (story)" style="background:none;border:0;padding:14px 0 0"></div>
 </article></div></div></div></section>
 <div class="shell"><nav class="doors"><a href="../">Brain</a><a href="../content/">Instagram</a><a href="../linkedin/">LinkedIn</a><a href="../stories/" class="here">Stories</a><a href="../reel-cuts/">Reels</a><a href="../strategy.html">Strategy</a><a href="../megha.html">Megha</a><a href="../voice.html">Voice</a><a href="../audience.html">Audience</a><a href="../brand.html">Brand</a><a href="../offers.html">Offers</a><a href="../tech.html">Tech</a><a href="../photos.html">Photos</a><a href="../research.html">Research</a><a href="../ideas.html">Ideas</a></nav></div>
 <footer><div class="shell">WithinWorks Leadership &middot; Kept by Mehr Patni &middot; Private working page</div></footer>
@@ -67,10 +67,12 @@ function paint() {
     const notes = entries.filter(e => e.kind === 'Comment' && e.item.split(' | ')[0] === b.dataset.id);
     const done = new Set(entries.filter(e => e.kind === 'Done' && e.item.split(' | ')[0] === b.dataset.id).map(e => e.text));
     const mehr = BRAIN.who() === 'Mehr';
-    b.querySelector('.thread').innerHTML = notes.map(n => `<div${done.has(n.time) ? ' class="done"' : ''}><b>${BRAIN.esc(n.from)}</b> <span>${BRAIN.ago(n.time)}</span>`
-      + (done.has(n.time) ? ' <em class="tag">Done</em>' : (mehr && n.from !== 'Mehr' ? ` <button class="pill" data-t="${BRAIN.esc(n.time)}">Mark done</button>` : ''))
+    // a comment made on or before the post's last revision has been worked in
+    const applied = n => b.dataset.rev && n.time.slice(0, 10) <= b.dataset.rev;
+    b.querySelector('.thread').innerHTML = notes.map(n => `<div${done.has(n.time) || applied(n) ? ' class="done"' : ''}><b>${BRAIN.esc(n.from)}</b> <span>${BRAIN.ago(n.time)}</span>`
+      + (done.has(n.time) ? ' <em class="tag">Done</em>' : applied(n) ? ' <em class="tag">Changes made</em>' : (mehr && n.from !== 'Mehr' ? ` <button class="pill" data-t="${BRAIN.esc(n.time)}">Mark done</button>` : ''))
       + `<br>${BRAIN.esc(n.text)}</div>`).join('');
-    if (!status.dataset.busy && s === 'comment' && notes.length && notes.every(n => done.has(n.time))) status.textContent = 'Updated';
+    if (!status.dataset.busy && s === 'comment' && notes.length && notes.every(n => done.has(n.time) || applied(n))) status.textContent = 'Updated, changes made';
     // comments fold away: open while a post is in review, folded once it is approved; a tap opens or closes them
     const wrap = b.querySelector('.cwrap'); wrap.hidden = !notes.length;
     wrap.querySelector('summary').textContent = notes.length + (notes.length === 1 ? ' comment' : ' comments');
