@@ -49,23 +49,9 @@ const facts = {
         <p class="body" style="margin-top:22px">They don’t value my work. I’m being sidelined. It’s happening again, and soon it will be obvious to everyone.</p></div></div>
     <p class="hand" style="position:absolute;left:560px;right:70px;top:1010px;font-size:46px;line-height:1.05;color:${C.mocha};transform:rotate(-3deg)">two facts…<br>and a whole future</p>`),
 
-  'lf-3': P('paper', `
-    <p class="lab" style="position:absolute;left:90px;top:100px">[ What weighs on us ]</p>
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:190px;font-size:74px;font-weight:300;line-height:1.12;color:${C.forest}">The facts are usually short. <i>The story is usually long.</i></p>
-    <p class="body" style="position:absolute;left:90px;right:120px;top:520px">Most of what keeps us awake lives in the story: the meaning we add, the motive we assume, the future we predict.</p>
-    <p class="body" style="position:absolute;left:90px;right:120px;top:760px">Decisions made from the story feel urgent. Decisions made from the facts feel calm, and they tend to be better.</p>`),
-
-  'lf-4': P('paper', `
-    <p class="lab" style="position:absolute;left:90px;top:100px">[ The coaching question ]</p>
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:190px;padding:46px 0;border-top:1.5px solid ${C.forest};border-bottom:1.5px solid ${C.forest};font-size:66px;font-style:italic;font-weight:300;line-height:1.18;color:${C.forest}">Can the story change when the perspective changes?</p>
-    <p class="lab" style="position:absolute;left:90px;top:600px;color:${C.forest}">Other stories, same facts</p>
-    ${['It was a working session for one team, nothing more.', 'Someone forgot. It happens.', 'It’s a chance to ask what I want to be part of.']
-      .map((t, i) => `<p class="hand" style="position:absolute;left:90px;right:90px;top:${660 + i * 110}px;font-size:50px;line-height:1.1;color:${C.charcoal}">${t}</p>`).join('')}`),
-
-  'lf-5': P('green', `
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:220px;font-size:64px;font-weight:300;line-height:1.2">Much of coaching is this: separating the facts from the story, <i style="color:#E3C49C">so you can choose your next step with a clear head.</i></p>
-    <p class="body" style="position:absolute;left:90px;right:90px;top:720px;opacity:.88">Try it on one thing that is weighing on you this week. Write the facts in one line. Then notice how long the story is.</p>
-    <p style="position:absolute;left:90px;top:960px;font:400 22px Jost;letter-spacing:.06em;opacity:.8">Megha Bhalla · Executive and Transformational Coach</p>`, true),
+  'lf-3': P('green', `
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;padding:46px 0;border-top:1.5px solid rgba(250,248,245,.4);border-bottom:1.5px solid rgba(250,248,245,.4);font-size:66px;font-style:italic;font-weight:300;line-height:1.18;color:#E3C49C">Can the story change when the perspective changes?</p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:640px;font-size:50px;font-weight:300;line-height:1.3">Much of coaching is this: separating the facts from the story, so you can choose your next step with a clear head.</p>`, true),
 };
 
 // ---- A process, not a pill -------------------------------------------------------------
@@ -85,17 +71,9 @@ const pill = {
        ['Between them, small steps.', 'The real change happens in your week. Each session ends with what you will try next.']]
       .map(([lead, text], i) => `<p class="serif" style="position:absolute;left:90px;right:110px;top:${270 + i * 290}px;font-size:40px;font-weight:300;line-height:1.42"><i style="color:${C.forest};font-weight:400">${lead}</i> ${text}</p>`).join('')}`),
 
-  'lp-3': P('paper', `
-    <p class="lab" style="position:absolute;left:90px;top:100px">[ What it asks of you ]</p>
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:180px;font-size:70px;font-weight:300;line-height:1.12;color:${C.forest}">Progress asks for <i>four things.</i></p>
-    ${[['Intent', 'in every conversation'], ['Courage', 'to look at what you’ve been avoiding'], ['Patience', 'to fail, and to start again'], ['Small steps', 'over grand plans']]
-      .map(([h, t], i) => `<div style="position:absolute;left:90px;right:90px;top:${420 + i * 130}px;display:flex;align-items:baseline;gap:24px"><p class="serif" style="width:300px;font-size:46px;font-style:italic;color:${C.forest}">${h}</p><p class="body" style="font-size:30px">${t}</p></div>`).join('')}
-    <p class="hand" style="position:absolute;left:90px;right:90px;top:980px;font-size:56px;color:${C.mocha};transform:rotate(-2deg)">No judgement, just progress.</p>`),
-
-  'lp-4': P('green', `
-    <p class="lab" style="position:absolute;left:90px;top:100px;color:#E3C49C">[ What stays the same ]</p>
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:200px;font-size:70px;font-weight:300;line-height:1.15">What you share <i style="color:#E3C49C">stays between us.</i> Always.</p>
-    <p class="body" style="position:absolute;left:90px;right:120px;top:520px;opacity:.88">The agenda is yours in every session. My work is to listen deeply, ask the questions that matter, and hold the space while you find your answers.</p>
+  'lp-3': P('green', `
+    <p class="hand" style="position:absolute;left:90px;right:90px;top:140px;font-size:72px;line-height:1.05;color:#E3C49C;transform:rotate(-2deg)">No judgement, just progress.</p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:340px;font-size:50px;font-weight:300;line-height:1.3">It takes courage, intent and small steps. The agenda is yours, and what you share <i style="color:#E3C49C">stays between us.</i></p>
     <p class="serif" style="position:absolute;left:90px;right:90px;top:900px;font-size:40px;font-weight:300;line-height:1.4">Book a discovery call on<br><i style="color:#E3C49C">www.withinworksleadership.com</i></p>`, true),
 };
 
