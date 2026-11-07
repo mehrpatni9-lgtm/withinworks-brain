@@ -18,6 +18,8 @@ const BRAIN = (() => {
     if (DEMO && !q) return 'Mehr';
     return ls.get('who3') || 'Megha';
   }
+  // True once this browser has said who it belongs to (a ?from= link or a tap on the name question).
+  function known() { return !!ls.get('who3'); }
   function setWho(name) { ls.set('who3', name); }
 
   // Entries sent from this browser, shown at once while the sheet catches up.
@@ -123,5 +125,5 @@ const BRAIN = (() => {
     draw();
   }
 
-  return { who, send, feed, statusMap, ago, esc, picker };
+  return { who, known, setWho, send, feed, statusMap, ago, esc, picker };
 })();
