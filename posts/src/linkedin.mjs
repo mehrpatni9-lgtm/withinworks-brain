@@ -33,11 +33,9 @@ const P = (cls, inner, dark) => `<body class="${cls}">${inner}${W(dark)}</body>`
 // ---- Facts and the story -------------------------------------------------------------
 const facts = {
   'lf-1': P('green', `
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 78% 70%, rgba(226,176,110,.10), rgba(226,176,110,0) 70%)"></div>
     <p class="lab" style="position:absolute;left:90px;top:100px;color:#E3C49C">[ Understanding coaching ]</p>
     <p class="serif" style="position:absolute;left:90px;right:90px;top:230px;font-size:92px;font-weight:300;line-height:1.08">The facts,<br><i style="color:#E3C49C">and the story</i><br>we tell about them.</p>
-    <p class="body" style="position:absolute;left:90px;right:300px;top:640px;opacity:.88">A coaching tool you can use today, on a moment most of us have lived through.</p>
-    <div style="position:absolute;right:90px;top:820px">${icon('jaali', 230, '#E3C49C').replace(/<rect[^>]*opacity=".55"\/>/, '')}</div>`, true),
+    <p class="body" style="position:absolute;left:90px;right:300px;top:640px;opacity:.88">A coaching tool you can use today, on a moment most of us have lived through.</p>`, true),
 
   'lf-2': P('paper', `
     <p class="lab" style="position:absolute;left:90px;top:100px">[ The moment ]</p>
@@ -55,20 +53,16 @@ const facts = {
     <p class="lab" style="position:absolute;left:90px;top:100px">[ What weighs on us ]</p>
     <p class="serif" style="position:absolute;left:90px;right:90px;top:190px;font-size:74px;font-weight:300;line-height:1.12;color:${C.forest}">The facts are usually short. <i>The story is usually long.</i></p>
     <p class="body" style="position:absolute;left:90px;right:120px;top:520px">Most of what keeps us awake lives in the story: the meaning we add, the motive we assume, the future we predict.</p>
-    <p class="body" style="position:absolute;left:90px;right:120px;top:760px">Decisions made from the story feel urgent. Decisions made from the facts feel calm, and they tend to be better.</p>
-    <div style="position:absolute;right:90px;bottom:150px">${icon('ripple', 200)}</div>`),
+    <p class="body" style="position:absolute;left:90px;right:120px;top:760px">Decisions made from the story feel urgent. Decisions made from the facts feel calm, and they tend to be better.</p>`),
 
   'lf-4': P('paper', `
     <p class="lab" style="position:absolute;left:90px;top:100px">[ The coaching question ]</p>
-    <div style="position:absolute;left:90px;right:90px;top:180px;height:330px;display:flex;align-items:center;justify-content:center;padding:40px 60px">
-      ${glowBox(900, 330)}
-      <p class="serif" style="position:relative;text-align:center;font-size:62px;font-style:italic;font-weight:300;line-height:1.2;color:${C.forest}">Can the story change when the perspective changes?</p></div>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:190px;padding:46px 0;border-top:1.5px solid ${C.forest};border-bottom:1.5px solid ${C.forest};font-size:66px;font-style:italic;font-weight:300;line-height:1.18;color:${C.forest}">Can the story change when the perspective changes?</p>
     <p class="lab" style="position:absolute;left:90px;top:600px;color:${C.forest}">Other stories, same facts</p>
     ${['It was a working session for one team, nothing more.', 'Someone forgot. It happens.', 'It’s a chance to ask what I want to be part of.']
       .map((t, i) => `<p class="hand" style="position:absolute;left:90px;right:90px;top:${660 + i * 110}px;font-size:50px;line-height:1.1;color:${C.charcoal}">${t}</p>`).join('')}`),
 
   'lf-5': P('green', `
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 85%, rgba(226,176,110,.10), rgba(226,176,110,0) 70%)"></div>
     <p class="serif" style="position:absolute;left:90px;right:90px;top:220px;font-size:64px;font-weight:300;line-height:1.2">Much of coaching is this: separating the facts from the story, <i style="color:#E3C49C">so you can choose your next step with a clear head.</i></p>
     <p class="body" style="position:absolute;left:90px;right:90px;top:720px;opacity:.88">Try it on one thing that is weighing on you this week. Write the facts in one line. Then notice how long the story is.</p>
     <p style="position:absolute;left:90px;top:960px;font:400 22px Jost;letter-spacing:.06em;opacity:.8">Megha Bhalla · Executive and Transformational Coach</p>`, true),
@@ -80,21 +74,16 @@ const step = (label, title, text, top) => `<div style="position:absolute;left:90
   <p class="body" style="font-size:30px;margin-top:14px">${text}</p></div>`;
 const pill = {
   'lp-1': P('green', `
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 75% 75%, rgba(226,176,110,.10), rgba(226,176,110,0) 70%)"></div>
     <p class="lab" style="position:absolute;left:90px;top:100px;color:#E3C49C">[ How coaching works ]</p>
     <p class="serif" style="position:absolute;left:90px;right:90px;top:240px;font-size:100px;font-weight:300;line-height:1.05">Coaching is<br>a process,<br><i style="color:#E3C49C">not a pill.</i></p>
-    <p class="body" style="position:absolute;left:90px;right:200px;top:700px;opacity:.88">What happens, in what order, and what it asks of you.</p>
-    <div style="position:absolute;right:90px;top:820px">${icon('chakri', 230, '#E3C49C').replace(/<rect[^>]*opacity=".55"\/>/, '')}</div>`, true),
+    <p class="body" style="position:absolute;left:90px;right:200px;top:700px;opacity:.88">What happens, in what order, and what it asks of you.</p>`, true),
 
   'lp-2': P('paper', `
     <p class="serif" style="position:absolute;left:90px;right:90px;top:100px;font-size:64px;font-weight:300;line-height:1.12;color:${C.forest}">How it <i>unfolds</i></p>
-    ${[['home', 'Start here', 'A discovery call', '45 minutes to explore what’s possible for you, and whether this feels like the right partnership.'],
-       ['lotus', 'The core work', 'Six sessions', '60 minutes each, ideally every two weeks, in person, online or both.'],
-       ['sun', 'Between sessions', 'Small steps', 'The real change happens in your week. Each session ends with what you will try next.']]
-      .map(([m, label, title, text], i) => `<div style="position:absolute;left:90px;right:90px;top:${260 + i * 300}px;display:flex;gap:44px;align-items:flex-start">
-        <div style="flex:none">${icon(m, 200)}</div>
-        <div style="padding-top:8px"><p class="lab">${label}</p><p class="serif" style="font-size:48px;font-weight:300;line-height:1.1;margin-top:10px;color:${C.forest}">${title}</p>
-        <p class="body" style="font-size:28px;line-height:1.5;margin-top:12px">${text}</p></div></div>`).join('')}`),
+    ${[['It begins with a conversation.', 'A 45-minute discovery call to explore what’s possible for you, and whether this feels like the right partnership.'],
+       ['Then, six sessions.', '60 minutes each, ideally every two weeks, in person, online or both.'],
+       ['Between them, small steps.', 'The real change happens in your week. Each session ends with what you will try next.']]
+      .map(([lead, text], i) => `<p class="serif" style="position:absolute;left:90px;right:110px;top:${270 + i * 290}px;font-size:40px;font-weight:300;line-height:1.42"><i style="color:${C.forest};font-weight:400">${lead}</i> ${text}</p>`).join('')}`),
 
   'lp-3': P('paper', `
     <p class="lab" style="position:absolute;left:90px;top:100px">[ What it asks of you ]</p>
@@ -104,14 +93,10 @@ const pill = {
     <p class="hand" style="position:absolute;left:90px;right:90px;top:980px;font-size:56px;color:${C.mocha};transform:rotate(-2deg)">No judgement, just progress.</p>`),
 
   'lp-4': P('green', `
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 80%, rgba(226,176,110,.10), rgba(226,176,110,0) 70%)"></div>
     <p class="lab" style="position:absolute;left:90px;top:100px;color:#E3C49C">[ What stays the same ]</p>
     <p class="serif" style="position:absolute;left:90px;right:90px;top:200px;font-size:70px;font-weight:300;line-height:1.15">What you share <i style="color:#E3C49C">stays between us.</i> Always.</p>
     <p class="body" style="position:absolute;left:90px;right:120px;top:520px;opacity:.88">The agenda is yours in every session. My work is to listen deeply, ask the questions that matter, and hold the space while you find your answers.</p>
-    <div style="position:absolute;left:90px;right:90px;top:860px;height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center">
-      ${glowBox(900, 180)}
-      <p class="lab" style="position:relative;color:#E3C49C;font-size:15px">Book a discovery call</p>
-      <p class="serif" style="position:relative;font-size:42px;margin-top:12px">www.withinworksleadership.com</p></div>`, true),
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:900px;font-size:40px;font-weight:300;line-height:1.4">Book a discovery call on<br><i style="color:#E3C49C">www.withinworksleadership.com</i></p>`, true),
 };
 
 const frames = { ...facts, ...pill };
