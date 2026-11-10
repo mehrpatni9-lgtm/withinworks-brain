@@ -455,3 +455,5 @@ body.home .now { margin-top: 40px; }
 
 /* LinkedIn: copy button sits inside the post, bottom right, like Instagram */
 .li .copyrow { display: flex; justify-content: flex-end; padding: 0 12px 10px; margin: 0; }
+
+.when-date { color: var(--forest); font-weight: 500; }
