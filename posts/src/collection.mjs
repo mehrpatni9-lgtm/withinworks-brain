@@ -92,8 +92,8 @@ const slides = {
     <p class="lab" style="position:absolute;left:100px;top:110px;color:${C.mocha}">Understanding coaching</p>
     <p class="serif" style="position:absolute;left:100px;right:100px;top:230px;font-weight:400;font-size:118px;line-height:1.06">Coach, mentor, consultant, therapist?</p>
     <div style="position:absolute;left:100px;right:100px;top:820px;display:grid;grid-template-columns:1fr 1fr;border-top:1.5px solid rgba(61,58,53,.3);border-left:1.5px solid rgba(61,58,53,.3)">
-      ${[['Therapist', 'Heal'], ['Mentor', 'Learn from experience'], ['Consultant', 'Be advised'], ['Coach', 'Find your own answers']].map(([r, t], i) => `<div style="border-right:1.5px solid rgba(61,58,53,.3);border-bottom:1.5px solid rgba(61,58,53,.3);padding:24px 30px 26px;${i === 3 ? `background:${C.forest};color:${C.ivory}` : ''}">
-        <p class="lab" style="font-size:15px;color:${i === 3 ? '#E3C49C' : C.mocha}">${r}</p><p style="font:400 34px Fraunces;margin-top:8px">${t}</p></div>`).join('')}</div>
+      ${[['Therapist', 'Heal'], ['Mentor', 'Learn from experience'], ['Consultant', 'Be advised'], ['Coach', 'Find your own answers']].map(([r, t], i) => `<div style="border-right:1.5px solid rgba(61,58,53,.3);border-bottom:1.5px solid rgba(61,58,53,.3);padding:30px 32px 32px;${i === 3 ? `background:${C.forest};color:${C.ivory}` : ''}">
+        <p style="font:400 44px Fraunces;line-height:1.1">${r}</p><p style="font:italic 400 26px Fraunces;margin-top:8px;color:${i === 3 ? '#E3C49C' : C.sage}">${t}</p></div>`).join('')}</div>
     <p class="serif" style="position:absolute;right:100px;top:1185px;font-style:italic;font-weight:400;font-size:36px;color:${C.sage}">Which do you need?</p>
     ${W()}</body>`,
   'c1-5b': `<body class="grain" style="background:#FBF8F3">
