@@ -90,11 +90,10 @@ const slides = {
   // 05 · Coaching, plainly · carousel 2 · design
   'c1-5a': `<body class="grain" style="background:#F6F1EA">
     <p class="lab" style="position:absolute;left:100px;top:110px;color:${C.mocha}">Understanding coaching</p>
-    <p class="serif" style="position:absolute;left:100px;right:100px;top:230px;font-weight:400;font-size:118px;line-height:1.06">Coach, mentor, consultant, therapist?</p>
-    <div style="position:absolute;left:100px;right:100px;top:820px;display:grid;grid-template-columns:1fr 1fr;border-top:1.5px solid rgba(61,58,53,.3);border-left:1.5px solid rgba(61,58,53,.3)">
-      ${[['Therapist', 'Heal'], ['Mentor', 'Learn from experience'], ['Consultant', 'Be advised'], ['Coach', 'Find your own answers']].map(([r, t], i) => `<div style="border-right:1.5px solid rgba(61,58,53,.3);border-bottom:1.5px solid rgba(61,58,53,.3);padding:30px 32px 32px;${i === 3 ? `background:${C.forest};color:${C.ivory}` : ''}">
-        <p style="font:400 44px Fraunces;line-height:1.1">${r}</p><p style="font:italic 400 26px Fraunces;margin-top:8px;color:${i === 3 ? '#E3C49C' : C.sage}">${t}</p></div>`).join('')}</div>
-    <p class="serif" style="position:absolute;right:100px;top:1185px;font-style:italic;font-weight:400;font-size:36px;color:${C.sage}">Which do you need?</p>
+    <div style="position:absolute;left:100px;right:100px;top:200px;height:880px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border-top:1.5px solid rgba(61,58,53,.3);border-left:1.5px solid rgba(61,58,53,.3)">
+      ${[['Therapist', 'Heal'], ['Mentor', 'Learn from experience'], ['Consultant', 'Be advised'], ['Coach', 'Find your own answers']].map(([r, t], i) => `<div style="border-right:1.5px solid rgba(61,58,53,.3);border-bottom:1.5px solid rgba(61,58,53,.3);padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between;${i === 3 ? `background:${C.forest};color:${C.ivory}` : ''}">
+        <p style="font:400 66px Fraunces;line-height:1.05">${r}</p><p style="font:italic 400 30px Fraunces;line-height:1.25;color:${i === 3 ? '#E3C49C' : C.sage}">${t}</p></div>`).join('')}</div>
+    <p class="serif" style="position:absolute;right:100px;top:1150px;font-style:italic;font-weight:400;font-size:44px;color:${C.forest}">Which do you need?</p>
     ${W()}</body>`,
   'c1-5b': `<body class="grain" style="background:#FBF8F3">
     ${[['Therapy', 'heals what makes everyday life feel unsteady.'], ['Mentoring', 'shows you a path someone has already walked.'], ['Consulting', 'studies the problem and hands you the plan.'], ['Coaching', 'helps you find your own answer, and act on it.']]
