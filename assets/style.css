@@ -452,3 +452,6 @@ body.home .now { margin-top: 40px; }
 .c-text { margin: 4px 0 0; }
 .c-text.clip { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .c-more { background: none; border: 0; padding: 4px 0 0; color: var(--sage); font: 0.85rem Jost, sans-serif; cursor: pointer; }
+
+/* LinkedIn: copy button sits inside the post, bottom right, like Instagram */
+.li .copyrow { display: flex; justify-content: flex-end; padding: 0 12px 10px; margin: 0; }

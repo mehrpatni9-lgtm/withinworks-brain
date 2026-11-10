@@ -92,17 +92,17 @@ INSTAGRAM
 
 LINKEDIN
 
-L1 | Where the answers were
-  Text: For 25 years, my work was to have the answers. / Coaching came to me first as a tool for my own development. The answers I had been searching for in situations and in other people had been within me all along. / Today I hold that same space for others, so they can find theirs. / What answer have you been looking for outside yourself?
+L1 | How coaching works
+  Text: Coaching is a process, not a pill. It takes courage, intent and small steps. No judgement, just progress. / Book a discovery call on www.withinworksleadership.com
 
-L2 | Diwali note
-  Text: Every home is lit up today. / At Diwali we clean every corner and fill it with light. Our working lives have corners too: a decision we keep postponing, a conversation we keep avoiding. / A short note for the season, and the ways I work with leaders when they are ready to look at theirs. / Wishing you a Diwali full of light.
+L2 | Where the answers were
+  Text: For 25 years, my work was to have the answers. / Coaching came to me first as a tool for my own development. The answers I had been searching for in situations and in other people had been within me all along. / Today I hold that same space for others, so they can find theirs. / What answer have you been looking for outside yourself?
 
 L3 | The facts and the story
   Text: What are the facts, and what is the story? It is one of the simplest questions I ask, and one of the most useful. / The facts are usually short. The story is usually long.
 
-L4 | How coaching works
-  Text: Coaching is a process, not a pill. It takes courage, intent and small steps. No judgement, just progress. / Book a discovery call on www.withinworksleadership.com
+L4 | Diwali note
+  Text: Every home is lit up today. / At Diwali we clean every corner and fill it with light. Our working lives have corners too: a decision we keep postponing, a conversation we keep avoiding. / A short note for the season, and the ways I work with leaders when they are ready to look at theirs. / Wishing you a Diwali full of light.
 
 STORIES
 
