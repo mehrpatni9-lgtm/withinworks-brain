@@ -88,10 +88,10 @@ export default (C, PH, ST, W) => ({
   // 14 · The Within Question 02 · single · two posters on a real wall
   'c1-14': `<body style="background:${C.forest}">
     <img src="${ST('ivy')}" style="position:absolute;left:-110px;top:-80px;width:1300px">
-    ${[['What decision are you waiting for permission to make?', 174, 270, 208, 310, 34], ['Whose permission?', 732, 270, 218, 318, 46]]
+    ${[['Waiting<br>for<br>permission?', 174, 270, 208, 310, 34], ['Whose?', 732, 270, 218, 318, 56]]
       .map(([t, x, y, w, h, fs]) => `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;display:flex;align-items:center;justify-content:center;padding:18px;text-align:center"><p class="serif" style="font-style:italic;font-weight:400;font-size:${fs}px;line-height:1.2;color:${C.forest}">${t}</p></div>`).join('')}
     <div style="position:absolute;left:0;right:0;top:1209px;bottom:0;background:${C.forest}"></div>
-    <p class="lab" style="position:absolute;right:70px;bottom:62px;color:${C.mocha};font-size:19px">The Within Question &middot; 02</p>
+    <p class="lab" style="position:absolute;right:70px;bottom:62px;color:${C.mocha};font-size:19px">The Within Question</p>
     ${W(true)}</body>`,
 
   // 15 · Inside a session · carousel 2 · real photo then card
