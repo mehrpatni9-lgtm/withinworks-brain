@@ -457,3 +457,9 @@ body.home .now { margin-top: 40px; }
 .li .copyrow { display: flex; justify-content: flex-end; padding: 0 12px 10px; margin: 0; }
 
 .when-date { color: var(--forest); font-weight: 500; }
+
+/* copy sits in the action row, next to send */
+.ig-bar .copyrow, .li-bar .copyrow { display: inline-flex; align-items: center; padding: 0; margin: 0; }
+.ig-bar .copy, .li-bar .copy { width: 28px; height: 28px; color: inherit; }
+.li-bar { align-items: center; }
+.ig-bar .copy svg { width: 22px; height: 22px; stroke-width: 1.9; }
