@@ -37,7 +37,10 @@ const SUGGEST = (() => {
       const live_s = sugg.filter(s => !rej.has(s.time) && parse(s.text).text);
       const latest = live_s[live_s.length - 1];
       let live = src.dataset.original;
-      if (latest && !close(live, parse(latest.text).text)) live = parse(latest.text).text;
+      // a revision made on or after her edit already carries it (with any later changes), so the built caption wins
+      const rev = (article.querySelector('.review') || { dataset: {} }).dataset.rev || '';
+      const handled = latest && rev && latest.time.slice(0, 10) <= rev;
+      if (latest && !handled && !close(live, parse(latest.text).text)) live = parse(latest.text).text;
       src.value = live; article.dataset.pending = '';
       cap.innerHTML = prefix(article) + BRAIN.esc(live);
       // Suggestion cards in the thread: a quiet record that her edit went in
