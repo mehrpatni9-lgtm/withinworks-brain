@@ -463,3 +463,26 @@ body.home .now { margin-top: 40px; }
 .ig-bar .copy, .li-bar .copy { width: 28px; height: 28px; color: inherit; }
 .li-bar { align-items: center; }
 .ig-bar .copy svg { width: 22px; height: 22px; stroke-width: 1.9; }
+
+/* Review row, 11 Nov clean-up: edit caption lives in the post; tick, Comment and the comment count sit on one steady row below it */
+.cap-edit { display: inline-flex; align-items: center; gap: 6px; margin: 2px 12px 12px; padding: 5px 12px; border: 1px solid rgba(0,0,0,.14); border-radius: 99px; background: #fff; color: #555; font: 400 13px/1 var(--sans, Jost, sans-serif); cursor: pointer; }
+.cap-edit:hover, .cap-edit.on { border-color: var(--sage); color: var(--sage); }
+.li .cap-edit { margin: 0 16px 12px; }
+.review.post { padding: 12px 0 0 !important; gap: 8px; }
+.review.post .act { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; min-height: 32px; }
+.review.post .btn, .review.post .box .btn { min-height: 32px; height: 32px; padding: 0 14px; font-size: .85rem; line-height: 1; }
+.review.post .btn.tick { width: 32px; min-width: 32px; padding: 0; font-size: .95rem; }
+.review.post .status { font-size: .8rem; color: var(--text-faint); }
+.review.post .status:empty { display: none; }
+.ccount { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; background: none; border: 0; padding: 4px 0; font: 400 .85rem var(--sans, Jost, sans-serif); color: var(--forest); cursor: pointer; }
+.ccount[hidden] { display: none; }
+.ccount i { width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); margin-top: -3px; transition: transform .2s; }
+.ccount.open i { transform: rotate(-135deg); margin-top: 3px; }
+.review.post .cwrap { display: grid; gap: 8px; margin: 0; }
+.review.post .cwrap[hidden] { display: none; }
+.review.post .box { margin: 0; }
+.review.post .box textarea { min-height: 80px; }
+@media (max-width: 700px) {
+  .review.post .btn, .review.post .box .btn { min-height: 34px; height: 34px; padding: 0 14px; font-size: .9rem; }
+  .review.post .btn.tick { width: 34px; min-width: 34px; font-size: 1rem; }
+}

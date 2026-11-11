@@ -49,9 +49,6 @@ const SUGGEST = (() => {
         const d = parse(s.text), state = rej.has(s.time) ? '<em class="tag no">Not used</em>' : '<em class="tag">Applied</em>';
         return `<div class="sugg done"><b>${BRAIN.esc(s.from)}</b> <span>edited the ${d.text ? 'caption' : 'post'} &middot; ${BRAIN.ago(s.time)}</span> ${state}${d.note ? `<p class="sg-quote">${BRAIN.esc(d.note)}</p>` : ''}</div>`;
       }).join('');
-      const pending = [];
-      const st = article.querySelector('.review .status');
-      if (st && !st.dataset.busy && sugg.length && !pending.length && !/^Approved/.test(st.textContent)) st.textContent = 'Updated';
     });
   }
 
@@ -65,7 +62,7 @@ const SUGGEST = (() => {
     cap.classList.remove('clip'); const more = cap.nextElementSibling; if (more && more.matches('.ig-more, .li-more')) more.remove();
     cap.innerHTML = prefix(article) + `<span class="edit" contenteditable="true" spellcheck="true"></span>`;
     const ed = cap.querySelector('.edit'); ed.innerText = pend;
-    const btn = article.querySelector('[data-a="suggest"]'); if (btn) btn.textContent = 'Save';
+    const btn = article.querySelector('[data-a="suggest"]'); if (btn) { btn.dataset.label = btn.dataset.label || btn.innerHTML; btn.innerHTML = 'Save'; btn.classList.add('on'); }
     ed.focus(); const r = document.createRange(); r.selectNodeContents(ed); r.collapse(false); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
   }
   function setHint(article, t) { const h = article.querySelector('.sugg-hint'); if (h) h.textContent = t; }
@@ -76,7 +73,7 @@ const SUGGEST = (() => {
     const text = (ed ? ed.innerText : '').replace(/\n{3,}/g, '\n\n').trim(), note = '';
     const before = (article.dataset.pending || src.value).trim();
     editing.delete(article.id);
-    const btn = article.querySelector('[data-a="suggest"]'); if (btn) btn.textContent = 'Suggest edit';
+    const btn = article.querySelector('[data-a="suggest"]'); if (btn && btn.dataset.label) { btn.innerHTML = btn.dataset.label; btn.classList.remove('on'); }
     const changed = text && text !== before;
     if (!changed && !note) { document.dispatchEvent(new Event('brain:refresh')); return; }
     
@@ -97,6 +94,7 @@ const SUGGEST = (() => {
   document.addEventListener('click', async e => {
     const t = e.target, article = t.closest && t.closest('article.post-wrap');
     if (!article) return;
+    const sb = t.closest('[data-a="suggest"]'); if (sb) { editing.has(article.id) ? save(article) : startEdit(article); return; }
     if (t.dataset.a === 'suggest') { editing.has(article.id) ? save(article) : startEdit(article); return; }
     let kind, text;
     if (t.dataset.acc) { kind = 'Accepted'; text = t.dataset.acc; }

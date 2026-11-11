@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=26">
+<link rel="stylesheet" href="assets/style.css?v=27">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 110'%3E%3Ctext x='4' y='88' font-family='Georgia' font-size='104' font-weight='600' fill='%235d6e5e'%3EW%3C/text%3E%3C/svg%3E">
 </head>
 <body class="page">
@@ -32,13 +32,13 @@
 .pf .n{display:inline-block;margin:12px 6px 0;font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;color:#B4654A}
 .crumb{font-size:1.05rem;margin-bottom:6px}.crumb a{color:#B4654A;text-decoration:none}
 </style><div class="pf-grid"><a class="pf" href="printables-folders.html"><div class="pf-body">
-<div class="pf-thumb"><img src="printables/fm-a.jpg?v=1794402528" alt=""></div>
+<div class="pf-thumb"><img src="printables/fm-a.jpg?v=1794404341" alt=""></div>
 <h3>Presentation folders</h3><p>Two options for client meetings. Choose one.</p><span class="n">2 files &rarr;</span></div></a><a class="pf" href="printables-journal.html"><div class="pf-body">
-<div class="pf-thumb"><img src="printables/jn-sheet.jpg?v=1794402528" alt=""></div>
+<div class="pf-thumb"><img src="printables/jn-sheet.jpg?v=1794404341" alt=""></div>
 <h3>Journal</h3><p>Notes from Within, a journal to give clients.</p><span class="n">1 file &rarr;</span></div></a></div></div></section>
 <div class="shell"><nav class="doors"><a href="./">Brain</a><a href="meetings.html">Meetings</a><a href="content/">Instagram</a><a href="linkedin/">LinkedIn</a><a href="stories/">Stories</a><a href="reel-cuts/">Reels</a><a href="printables.html" class="here">Printables</a><a href="working-material.html">Working material</a><a href="strategy.html">Strategy</a><a href="megha.html">Megha</a><a href="voice.html">Voice</a><a href="audience.html">Audience</a><a href="brand.html">Brand</a><a href="offers.html">Offers</a><a href="tech.html">Tech</a><a href="photos.html">Photos</a><a href="research.html">Research</a><a href="ideas.html">Ideas</a></nav></div>
 <footer><div class="shell">WithinWorks Leadership &middot; Kept by Mehr Patni &middot; Private working page</div></footer>
-<script>window.POSTMAP = {"01": "c1-1", "02": "c1-5", "03": "c1-11", "04": "c1-9", "05": "c1-15", "06": "c1-2", "07": "c1-12", "08": "c1-3", "09": "c1-4", "10": "c1-16", "11": "c1-7", "12": "c1-8", "13": "c1-13", "14": "c1-14", "15": "c1-10", "L1": "l1-3", "L2": "l1-1", "L3": "l1-2", "L4": "l1-4", "S1": "s1-1", "S2": "sd-1"};</script><script src="assets/brain.js?v=10"></script><script src="assets/suggest.js?v=8"></script>
+<script>window.POSTMAP = {"01": "c1-1", "02": "c1-5", "03": "c1-11", "04": "c1-9", "05": "c1-15", "06": "c1-2", "07": "c1-12", "08": "c1-3", "09": "c1-4", "10": "c1-16", "11": "c1-7", "12": "c1-8", "13": "c1-13", "14": "c1-14", "15": "c1-10", "L1": "l1-3", "L2": "l1-1", "L3": "l1-2", "L4": "l1-4", "S1": "s1-1", "S2": "sd-1"};</script><script src="assets/brain.js?v=10"></script><script src="assets/suggest.js?v=9"></script>
 <script>
 document.querySelectorAll('.ig-media').forEach(m => {
   const t = m.querySelector('.ig-track'), n = t.children.length;
@@ -59,49 +59,51 @@ let entries = [];
 function paint() {
   const st = BRAIN.statusMap(entries);
   boxes.forEach(b => {
-    const s = st[b.dataset.id], status = b.querySelector('.status');
-    if (!status.dataset.busy) { status.className = 'status'; const last = entries.filter(e => e.item.split(' | ')[0] === b.dataset.id && (e.kind === 'Approved' || e.kind === 'Comment' || e.kind === 'Suggestion')).pop();
-      status.textContent = s === 'approved' ? 'Approved by ' + (entries.filter(e => e.kind === 'Approved' && e.item.split(' | ')[0] === b.dataset.id).pop() || {}).from : s === 'comment' ? (last.kind === 'Suggestion' ? 'Suggestion from ' : 'Comment from ') + last.from : ''; }
-    const tk = b.querySelector('.tick'); if (tk) tk.classList.toggle('on', s === 'approved');
-    const as = b.querySelector('.as'); if (as) as.textContent = BRAIN.known() ? 'as ' + BRAIN.who() : '';
-    // approved posts drop their comment thread and suggestions from view (they stay in the sheet)
-    const sl = b.querySelector('.sugg-list'); if (sl) sl.hidden = s === 'approved';
-    const notes = entries.filter(e => e.kind === 'Comment' && e.item.split(' | ')[0] === b.dataset.id);
-    const done = new Set(entries.filter(e => e.kind === 'Done' && e.item.split(' | ')[0] === b.dataset.id).map(e => e.text));
+    const s = st[b.dataset.id], status = b.querySelector('.status'), id = b.dataset.id;
+    const of = k => entries.filter(e => e.kind === k && e.item.split(' | ')[0] === id);
+    if (!status.dataset.busy) { status.className = 'status'; status.textContent = ''; }
+    const tk = b.querySelector('.tick'), ap = of('Approved').pop();
+    tk.classList.toggle('on', s === 'approved'); tk.title = s === 'approved' && ap ? 'Approved by ' + ap.from : 'Approve';
+    const notes = of('Comment'), edits = of('Suggestion');
+    const done = new Set(of('Done').map(e => e.text));
     const mehr = BRAIN.who() === 'Mehr';
     // a comment made on or before the post's last revision has been worked in
     const applied = n => b.dataset.rev && n.time.slice(0, 10) <= b.dataset.rev;
     b.querySelector('.thread').innerHTML = notes.map(n => `<div${done.has(n.time) || applied(n) ? ' class="done"' : ''}><b>${BRAIN.esc(n.from)}</b> <span>${BRAIN.ago(n.time)}</span>`
       + (done.has(n.time) ? ' <em class="tag">Done</em>' : applied(n) ? ' <em class="tag">Changes made</em>' : (mehr && n.from !== 'Mehr' ? ` <button class="pill" data-t="${BRAIN.esc(n.time)}">Mark done</button>` : ''))
       + (n.text.length > 180 ? `<p class="c-text${OPENC.has(n.time) ? '' : ' clip'}">${BRAIN.esc(n.text)}</p><button class="c-more" type="button" data-ct="${BRAIN.esc(n.time)}">${OPENC.has(n.time) ? 'less' : 'more'}</button></div>` : `<br>${BRAIN.esc(n.text)}</div>`)).join('');
-    if (!status.dataset.busy && s === 'comment' && notes.length && notes.every(n => done.has(n.time) || applied(n))) status.textContent = 'Updated, changes made';
-    // comments fold away: open while a post is in review, folded once it is approved; a tap opens or closes them
-    const wrap = b.querySelector('.cwrap'); wrap.hidden = !notes.length;
-    wrap.querySelector('summary').textContent = notes.length + (notes.length === 1 ? ' comment' : ' comments');
-    if (b.dataset.st !== (s || '')) { wrap.open = s !== 'approved'; b.dataset.st = s || ''; }
+    // the count sits at the end of the action row, so nothing above or beside the buttons moves
+    const parts = []; if (notes.length) parts.push(notes.length + (notes.length === 1 ? ' comment' : ' comments')); if (edits.length) parts.push(edits.length + (edits.length === 1 ? ' edit' : ' edits'));
+    const cc = b.querySelector('.ccount'), wrap = b.querySelector('.cwrap');
+    cc.hidden = !parts.length; cc.querySelector('span').textContent = parts.join(' · ');
+    if (b.dataset.st !== (s || '')) { b.dataset.open = parts.length && s !== 'approved' ? '1' : ''; b.dataset.st = s || ''; }
+    wrap.hidden = !parts.length || !b.dataset.open; cc.classList.toggle('open', !wrap.hidden);
   });
 }
 boxes.forEach(b => {
-  b.innerHTML = `<details class="cwrap"><summary></summary><div class="thread"></div></details><div class="act">
+  b.innerHTML = `<div class="act">
     <button class="btn tick" data-a="approve" title="Approve" aria-label="Approve">&#10003;</button>
     <button class="btn" data-a="comment">Comment</button>
-    <button class="btn" data-a="suggest">Suggest edit</button>
-    <span class="status" role="status"></span><span class="as" style="font-size:.75rem;color:var(--text-faint);margin-left:auto"></span>
-    <div class="box"><textarea placeholder="Your comment"></textarea><div><button class="btn ok" data-a="send">Send</button></div></div>
-  </div><div class="sugg-list"></div>`;
+    <span class="status" role="status"></span>
+    <button class="ccount" type="button" data-a="fold" hidden><span></span><i></i></button>
+  </div>
+  <div class="box"><textarea placeholder="Your comment"></textarea><div><button class="btn ok" data-a="send">Send</button></div></div>
+  <div class="cwrap" hidden><div class="thread"></div><div class="sugg-list"></div></div>`;
   const status = b.querySelector('.status'), box = b.querySelector('.box'), ta = box.querySelector('textarea');
   b.addEventListener('click', async e => {
-    if (e.target.classList.contains("pill") && e.target.dataset.t) {
-      e.target.disabled = true; e.target.textContent = 'Saving...';
-      try { await BRAIN.send('Done', b.dataset.id + ' | ' + b.dataset.title, e.target.dataset.t); entries = await BRAIN.feed(); paint(); }
-      catch (err) { e.target.disabled = false; e.target.textContent = 'Mark done'; }
+    const tgt = e.target.closest('button') || e.target;
+    if (tgt.classList.contains("pill") && tgt.dataset.t) {
+      tgt.disabled = true; tgt.textContent = 'Saving...';
+      try { await BRAIN.send('Done', b.dataset.id + ' | ' + b.dataset.title, tgt.dataset.t); entries = await BRAIN.feed(); paint(); }
+      catch (err) { tgt.disabled = false; tgt.textContent = 'Mark done'; }
       return;
     }
-    if (e.target.dataset && e.target.dataset.me) { // answer to "Who is this?"
-      BRAIN.setWho(e.target.dataset.me); delete status.dataset.busy; document.querySelectorAll('.review .as').forEach(x => x.textContent = 'as ' + e.target.dataset.me);
-      status.textContent = 'Thanks, ' + e.target.dataset.me + '. Tap again to send.'; return;
+    if (tgt.dataset && tgt.dataset.me) { // answer to "Who is this?"
+      BRAIN.setWho(tgt.dataset.me); delete status.dataset.busy;
+      status.textContent = 'Thanks, ' + tgt.dataset.me + '. Tap again to send.'; return;
     }
-    const a = e.target.dataset && e.target.dataset.a;
+    const a = tgt.dataset && tgt.dataset.a;
+    if (a === 'fold') { b.dataset.open = b.dataset.open ? '' : '1'; paint(); return; }
     if (!a || a === 'suggest' || a === 'send-sugg') return;
     // A browser that has never said who it belongs to is asked once, so nothing is sent in the wrong name.
     if (a !== 'comment' && !BRAIN.known()) {
@@ -111,17 +113,17 @@ boxes.forEach(b => {
     if (a === 'comment') { box.classList.toggle('open'); if (box.classList.contains('open')) ta.focus(); return; }
     const approve = a === 'approve';
     if (!approve && !ta.value.trim()) { ta.focus(); return; }
-    e.target.disabled = true; status.dataset.busy = 1; status.className = 'status'; status.textContent = 'Sending...';
+    tgt.disabled = true; status.dataset.busy = 1; status.className = 'status'; status.textContent = 'Sending...';
     try {
       await BRAIN.send(approve ? 'Approved' : 'Comment', b.dataset.id + ' | ' + b.dataset.title, approve ? '' : ta.value.trim());
-      if (!approve) { ta.value = ''; box.classList.remove('open'); }
+      if (!approve) { ta.value = ''; box.classList.remove('open'); b.dataset.open = '1'; }
       delete status.dataset.busy;
       entries = await BRAIN.feed(); paint(); SUGGEST.paint(entries);
     } catch (err) {
       delete status.dataset.busy;
-      status.className = 'status err'; status.textContent = 'Not sent. Check your connection and try again.';
+      status.className = 'status err'; status.textContent = 'Not sent. Try again.';
     }
-    e.target.disabled = false;
+    tgt.disabled = false;
   });
 });
 (async function load() { entries = await BRAIN.feed(); paint(); SUGGEST.paint(entries); setTimeout(load, 60000); })();
