@@ -43,14 +43,14 @@ export default (C, PH, ST, W) => ({
     <div style="position:absolute;left:100px;right:100px;top:50%;transform:translateY(-50%);background:${C.ivory};padding:110px 84px">
       <p class="serif" style="font-size:96px;font-weight:400;line-height:1.08;color:${C.forest}">How coaching with me works</p>
       <p style="font-size:42px;font-weight:300;line-height:1.45;margin-top:44px">Three questions people ask before we begin.</p></div>
-    ${W(false, false, 'solid')}</body>`,
+    ${W(false, false, 'mocha')}</body>`,
   'c1-11b': `<body class="grain" style="background:${C.mocha}">
     <div style="position:absolute;left:90px;right:90px;top:50%;transform:translateY(-50%);background:${C.ivory};padding:90px 80px">
       <p class="serif" style="font-size:58px;font-weight:500;color:${C.forest}">Where do we start?</p>
       <p style="font-size:42px;font-weight:300;line-height:1.48;margin-top:24px">With a complimentary 45-minute call, to explore what is possible for you and whether we are the right fit.</p>
       <p class="serif" style="font-size:58px;font-weight:500;color:${C.forest};margin-top:64px">How long does it take?</p>
       <p style="font-size:42px;font-weight:300;line-height:1.48;margin-top:24px">Six 60-minute sessions, ideally every two weeks, in person, online or both.</p></div>
-    ${W(false, false, 'solid')}</body>`,
+    ${W(false, false, 'mocha')}</body>`,
   'c1-11c': `<body class="grain" style="background:${C.mocha}">
     <div style="position:absolute;left:90px;right:90px;top:44%;transform:translateY(-50%);background:${C.ivory};padding:90px 80px">
       <p class="serif" style="font-size:58px;font-weight:500;color:${C.forest}">What do I bring?</p>
@@ -58,7 +58,7 @@ export default (C, PH, ST, W) => ({
       <p class="serif" style="font-size:58px;font-weight:500;color:${C.forest};margin-top:64px">Is it confidential?</p>
       <p style="font-size:42px;font-weight:300;line-height:1.48;margin-top:24px">Always. What you share stays between us.</p></div>
     <p class="serif" style="position:absolute;left:90px;right:90px;bottom:110px;text-align:center;color:${C.forest};font-size:40px;font-weight:400;line-height:1.35">Book a discovery call on<br><i>www.withinworksleadership.com</i></p>
-    ${W(false, false, 'solid')}</body>`,
+    ${W(false, false, 'mocha')}</body>`,
 
   // 12 · Three people in the room · carousel 2 · diagram
   'c1-12a': `<body class="grain" style="background:${C.wash}">

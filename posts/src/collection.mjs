@@ -19,8 +19,8 @@ const GRAIN = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
 // The W, never boxed. Its two halves change colour with the ground so it always reads:
 // ivory: sage and mocha; solid mocha or sage: forest and cream; photos: light sage and mocha over a soft shadow.
 const W = (dark = false, name = false, tone = '') => {
-  const solid = tone === 'solid', photo = tone === 'photo' || tone === 'bare', shade = tone === 'photo';
-  const left = solid ? C.forest : (dark || photo) ? '#93A894' : C.sage, right = solid ? '#F3EEE6' : C.mocha;
+  const onMocha = tone === 'mocha', solid = tone === 'solid' || onMocha, photo = tone === 'photo' || tone === 'bare', shade = tone === 'photo';
+  const left = solid ? C.forest : (dark || photo) ? '#93A894' : C.sage, right = onMocha ? '#E2CBB2' : solid ? '#F3EEE6' : C.mocha;
   return `<div style="position:absolute;left:64px;bottom:56px;display:flex;align-items:center;gap:16px">
   ${shade ? `<div style="position:absolute;left:-80px;top:-75px;width:${name ? 560 : 220}px;height:205px;background:radial-gradient(ellipse at ${name ? '22%' : '50%'} 50%, rgba(20,24,20,.72), rgba(20,24,20,.35) 40%, rgba(20,24,20,0) 72%);pointer-events:none"></div>` : ''}
   <svg width="58" height="53" viewBox="0 0 120 110" style="position:relative"><defs><clipPath id="l"><rect width="58" height="110"/></clipPath><clipPath id="r"><rect x="58" width="62" height="110"/></clipPath></defs>

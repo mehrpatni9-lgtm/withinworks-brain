@@ -28,7 +28,7 @@ export default (C, PH, ST, W) => ({
       <img src="${PH('07')}" style="width:100%;height:560px;object-fit:cover;object-position:58% 35%;display:block">
       <p class="serif" style="font-size:84px;font-weight:400;line-height:1.08;color:${C.forest};padding:52px 40px 0">How coaching with me works</p>
       <p class="serif" style="font-size:44px;font-style:italic;font-weight:300;line-height:1.3;color:${C.charcoal};padding:22px 40px 0">A process, not a pill.</p></div>
-    ${W(false, false, 'solid')}</body>`,
+    ${W(false, false, 'mocha')}</body>`,
 
   // The new role starter pack, rethought: the missing piece is the coaching point
   'c1-13': `<body class="grain" style="background:#F4F0E8">
