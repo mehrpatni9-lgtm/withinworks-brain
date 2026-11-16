@@ -80,9 +80,10 @@ const BRAIN = (() => {
   //   03 | approve        01 | caption | new caption text        05 | note | comment
   // Each line becomes a normal approval, caption suggestion or comment on that post.
   function expandVoice(list) {
-    const map = window.POSTMAP || {}, out = [];
+    const out = [];
     list.forEach(e => {
       if (e.kind !== 'Voice') return out.push(e);
+      const map = (window.POSTMAP_OLD && e.time < window.POSTMAP_CUT ? window.POSTMAP_OLD : window.POSTMAP) || {};
       e.text.split(/\n+/).forEach((line, i) => {
         const [code, what, ...rest] = line.split('|').map(x => x.trim());
         if ((code || '').toLowerCase() === 'all' && /approve/i.test(what || '')) { Object.keys(map).filter(k => /^\d+$/.test(k)).forEach((k, j) => out.push({ time: new Date(new Date(e.time).getTime() + i * 50 + j + 1).toISOString(), from: e.from, kind: 'Approved', item: map[k] + ' | voice', text: '' })); return; }
