@@ -70,18 +70,14 @@ const blobs = `<div style="position:absolute;left:-260px;top:-180px;width:900px;
   <div style="position:absolute;right:-300px;top:380px;width:1000px;height:1000px;border-radius:50%;background:radial-gradient(circle,rgba(176,141,111,.45),rgba(176,141,111,0) 65%)"></div>`;
 const analogy = ([ic, h, t], n) => `<div style="display:flex;gap:40px;align-items:flex-start">
   <svg width="130" height="130" viewBox="0 0 100 100" style="flex:none;color:${C.mocha}" fill="none" stroke="${C.forest}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">${ICON[ic]}</svg>
-  <div><p style="font:500 19px Jost;letter-spacing:.24em;text-transform:uppercase;color:${C.mocha}">A coach is like… 0${n}</p>
-  <p class="serif" style="font-size:76px;font-weight:400;line-height:1.05;color:${C.forest};margin-top:10px">${h}</p>
+  <div><p class="serif" style="font-size:76px;font-weight:400;line-height:1.05;color:${C.forest}">${h}</p>
   <p style="font:400 33px/1.45 Jost;margin-top:16px">${t}</p></div></div>`;
 const d2 = name => ({
   1: `<body class="paper">${blobs}
-    <p class="hand" style="position:absolute;left:0;right:0;top:300px;text-align:center;font-size:56px;color:${C.mocha};transform:rotate(-2deg)">how I explain</p>
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:400px;text-align:center;font-size:124px;font-weight:400;line-height:1.02;color:${C.forest}">Coaching</p>
-    <div style="position:absolute;left:539px;top:760px;width:2px;height:120px;background:${C.forest};opacity:.5"></div>
-    <p style="position:absolute;left:0;right:0;top:920px;text-align:center;font:500 22px Jost;letter-spacing:.3em;text-transform:uppercase">in four analogies</p>
-    ${W(false, name)}</body>`,
-  2: `<body class="paper">${blobs}<div style="position:absolute;left:90px;right:90px;top:300px;display:flex;flex-direction:column;gap:120px">${analogy(analogies[0], 1)}${analogy(analogies[1], 2)}</div>${W(false, name)}</body>`,
-  3: `<body class="paper">${blobs}<div style="position:absolute;left:90px;right:90px;top:160px;display:flex;flex-direction:column;gap:110px">${analogy(analogies[2], 3)}${analogy(analogies[3], 4)}</div>${CTA}${W(false, name)}</body>`,
+    <p class="hand" style="position:absolute;left:90px;top:110px;font-size:50px;color:${C.mocha};transform:rotate(-2deg)">how I explain coaching</p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:180px;font-size:96px;font-weight:400;line-height:1.02;color:${C.forest}">A coach is like…</p>
+    <div style="position:absolute;left:90px;right:90px;top:430px;display:flex;flex-direction:column;gap:100px">${analogy(analogies[0])}${analogy(analogies[1])}</div>${W(false, name)}</body>`,
+  2: `<body class="paper">${blobs}<div style="position:absolute;left:90px;right:90px;top:200px;display:flex;flex-direction:column;gap:110px">${analogy(analogies[2])}${analogy(analogies[3])}</div>${CTA}${W(false, name)}</body>`,
 });
 
 const b = await chromium.launch();
