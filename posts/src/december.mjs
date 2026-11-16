@@ -79,8 +79,8 @@ const d2 = name => ({
   2: `<body class="paper">${blobs}
     <p class="serif" style="position:absolute;left:90px;right:90px;top:250px;font-size:210px;font-weight:500;line-height:1;color:${C.mocha}">84%</p>
     <p class="serif" style="position:absolute;left:90px;right:90px;top:490px;font-size:58px;font-weight:400;line-height:1.2;color:${C.forest}">of people who have been coached were satisfied with it.</p>
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:720px;font-size:54px;font-style:italic;font-weight:400;line-height:1.22;color:${C.forest}">Want to give Executive &amp; Transformational Coaching a try?</p>
-    <p style="position:absolute;left:90px;right:90px;top:905px;font:400 19px Jost;letter-spacing:.04em;color:rgba(61,58,53,.7)">Source: ICF and PwC, 2026 Global Consumer Awareness Study</p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:800px;font-size:54px;font-style:italic;font-weight:400;line-height:1.22;color:${C.forest}">Want to give Executive &amp; Transformational Coaching a try?</p>
+    <p style="position:absolute;left:90px;right:90px;top:650px;font:400 19px Jost;letter-spacing:.04em;color:rgba(61,58,53,.7)">Source: ICF and PwC, 2026 Global Consumer Awareness Study</p>
     ${CTA}${W(false, name)}</body>`,
 });
 
