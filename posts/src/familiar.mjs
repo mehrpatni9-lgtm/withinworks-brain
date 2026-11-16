@@ -31,6 +31,12 @@ body { width: 1080px; height: 1350px; overflow: hidden; position: relative; font
 const ST = n => `file://${path.join(HERE, 'stock', n + '.jpg')}`;
 const PICS = [['thought', '72% 35%'], ['late', '50% 50%'], ['boardroom', '40% 55%']];  // Unsplash, see stock/CREDITS.txt
 const thoughts = ['I feel stuck at work.', 'I second-guess every decision.', 'I’ve lost my confidence.'];
+const stats = [  // ICF and PwC 2026, people who have been coached
+  [84, 'Satisfied with it', C.mocha],
+  [65, 'Better decisions', C.forest],
+  [64, 'More confident', C.sage],
+  [63, 'Clearer goals', C.lsage],
+];
 const rows = [
   ['Stuck at work', 41, 'come for their career, the top reason.'],
   ['Second-guessing', 65, 'make better decisions after coaching.'],
@@ -47,14 +53,15 @@ const pages = name => ({
     ${W(false, name)}</body>`,
 
   2: `<body class="paper">
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:120px;font-size:68px;font-weight:400;line-height:1.1;color:${C.forest}">What the <i style="color:${C.mocha}">research</i> says</p>
-    ${rows.map(([h, n, t], i) => { const r = 78, c = 2 * Math.PI * r, col = i ? C.forest : C.mocha;
-      return `<div style="position:absolute;left:90px;right:90px;top:${290 + i * 290}px;height:250px;background:${C.ivory};border-radius:22px;box-shadow:0 10px 26px rgba(60,50,40,.08);display:flex;align-items:center;gap:44px;padding:0 48px 0 36px">
-      <div style="position:relative;width:184px;height:184px;flex:none">
-        <svg width="184" height="184" viewBox="0 0 184 184" style="position:absolute;inset:0;transform:rotate(-90deg)"><circle cx="92" cy="92" r="${r}" fill="none" stroke="${C.track}" stroke-width="14"/><circle cx="92" cy="92" r="${r}" fill="none" stroke="${col}" stroke-width="14" stroke-linecap="round" stroke-dasharray="${(c * n / 100).toFixed(1)} ${c.toFixed(1)}"/></svg>
-        <p class="serif" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:58px;font-weight:500;color:${col};letter-spacing:-.01em">${n}<span style="font-size:32px;margin-left:2px">%</span></p></div>
-      <div><p class="serif" style="font-size:46px;font-style:italic;font-weight:400;line-height:1.05;color:${C.forest}">${h}</p>
-      <p style="font:400 30px/1.4 Jost;margin-top:12px">${t}</p></div></div>`; }).join('')}
+    <p class="lab" style="position:absolute;left:90px;top:100px">[ What the research says ]</p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:64px;font-weight:400;line-height:1.1;color:${C.forest}">What people get <i style="color:${C.mocha}">from coaching</i></p>
+    ${(() => { const top = 380, base = 1060, H = base - top, X0 = 150, colW = 150, gap = 70;
+      const grid = [25, 50, 75, 100].map(v => `<div style="position:absolute;left:${X0 - 60}px;right:90px;top:${base - H * v / 100}px;border-top:1.5px dashed rgba(47,58,50,.14)"></div><p style="position:absolute;left:90px;top:${base - H * v / 100 - 12}px;font:400 18px Jost;color:rgba(61,58,53,.5)">${v}</p>`).join('');
+      const cols = stats.map(([n, h, col], i) => { const x = X0 + 30 + i * (colW + gap), ht = H * n / 100;
+        return `<div style="position:absolute;left:${x}px;top:${base - ht}px;width:${colW}px;height:${ht}px;background:${col};border-radius:18px 18px 0 0"></div>
+        <p class="serif" style="position:absolute;left:${x - 20}px;width:${colW + 40}px;top:${base - ht - 92}px;text-align:center;font-size:66px;font-weight:500;color:${col === C.gold ? C.mocha : col}">${n}<span style="font-size:34px">%</span></p>
+        <p style="position:absolute;left:${x - 30}px;width:${colW + 60}px;top:${base + 22}px;text-align:center;font:500 25px/1.25 Jost;color:${C.charcoal}">${h}</p>`; }).join('');
+      return grid + `<div style="position:absolute;left:${X0 - 60}px;right:90px;top:${base}px;border-top:2.5px solid ${C.forest}"></div>` + cols; })()}
     ${SRC(false)}${W(false, false)}</body>`,
 
   3: `<body class="green">
