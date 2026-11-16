@@ -9,7 +9,7 @@ import { chromium } from '/Users/mehrpatni/mehr-portfolio/node_modules/playwrigh
 
 const HERE = path.dirname(new URL(import.meta.url).pathname);
 const OUT = path.resolve(HERE, '..');
-const C = { forest: '#2F3A32', ivory: '#FAF8F5', paper: '#F3EEE6', mocha: '#B08D6F', gold: '#E3C49C', sage: '#5D6E5E', lsage: '#93A894', charcoal: '#3D3A35', line: 'rgba(47,58,50,.22)', track: 'rgba(47,58,50,.10)' };
+const C = { forest: '#2F3A32', ivory: '#FAF8F5', paper: '#F3EEE6', mocha: '#B08D6F', gold: '#E3C49C', sage: '#5D6E5E', lsage: '#93A894', charcoal: '#3D3A35', line: 'rgba(47,58,50,.22)', track: 'rgba(47,58,50,.09)' };
 const GRAIN = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.2 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`;
 const W = (dark, name) => `<div style="position:absolute;left:90px;bottom:60px;display:flex;align-items:center;gap:14px">
   <svg width="52" height="48" viewBox="0 0 120 110"><defs><clipPath id="l"><rect width="58" height="110"/></clipPath><clipPath id="r"><rect x="58" width="62" height="110"/></clipPath></defs>
@@ -32,9 +32,9 @@ const ST = n => `file://${path.join(HERE, 'stock', n + '.jpg')}`;
 const PICS = [['thought', '72% 35%'], ['late', '50% 50%'], ['boardroom', '40% 55%']];  // Unsplash, see stock/CREDITS.txt
 const thoughts = ['I feel stuck at work.', 'I second-guess every decision.', 'I’ve lost my confidence.'];
 const rows = [
-  ['Stuck at work', 41, 'come for their career, the most common reason.'],
-  ['Second-guessing', 65, 'say coaching helped them make better decisions.'],
-  ['Confidence', 64, 'say they came out of it more confident.'],
+  ['Stuck at work', 41, 'come for their career, the top reason.'],
+  ['Second-guessing', 65, 'make better decisions after coaching.'],
+  ['Confidence', 64, 'feel more confident after coaching.'],
 ];
 
 const pages = name => ({
@@ -47,13 +47,14 @@ const pages = name => ({
     ${W(false, name)}</body>`,
 
   2: `<body class="paper">
-    <p class="lab" style="position:absolute;left:90px;top:110px">[ What the research says ]</p>
-    ${rows.map(([h, n, t], i) => `<div style="position:absolute;left:90px;right:90px;top:${215 + i * 315}px;border-top:1.5px solid ${C.line};padding-top:38px">
-      <p class="serif" style="font-size:44px;font-style:italic;font-weight:400;color:${C.forest}">${h}</p>
-      <div style="display:flex;align-items:center;gap:30px;margin-top:22px">
-        <div style="flex:1;height:30px;background:${C.track};border-radius:15px;overflow:hidden"><div style="width:${n}%;height:100%;background:${i ? C.forest : C.mocha};border-radius:15px"></div></div>
-        <p class="serif" style="font-size:72px;font-weight:500;line-height:1;width:170px;text-align:right;color:${C.forest}">${n}%</p></div>
-      <p style="font:400 30px/1.4 Jost;margin-top:14px;max-width:740px">${t}</p></div>`).join('')}
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:120px;font-size:68px;font-weight:400;line-height:1.1;color:${C.forest}">What the <i style="color:${C.mocha}">research</i> says</p>
+    ${rows.map(([h, n, t], i) => { const r = 78, c = 2 * Math.PI * r, col = i ? C.forest : C.mocha;
+      return `<div style="position:absolute;left:90px;right:90px;top:${290 + i * 290}px;height:250px;background:${C.ivory};border-radius:22px;box-shadow:0 10px 26px rgba(60,50,40,.08);display:flex;align-items:center;gap:44px;padding:0 48px 0 36px">
+      <div style="position:relative;width:184px;height:184px;flex:none">
+        <svg width="184" height="184" viewBox="0 0 184 184" style="position:absolute;inset:0;transform:rotate(-90deg)"><circle cx="92" cy="92" r="${r}" fill="none" stroke="${C.track}" stroke-width="14"/><circle cx="92" cy="92" r="${r}" fill="none" stroke="${col}" stroke-width="14" stroke-linecap="round" stroke-dasharray="${(c * n / 100).toFixed(1)} ${c.toFixed(1)}"/></svg>
+        <p class="serif" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:58px;font-weight:500;color:${col};letter-spacing:-.01em">${n}<span style="font-size:32px;margin-left:2px">%</span></p></div>
+      <div><p class="serif" style="font-size:46px;font-style:italic;font-weight:400;line-height:1.05;color:${C.forest}">${h}</p>
+      <p style="font:400 30px/1.4 Jost;margin-top:12px">${t}</p></div></div>`; }).join('')}
     ${SRC(false)}${W(false, false)}</body>`,
 
   3: `<body class="green">
