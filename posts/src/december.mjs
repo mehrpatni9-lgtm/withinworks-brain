@@ -74,10 +74,14 @@ const analogy = ([ic, h, t], n) => `<div style="display:flex;gap:40px;align-item
   <p style="font:400 33px/1.45 Jost;margin-top:16px">${t}</p></div></div>`;
 const d2 = name => ({
   1: `<body class="paper">${blobs}
-    <p class="hand" style="position:absolute;left:90px;top:110px;font-size:50px;color:${C.mocha};transform:rotate(-2deg)">how I explain coaching</p>
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:180px;font-size:96px;font-weight:400;line-height:1.02;color:${C.forest}">A coach is like…</p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:96px;font-weight:400;line-height:1.02;color:${C.forest}">A coach is like…</p>
     <div style="position:absolute;left:90px;right:90px;top:430px;display:flex;flex-direction:column;gap:100px">${analogy(analogies[0])}${analogy(analogies[1])}</div>${W(false, name)}</body>`,
-  2: `<body class="paper">${blobs}<div style="position:absolute;left:90px;right:90px;top:200px;display:flex;flex-direction:column;gap:110px">${analogy(analogies[2])}${analogy(analogies[3])}</div>${CTA}${W(false, name)}</body>`,
+  2: `<body class="paper">${blobs}<div style="position:absolute;left:90px;right:90px;top:110px;display:flex;flex-direction:column;gap:80px">${analogy(analogies[2])}${analogy(analogies[3])}</div>
+    <div style="position:absolute;left:90px;right:90px;top:690px;border-top:1.5px solid rgba(47,58,50,.25);padding-top:44px">
+      <p class="serif" style="font-size:44px;font-weight:400;line-height:1.25;color:${C.forest}"><span style="font-size:64px;font-weight:500;color:${C.mocha}">84%</span> of people who have been coached were satisfied with it.</p>
+      <p class="serif" style="font-size:44px;font-style:italic;font-weight:400;line-height:1.25;color:${C.forest};margin-top:26px">Want to give Executive &amp; Transformational Coaching a try?</p>
+      <p style="font:400 18px Jost;letter-spacing:.04em;color:rgba(61,58,53,.7);margin-top:22px">Source: ICF and PwC, 2026 Global Consumer Awareness Study</p></div>
+    ${CTA}${W(false, name)}</body>`,
 });
 
 const b = await chromium.launch();
