@@ -78,12 +78,25 @@ const pill = {
 };
 
 const frames = { ...facts, ...pill };
-const only = process.argv[2];
+const only = process.argv[2] === 'pdf' ? '__none__' : process.argv[2];
 const b = await chromium.launch(), p = await b.newPage({ viewport: { width: 1080, height: 1350 } });
 for (const [name, html] of Object.entries(frames)) {
   if (only && !name.startsWith(only)) continue;
   fs.writeFileSync(path.join(HERE, '_tmp_li.html'), `<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head>${html}</html>`);
   await p.goto('file://' + path.join(HERE, '_tmp_li.html')); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(400);
   await p.screenshot({ path: path.join(OUT, name + '.jpg'), type: 'jpeg', quality: 90 });
+}
+// Best-quality PDF for LinkedIn documents (Mehr, 16 Nov): vector text and embedded fonts, one page per frame.
+// Usage: node linkedin.mjs pdf lf   -> ../lf.pdf
+if (process.env.PDF || process.argv[2] === 'pdf') {
+  const pre = process.argv[3] || only, parts = [];
+  for (const [name, html] of Object.entries(frames)) {
+    if (!name.startsWith(pre)) continue;
+    fs.writeFileSync(path.join(HERE, '_tmp_li.html'), `<!doctype html><html><head><meta charset="utf-8"><style>${css} @page{size:2160px 2700px;margin:0} html,body{margin:0}</style></head>${html}</html>`);
+    await p.goto('file://' + path.join(HERE, '_tmp_li.html')); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(400);
+    const out = path.join(HERE, `_${name}.pdf`); await p.pdf({ path: out, width: '2160px', height: '2700px', printBackground: true, scale: 2 }); parts.push(out); // double-size pages: LinkedIn renders documents from page size, so bigger pages stay sharp
+  }
+  const { execFileSync } = await import('child_process');
+  execFileSync('pdfunite', [...parts, path.join(OUT, pre + '.pdf')]); parts.forEach(x => fs.unlinkSync(x));
 }
 fs.unlinkSync(path.join(HERE, '_tmp_li.html')); await b.close(); console.log('rendered');

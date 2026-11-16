@@ -486,3 +486,4 @@ body.home .now { margin-top: 40px; }
   .review.post .btn, .review.post .box .btn { min-height: 34px; height: 34px; padding: 0 14px; font-size: .9rem; }
   .review.post .btn.tick { width: 34px; min-width: 34px; font-size: 1rem; }
 }
+.when-date .posted { display:inline-block; font-weight:600; font-size:.85em; letter-spacing:.04em; color:#fff; background:var(--forest); padding:2px 8px; border-radius:99px; margin-left:2px; }
