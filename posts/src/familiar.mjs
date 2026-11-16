@@ -53,7 +53,7 @@ const pages = name => ({
     ${W(false, name)}</body>`,
 
   2: `<body class="paper">
-    <p class="lab" style="position:absolute;left:90px;top:100px">[ What the research says ]</p>
+    <p class="lab" style="position:absolute;left:90px;top:100px">[ ICF &amp; PwC research says ]</p>
     <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:64px;font-weight:400;line-height:1.1;color:${C.forest}">What people get <i style="color:${C.mocha}">from coaching</i></p>
     ${(() => { const top = 380, base = 1060, H = base - top, X0 = 150, colW = 150, gap = 70;
       const grid = [25, 50, 75, 100].map(v => `<div style="position:absolute;left:${X0 - 60}px;right:90px;top:${base - H * v / 100}px;border-top:1.5px dashed rgba(47,58,50,.14)"></div><p style="position:absolute;left:90px;top:${base - H * v / 100 - 12}px;font:400 18px Jost;color:rgba(61,58,53,.5)">${v}</p>`).join('');
