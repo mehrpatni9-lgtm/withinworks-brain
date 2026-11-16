@@ -47,46 +47,49 @@ INSTAGRAM
   Slide 2: What that hour is like
   Caption: People often ask what actually happens in a session. It’s quieter than you’d think.
 
-06 | Words in the world
+06 | Sound familiar?
+  Caption: Most people come to coaching with a feeling, not a plan. If one of these sounds like you, that is a good place to start. / Book a discovery call on www.withinworksleadership.com
+
+07 | Words in the world
   Slide 1: Night bus stop poster: "Most leaders don't need answers. They need better questions."
   Caption: Decision-making isn’t about right or wrong. It’s based on the facts you have today and the future you’re predicting. / The real skill is asking the right questions.
 
-07 | Three people in the room
+08 | Three people in the room
   Slide 1: Diagram: you, your company, the coach
   Slide 2: What each of the three does
   Caption: Team coaching works best when everyone understands their part in it, including yours. / Enquire about team coaching on www.withinworksleadership.com
 
-08 | The Within Question
+09 | The Within Question
   Slide 1: Dark green card: "Where are you still leading from an old story about yourself?" Handwritten below: "Separate the facts from the story. Does the story change when your perspective does?"
   Caption: Separate the facts from the story. Can the story change when the perspective changes? / The questions worth sitting with rarely feel comfortable at first. No need to answer here. Just notice what comes up.
 
-09 | Leadership, unlearned
+10 | Leadership, unlearned
   Slide 1: Two cards. Then, as a leader: "I gave the answer, quickly." Now, as a coach: "I ask, then wait."
   Caption: As a leader, for years my instinct was to solve. Coaching asked me to do the opposite: ask, then wait. It felt wrong at first. / But people rarely act on an answer someone hands them. They act on the one they find themselves.
 
-10 | Turning points 01
+11 | Turning points 01
   Slide 1: Empty departure lounge at dusk: "A new chapter changes everything around you. Then, quietly, it asks who you are here."
   Caption: For everyone starting again. What did you bring with you, and what did you leave behind?
 
-11 | What a coach hears
+12 | What a coach hears
   Slide 1: Big "Should." "The word I listen for."
   Slide 2: Whose should is it? Often someone else's voice.
   Caption: Some words tell me more than the sentence they’re in. This week, notice how often you say this one.
 
-12 | A book on my table
+13 | A book on my table
   Slide 1: Photo of a book, coffee and glasses: "On my reading table: Time to Think, Nancy Kline"
   Slide 2: Quote: "Everything we do depends for its quality on the thinking we do first."
   Caption: On my table this month. The line that stopped me is on the next slide.
 
-13 | The new role starter pack
+14 | The new role starter pack
   Slide 1: "The new role starter pack": coffee with everyone, a calendar that's no longer yours, reading every email twice, and an empty frame: "Time to ask who you want to be in this role. Not included."
   Caption: Every new role arrives with the same starter pack. What it leaves out is time to decide who you want to be in it. That is where coaching begins.
 
-14 | The Within Question 02
+15 | The Within Question 02
   Slide 1: Two posters on an ivy wall: "What decision are you waiting for permission to make?" / "Whose permission?"
   Caption: A question to sit with this week. Most of us are waiting for someone’s permission. Few of us have asked whose.
 
-15 | Notes from the mat
+16 | Notes from the mat
   Slide 1: Meditation hall photo: "I learned to pause on the mat long before I used it in a coaching room."
   Caption: Spirituality and mindfulness came long before coaching. They taught me the pause.
 
@@ -101,7 +104,10 @@ L2 | Where the answers were
 L3 | The facts and the story
   Text: What are the facts, and what is the story? It is one of the simplest questions I ask, and one of the most useful. / The facts are usually short. The story is usually long.
 
-L4 | Diwali note
+L4 | Sound familiar?
+  Text: Most people come to coaching with a feeling, not a plan. If one of these sounds like you, that is a good place to start. / Book a discovery call on www.withinworksleadership.com
+
+L5 | Diwali note
   Text: Every home is lit up today. / At Diwali we clean every corner and fill it with light. Our working lives have corners too: a decision we keep postponing, a conversation we keep avoiding. / A short note for the season, and the ways I work with leaders when they are ready to look at theirs. / Wishing you a Diwali full of light.
 
 STORIES
