@@ -87,15 +87,24 @@ INSTAGRAM
 15 | What can I help you through?
   Caption: Starting again takes courage, whether it is after a break, in a new field or in a new country. These are the moments I see most often.
 
-16 | Notes from the mat
-  Slide 1: Meditation hall photo: "I learned to pause on the mat long before I used it in a coaching room."
-  Caption: Spirituality and mindfulness came long before coaching. They taught me the pause. / Try Executive & Transformational Coaching today. Book a complimentary discovery call on www.withinworksleadership.com
+16 | A coaching tool I use: Wheel of Life
+  Caption: The Wheel of Life is one of the first tools I use with new clients, and one of the simplest. / You choose eight areas of your life, score each one from 1 to 10 for how satisfied you feel right now, and join the dots. In fifteen minutes you can see what a whole year has looked like. / I always ask people to look at the shape before the numbers. A steady wheel, a lopsided one, one sitting in the middle, or one that needs rebuilding: each tells a different story, and none of them is wrong. / Save this for a quiet evening this month.
 
 17 | How I explain coaching
   Caption: Coaching can be hard to explain until you have tried it. These four comparisons come closest.
 
 18 | What does your wheel say?
   Caption: 2026 is almost over. Before you plan the next year, take fifteen honest minutes to see where this one really went. / The Wheel of Life is one of the simplest tools I use with clients. You choose eight areas of your life, like career, money, health, family and fun, and score each one from 1 to 10 for how satisfied you feel right now. Join the dots and you get a shape. / That shape says a lot. Some wheels are steady. Some are lopsided, with one area carrying the rest. Some sit in the middle, and some need rebuilding after a heavy year. There is no good or bad wheel, only a clearer picture. / Comment WHEEL and I’ll send you the free worksheet in your DMs. It has: • The Wheel of Life, which you can fill in on your phone • What your wheel says: the four wheel types, a question to sit with, and one small step for each / Know which area you want to move in 2027? If you’d like help moving it, book a complimentary discovery call with me on www.withinworksleadership.com
+
+19 | Notes from the mat
+  Slide 1: Meditation hall photo: "I learned to pause on the mat long before I used it in a coaching room."
+  Caption: Spirituality and mindfulness came long before coaching. They taught me the pause. / Try Executive & Transformational Coaching today. Book a complimentary discovery call on www.withinworksleadership.com
+
+20 | A coaching tool I use: Values
+  Caption: Values are the few things that matter most to you. When your work honours them, even hard weeks feel right. When it doesn’t, even a good job can feel wrong. / Most people have never written theirs down. The exercise I use with clients takes about twenty minutes: circle the words that pull you, narrow them to five, then keep three and put each one into your own words. / If you’re thinking about a restart or a new role, start here. Your top three make a very good filter.
+
+21 | A coaching tool I use: Inner voices
+  Caption: We all carry inner voices that once helped us. The one that holds on kept things from going wrong. The one that keeps the peace kept us liked. The one that has to win got us noticed. / Over time they start making decisions for us. In coaching we don’t fight them. We get curious: what is this voice protecting me from, and what would my calm, steady self do instead? / Which one do you hear most at work?
 
 LINKEDIN
 
@@ -117,13 +126,22 @@ L5 | What’s my session all about?
 L6 | What can I help you through?
   Text: Coming back after a career break, changing direction, a new role, a new country. Starting again takes courage. / These are the moments we see most often at WithinWorks Leadership, and where coaching helps most.
 
-L7 | A coach is like
+L7 | The Wheel of Life
+  Text: The Wheel of Life is one of the first tools @Megha Bhalla uses with new clients at WithinWorks Leadership, and one of the simplest. / You choose eight areas of your life, score each one from 1 to 10 for how satisfied you feel right now, and join the dots. In fifteen minutes you can see what a whole year has looked like. / The shape matters more than the numbers. A steady wheel, a lopsided one, one sitting in the middle, or one that needs rebuilding: each tells a different story, and none of them is wrong.
+
+L8 | A coach is like
   Text: Coaching can be hard to explain until you have tried it. These four comparisons come closest. / Which one feels closest to what you need right now?
 
-L8 | What does your wheel say?
+L9 | What does your wheel say?
   Text: 2026 is almost over. Before you plan the next year, take fifteen honest minutes to see where this one really went. / The Wheel of Life is one of the simplest tools @Megha Bhalla uses with clients at WithinWorks Leadership. You choose eight areas of your life, like career, money, health, family and fun, and score each one from 1 to 10 for how satisfied you feel right now. Join the dots and you get a shape. / That shape says a lot. Some wheels are steady. Some are lopsided, with one area carrying the rest. Some sit in the middle, and some need rebuilding after a heavy year. There is no good or bad wheel, only a clearer picture. / Comment WHEEL and we’ll send you the free worksheet. It has: • The Wheel of Life, which you can fill in on your phone • What your wheel says: the four wheel types, a question to sit with, and one small step for each / Know which area you want to move in 2027? Book a complimentary discovery call with Megha on www.withinworksleadership.com
 
-L9 | Diwali note
+L10 | Your values
+  Text: Values are the few things that matter most to us. When work honours them, even hard weeks feel right. When it doesn’t, even a good job can feel wrong. / Most professionals have never written theirs down. The values exercise used at WithinWorks Leadership takes about twenty minutes: circle the words that pull you, narrow them to five, then keep three and define each in your own words. / Planning a restart or a new role? Start here. Your top three make a very good filter.
+
+L11 | The inner voices at work
+  Text: We all carry inner voices that once helped us. The one that holds on kept things from going wrong. The one that keeps the peace kept us liked. The one that has to win got us noticed. / Over time they start making decisions for us. In coaching at WithinWorks Leadership, we don’t fight them. We get curious: what is this voice protecting me from, and what would my calm, steady self do instead? / Which one do you hear most at work?
+
+L12 | Diwali note
   Text: Every home is lit up today. / At Diwali we clean every corner and fill it with light. Our working lives have corners too: a decision we keep postponing, a conversation we keep avoiding. / A short note for the season, and the ways I work with leaders when they are ready to look at theirs. / Wishing you a Diwali full of light.
 
 STORIES
