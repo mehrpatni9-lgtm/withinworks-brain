@@ -43,13 +43,13 @@ const TYPES = [
 
 const pages = name => ({
   1: `<body style="background:${C.forest};color:${C.ivory}">
-    ${[[120, 140, 26], [930, 120, 18], [980, 420, 30], [70, 560, 16], [880, 640, 14], [160, 400, 12]].map(([x, y, r]) => `<svg style="position:absolute;left:${x}px;top:${y}px" width="${r * 2}" height="${r * 2}" viewBox="-10 -10 20 20"><path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z" fill="${C.gold}" opacity=".85"/></svg>`).join('')}
-    <p class="serif" style="position:absolute;left:0;right:0;top:120px;text-align:center;font-size:330px;font-weight:400;line-height:1;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:3px ${C.gold}">2026</p>
-    <p class="serif" style="position:absolute;left:0;right:0;top:420px;text-align:center;font-size:84px;font-style:italic;font-weight:400;color:${C.gold}">is almost over.</p>
-    <p class="serif" style="position:absolute;left:120px;right:120px;top:560px;text-align:center;font-size:52px;font-weight:400;line-height:1.2">What does your wheel say about it?</p>
-    <div style="position:absolute;left:110px;top:760px;text-align:center"><img src="file://${path.join(HERE, 'stock', 'megha-face.png')}" style="width:270px;height:270px;border-radius:50%;border:5px solid ${C.gold};display:block"><p class="serif" style="font-size:34px;color:${C.ivory};margin-top:14px">Megha Bhalla</p><p style="font:500 16px Jost;letter-spacing:.24em;text-transform:uppercase;color:${C.gold};margin-top:4px">Leadership coach</p></div>
-    <div style="position:absolute;left:470px;top:720px">${wheel([8, 6, 4, 7, 5, 6, 8, 3], 460, { ring: 'rgba(250,248,245,.22)', fill: 'rgba(227,196,156,.28)', line: C.gold, dots: true })}</div>
-    <p class="hand" style="position:absolute;right:90px;bottom:70px;font-size:48px;color:${C.gold};transform:rotate(-3deg)">swipe to find your type &rarr;</p>
+    <img src="file://${path.resolve(HERE, '../../../megha-photos/M-17.jpg')}" style="position:absolute;left:190px;top:-430px;width:1700px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 420px)">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(47,58,50,.97) 0%,rgba(47,58,50,.9) 45%,rgba(47,58,50,.55) 80%,rgba(47,58,50,.45) 100%)"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(47,58,50,.85) 0%,rgba(47,58,50,0) 32%,rgba(47,58,50,0) 70%,rgba(47,58,50,.8) 100%)"></div>
+    <p style="position:absolute;left:90px;top:100px;font:500 20px Jost;letter-spacing:.28em;text-transform:uppercase;color:${C.gold}">Year-end check-in</p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:88px;font-weight:400;line-height:1.04">2026 is almost over.</p>
+    <p class="serif" style="position:absolute;left:90px;right:300px;top:262px;font-size:54px;font-weight:400;line-height:1.15;color:${C.gold}"><i>What does your wheel say about it?</i></p>
+    <div style="position:absolute;left:10px;top:520px">${wheel([8, 6, 4, 7, 5, 6, 8, 3], 680, { ring: 'rgba(250,248,245,.28)', fill: 'rgba(227,196,156,.3)', line: C.gold, labels: ['Career', 'Money', 'Health', 'Family', 'Love', 'Friends', 'Growth', 'Fun'], labelCol: 'rgba(250,248,245,.92)' })}</div>
     ${W(true, name)}</body>`,
   2: `<body class="paper">
     <p class="serif" style="position:absolute;left:90px;right:90px;top:100px;font-size:70px;font-weight:400;line-height:1.08;color:${C.forest}">Score 8 areas. <i style="color:${C.mocha}">Find your type.</i></p>
