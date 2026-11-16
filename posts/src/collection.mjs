@@ -72,8 +72,8 @@ const slides = {
   'c1-3': `<body class="grain" style="background:#EFE9E0">
     <div class="grain" style="position:absolute;left:120px;top:170px;width:840px;height:800px;background:${C.forest};transform:rotate(-2deg);box-shadow:0 30px 60px rgba(40,35,30,.28),0 4px 10px rgba(40,35,30,.15)">
       <p class="lab" style="position:absolute;left:76px;top:76px;color:${C.mocha};font-size:20px">The Within Question &middot; 01</p>
-      <p class="serif" style="position:absolute;left:76px;right:76px;top:250px;color:${C.ivory};font-style:italic;font-weight:400;font-size:78px;line-height:1.2">Where are you still leading from an old story about yourself?</p></div>
-    <p class="hand" style="position:absolute;left:170px;right:120px;top:1030px;font-size:54px;line-height:1.1;color:${C.charcoal};transform:rotate(-1deg)">Separate the facts from the story.<br>Does the story change when your perspective does?</p>
+      <p class="serif" style="position:absolute;left:76px;right:76px;top:250px;color:${C.ivory};font-style:italic;font-weight:400;font-size:92px;line-height:1.15">What story about yourself have you outgrown?</p></div>
+    <p class="hand" style="position:absolute;left:170px;right:120px;top:1050px;font-size:58px;line-height:1.1;color:${C.charcoal};transform:rotate(-1deg)">Separate the facts from the story.</p>
     ${W()}</body>`,
 
   // 04 · Leadership, unlearned · single · design (Mehr liked this one)
