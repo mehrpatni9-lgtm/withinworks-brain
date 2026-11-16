@@ -28,18 +28,15 @@ body { width: 1080px; height: 1350px; overflow: hidden; position: relative; font
 .lab { font: 500 18px Jost; letter-spacing: .3em; text-transform: uppercase; color: ${C.mocha}; }
 `;
 
-// Her answers, two per page: what I do, and what it means for you.
-const answers = [
-  ['I deeply listen.', 'To what you say, and to what you leave out.'],
-  ['I show up as myself.', 'So you can feel free to do the same.'],
-  ['I curiously ask.', 'First, I try to see it from where you stand.'],
-  ['I notice the small wins.', 'And I make sure you notice them too.'],
-  ['We build it together.', 'You bring the insight. You own the next step.'],
-  ['I keep it honest.', 'Clear agreements and open conversation,<br>with no judgement.'],
+// A session, start to finish, in plain words: it starts with you, we look closer, you leave with a next step.
+const steps = [
+  ['It starts with you', ['You bring what’s on your mind.', 'A decision, a frustration, a role you’re unsure of. Nothing is too small.'], ['I listen, fully.', 'No advice and no rushing. Just room to say it out loud.']],
+  ['Then we look closer', ['I ask simple questions.', 'The kind that help you see it from a new angle.'], ['You find your own answer.', 'Because it’s yours, it tends to stick.']],
+  ['You leave with a next step', ['One small step, your choice.', 'Something to try before we meet again.'], ['Next time, we start there.', 'That’s how six sessions add up to real change.']],
 ];
 
 const ST = n => `file://${path.join(HERE, 'stock', n + '.jpg')}`;
-const BG = [['cups', 'center 55%'], ['notebook', 'center 50%'], ['chairs', 'center 50%']];  // everyday real photos, Unsplash
+const BG = [['coffeehand', 'center 50%'], ['pen', 'center 45%'], ['roadwalk', 'center 60%']];  // everyday photos, Pexels; never reused in another post
 const SHADOW = [C.mocha, C.lsage, C.gold];
 const avatar = `<div style="position:absolute;left:-34px;top:-44px;width:104px;height:104px;border-radius:50%;overflow:hidden;border:4px solid ${C.ivory};box-shadow:0 6px 16px rgba(0,0,0,.25)"><img src="${FACE}" style="width:100%;height:100%;object-fit:cover;object-position:58% 36%;transform:scale(2.3);transform-origin:58% 36%"></div>`;
 const card = ([h, t], i, side) => `<div style="position:relative;align-self:${side ? 'flex-end' : 'flex-start'};width:780px;background:${C.ivory};border-radius:14px;padding:50px 54px 46px 74px;box-shadow:14px 14px 0 ${SHADOW[i % 3]}">
@@ -52,17 +49,17 @@ const pages = name => ({
     <img src="${COVER}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:46% 50%">
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(243,238,230,.0) 45%,rgba(30,28,24,.35) 100%)"></div>
     <div style="position:absolute;left:56px;top:80px;width:620px;background:${C.ivory};border-radius:50%/46%;padding:96px 92px;box-shadow:0 18px 40px rgba(40,30,20,.22);text-align:center">
-      <p class="serif" style="font-size:62px;font-weight:400;line-height:1.12;color:${C.forest}">Megha, what do you <i style="color:${C.mocha}">do</i> in your sessions?</p></div>
+      <p class="serif" style="font-size:62px;font-weight:400;line-height:1.12;color:${C.forest}">What’s my session <i style="color:${C.mocha}">all about?</i></p></div>
     <span style="position:absolute;left:400px;top:500px;width:46px;height:46px;border-radius:50%;background:${C.ivory};box-shadow:0 10px 24px rgba(40,30,20,.2)"></span>
     <span style="position:absolute;left:448px;top:556px;width:26px;height:26px;border-radius:50%;background:${C.ivory};box-shadow:0 8px 18px rgba(40,30,20,.2)"></span>
-    <p class="hand" style="position:absolute;right:80px;bottom:150px;font-size:54px;color:${C.ivory};transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,.35)">a question I hear often</p>
+    <p class="hand" style="position:absolute;right:80px;bottom:150px;font-size:54px;color:${C.ivory};transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,.35)">let me walk you through one</p>
     ${W(true, name)}</body>`,
   ...Object.fromEntries([0, 1, 2].map(k => [k + 2, `<body style="background:#333">
     <img src="${ST(BG[k][0])}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${BG[k][1]}">
-    <div style="position:absolute;inset:0;background:rgba(25,22,18,.28)"></div>
-    <p style="position:absolute;left:90px;top:100px;font:500 22px Jost;letter-spacing:.24em;text-transform:uppercase;color:${C.forest};background:${C.gold};padding:10px 18px">In my sessions</p>
+    <div style="position:absolute;inset:0;background:rgba(25,22,18,.22)"></div>
+    <p style="position:absolute;left:90px;top:100px;font:500 22px Jost;letter-spacing:.2em;text-transform:uppercase;color:${C.forest};background:${C.gold};padding:10px 18px">0${k + 1} &middot; ${steps[k][0]}</p>
     <div style="position:absolute;left:110px;right:90px;top:${k === 2 ? 270 : 340}px;display:flex;flex-direction:column;gap:96px">
-      ${card(answers[k * 2], k * 2, 0)}${card(answers[k * 2 + 1], k * 2 + 1, 1)}</div>
+      ${card(steps[k][1], k * 2, 0)}${card(steps[k][2], k * 2 + 1, 1)}</div>
     ${k === 2 ? `<p style="position:absolute;left:90px;bottom:150px;background:${C.forest};color:${C.ivory};font:400 32px/1.4 Jost;padding:22px 30px;border-radius:12px;box-shadow:10px 10px 0 ${C.gold}">Book a discovery call on <span style="color:${C.gold}">www.withinworksleadership.com</span></p>` : ''}
     ${W(true, name)}</body>`])),
 });

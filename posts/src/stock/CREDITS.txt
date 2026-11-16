@@ -18,3 +18,11 @@ window: https://unsplash.com/photos/DvyM3bZXvFI (Adam Davis, a woman at a desk l
 late: https://unsplash.com/photos/l12wb6pAzuQ (Vitaly Gariev, man working late at a dimly lit office desk)
 boardroom: https://unsplash.com/photos/bV5dFLEYecM (Craig Lovelidge, an empty conference room)
 thought: https://unsplash.com/photos/swn1SJOdmtU (Eric Soubeyrand de Saint Prix, a thoughtful woman looks out a window)
+Pexels free licence photos (16 Nov 2026)
+coffeehand: https://www.pexels.com/photo/a-person-s-hand-holding-a-cup-of-coffee-11892415/
+pen: https://www.pexels.com/photo/photo-of-person-writing-on-notebook-834897/
+roadwalk: https://www.pexels.com/photo/overhead-shot-of-a-person-walking-8437359/ (Carla Schizzi)
+parkpath: https://www.pexels.com/photo/autumn-park-walkway-17484623/
+sunrisemug: https://www.pexels.com/photo/person-holding-a-cup-of-coffee-7717295/ (Taryn Elliott)
+startline: https://www.pexels.com/photo/top-view-photo-of-shoes-1471880/
+deskwork: https://www.pexels.com/photo/hands-of-a-woman-writing-in-a-note-pad-in-front-of-a-laptop-26093502/
