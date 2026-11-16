@@ -14,3 +14,7 @@ notepad: https://images.unsplash.com/photo-1609338177398-ef256b01b1b4 (brown fra
 glasses: https://images.unsplash.com/photo-1587929501535-1e2d559e8488 (black framed eyeglasses on black book)
 lounge: https://images.unsplash.com/photo-1646947053493-9fdf3e9df08c (a view of an airport through a window)
 diya: https://commons.wikimedia.org/wiki/File:Diwali._diye.jpg (CC0, a clay diya burning at night)
+window: https://unsplash.com/photos/DvyM3bZXvFI (Adam Davis, a woman at a desk looking out a window)
+late: https://unsplash.com/photos/l12wb6pAzuQ (Vitaly Gariev, man working late at a dimly lit office desk)
+boardroom: https://unsplash.com/photos/bV5dFLEYecM (Craig Lovelidge, an empty conference room)
+thought: https://unsplash.com/photos/swn1SJOdmtU (Eric Soubeyrand de Saint Prix, a thoughtful woman looks out a window)

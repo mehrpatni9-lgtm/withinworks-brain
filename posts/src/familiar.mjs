@@ -28,6 +28,8 @@ body { width: 1080px; height: 1350px; overflow: hidden; position: relative; font
 .lab { font: 500 18px Jost; letter-spacing: .3em; text-transform: uppercase; color: ${C.mocha}; }
 `;
 
+const ST = n => `file://${path.join(HERE, 'stock', n + '.jpg')}`;
+const PICS = [['thought', '72% 35%'], ['late', '50% 50%'], ['boardroom', '40% 55%']];  // Unsplash, see stock/CREDITS.txt
 const thoughts = ['I feel stuck at work.', 'I second-guess every decision.', 'I’ve lost my confidence.'];
 const rows = [
   ['Stuck at work', 41, 'come for their career, the most common reason.'],
@@ -37,10 +39,11 @@ const rows = [
 
 const pages = name => ({
   1: `<body class="paper">
-    <p class="lab" style="position:absolute;left:90px;top:110px">[ Sound familiar? ]</p>
-    ${thoughts.map((t, i) => `<div style="position:absolute;left:90px;right:90px;top:${250 + i * 290}px;border-top:1.5px solid ${C.line};padding-top:52px">
-      <p class="serif" style="font-size:76px;font-style:italic;font-weight:400;line-height:1.12;color:${C.forest}">“${t}”</p></div>`).join('')}
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:1130px;font-size:38px;font-weight:400;color:${C.charcoal}">You’re in good company.</p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:96px;font-size:84px;font-weight:400;line-height:1;color:${C.forest}">Sound <i style="color:${C.mocha}">familiar?</i></p>
+    ${thoughts.map((t, i) => `<div style="position:absolute;left:90px;right:90px;top:${250 + i * 290}px;height:260px;border-radius:22px;overflow:hidden;background:${C.ivory};box-shadow:0 10px 26px rgba(60,50,40,.10);display:flex">
+      <div style="flex:1;display:flex;align-items:center;padding:0 40px 0 48px"><p class="serif" style="font-size:50px;font-style:italic;font-weight:400;line-height:1.14;color:${C.forest}">“${t}”</p></div>
+      <img src="${ST(PICS[i][0])}" style="width:400px;height:100%;object-fit:cover;object-position:${PICS[i][1]};flex:none"></div>`).join('')}
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:1135px;font-size:40px;font-weight:400;color:${C.charcoal}">You’re in good company.</p>
     ${W(false, name)}</body>`,
 
   2: `<body class="paper">

@@ -93,6 +93,9 @@ INSTAGRAM
   Slide 1: Meditation hall photo: "I learned to pause on the mat long before I used it in a coaching room."
   Caption: Spirituality and mindfulness came long before coaching. They taught me the pause.
 
+17 | What I do in sessions
+  Caption: People often ask me what actually happens in a session. Here is what I do, and what you can expect from me. / Book a discovery call on www.withinworksleadership.com
+
 LINKEDIN
 
 L1 | How coaching works
@@ -107,7 +110,10 @@ L3 | The facts and the story
 L4 | Sound familiar?
   Text: Most people come to coaching with a feeling, not a plan. If one of these sounds like you, that is a good place to start. / Book a discovery call on www.withinworksleadership.com
 
-L5 | Diwali note
+L5 | What I do in sessions
+  Text: People often ask me what actually happens in a session. Here is what I do, and what you can expect from me. / Book a discovery call on www.withinworksleadership.com
+
+L6 | Diwali note
   Text: Every home is lit up today. / At Diwali we clean every corner and fill it with light. Our working lives have corners too: a decision we keep postponing, a conversation we keep avoiding. / A short note for the season, and the ways I work with leaders when they are ready to look at theirs. / Wishing you a Diwali full of light.
 
 STORIES
