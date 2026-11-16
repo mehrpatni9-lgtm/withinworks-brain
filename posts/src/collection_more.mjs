@@ -71,8 +71,11 @@ export default (C, PH, ST, W) => ({
     ${W()}</body>`,
   'c1-12b': `<body class="grain" style="background:${C.wash}">
     ${[['You', 'bring the willingness to grow.'], ['Your company', 'brings the context, the goals, the stakes.'], ['Your coach', 'brings the space to think clearly, and the right questions.']]
-      .map(([h, t], i) => `<div style="position:absolute;left:100px;right:100px;top:${190 + i * 340}px;border-top:1.5px solid rgba(47,58,50,.35);padding-top:38px">
-        <p class="serif" style="font-size:56px;font-weight:400;line-height:1.25"><span style="color:${C.forest};font-style:italic">${h}</span> ${t}</p></div>`).join('')}
+      .map(([h, t], i) => `<div style="position:absolute;left:100px;right:100px;top:${130 + i * 280}px;border-top:1.5px solid rgba(47,58,50,.35);padding-top:38px">
+        <p class="serif" style="font-size:52px;font-weight:400;line-height:1.22"><span style="color:${C.forest};font-style:italic">${h}</span> ${t}</p></div>`).join('')}
+        <div style="position:absolute;left:100px;right:100px;bottom:150px;background:${C.forest};color:${C.ivory};border-radius:14px;padding:30px 36px">
+      <p class="serif" style="font-size:40px;font-weight:400;line-height:1.2">Founders, want to transform your team?</p>
+      <p style="font-size:26px;font-weight:400;line-height:1.4;margin-top:10px;opacity:.9">Book a discovery call to find out about Executive Team Coaching on <span style="color:#E3C49C">www.withinworksleadership.com</span></p></div>
     ${W()}</body>`,
 
   // 13 · The new role starter pack · single · objects on paper
