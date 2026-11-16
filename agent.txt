@@ -106,16 +106,16 @@ L3 | The facts and the story
   Text: What are the facts, and what is the story? It is one of the simplest questions I ask, and one of the most useful. / The facts are usually short. The story is usually long.
 
 L4 | Sound familiar?
-  Text: Most people come to coaching with a feeling, not a plan. If one of these sounds like you, that is a good place to start.
+  Text: Stuck, second-guessing, low on confidence. Most people come to coaching with a feeling, not a plan. / New research from ICF and PwC shows what changes once they do.
 
 L5 | What’s my session all about?
-  Text: People often ask me what actually happens in a session. Here is one, from start to finish.
+  Text: People often ask @Megha Bhalla what actually happens in a coaching session. / Here is one, from start to finish.
 
 L6 | What can I help you through?
-  Text: Starting again takes courage, whether it is after a break, in a new field or in a new country. These are the moments I see most often.
+  Text: Coming back after a career break, changing direction, a new role, a new country. Starting again takes courage. / These are the moments we see most often at WithinWorks Leadership, and where coaching helps most.
 
-L7 | How I explain coaching
-  Text: Coaching can be hard to explain until you have tried it. These four comparisons come closest.
+L7 | A coach is like
+  Text: Coaching can be hard to explain until you have tried it. These four comparisons come closest. / Which one feels closest to what you need right now?
 
 L8 | Diwali note
   Text: Every home is lit up today. / At Diwali we clean every corner and fill it with light. Our working lives have corners too: a decision we keep postponing, a conversation we keep avoiding. / A short note for the season, and the ways I work with leaders when they are ready to look at theirs. / Wishing you a Diwali full of light.
