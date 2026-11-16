@@ -35,15 +35,17 @@ const answers = [
   ['I curiously ask.', 'First, I try to see it from where you stand.'],
   ['I notice the small wins.', 'And I make sure you notice them too.'],
   ['We build it together.', 'You bring the insight. You own the next step.'],
-  ['I keep it honest.', 'Clear agreements, open conversation, and no judgement.'],
+  ['I keep it honest.', 'Clear agreements and open conversation,<br>with no judgement.'],
 ];
 
-const avatar = `<div style="width:118px;height:118px;border-radius:50%;flex:none;overflow:hidden;border:4px solid ${C.ivory};box-shadow:0 6px 16px rgba(60,50,40,.18)"><img src="${FACE}" style="width:100%;height:100%;object-fit:cover;object-position:58% 36%;transform:scale(2.3);transform-origin:58% 36%"></div>`;
-const bubble = ([h, t], side) => `<div style="display:flex;gap:24px;align-items:flex-end;${side ? 'flex-direction:row-reverse;' : ''}">
+const ST = n => `file://${path.join(HERE, 'stock', n + '.jpg')}`;
+const BG = [['cups', 'center 55%'], ['notebook', 'center 50%'], ['chairs', 'center 50%']];  // everyday real photos, Unsplash
+const SHADOW = [C.mocha, C.lsage, C.gold];
+const avatar = `<div style="position:absolute;left:-34px;top:-44px;width:104px;height:104px;border-radius:50%;overflow:hidden;border:4px solid ${C.ivory};box-shadow:0 6px 16px rgba(0,0,0,.25)"><img src="${FACE}" style="width:100%;height:100%;object-fit:cover;object-position:58% 36%;transform:scale(2.3);transform-origin:58% 36%"></div>`;
+const card = ([h, t], i, side) => `<div style="position:relative;align-self:${side ? 'flex-end' : 'flex-start'};width:780px;background:${C.ivory};border-radius:14px;padding:50px 54px 46px 74px;box-shadow:14px 14px 0 ${SHADOW[i % 3]}">
   ${avatar}
-  <div style="position:relative;background:${C.ivory};border-radius:${side ? '40px 40px 8px 40px' : '40px 40px 40px 8px'};padding:48px 50px;box-shadow:0 12px 30px rgba(60,50,40,.10);max-width:790px">
-    <p class="serif" style="font-size:60px;font-weight:400;line-height:1.08;color:${C.forest}">${h}</p>
-    <p style="font:400 33px/1.42 Jost;margin-top:18px">${t}</p></div></div>`;
+  <p class="serif" style="font-size:58px;font-weight:500;line-height:1.08;color:${C.forest}">${h}</p>
+  <p style="font:400 33px/1.42 Jost;margin-top:16px">${t}</p></div>`;
 
 const pages = name => ({
   1: `<body style="background:#d9cfc2">
@@ -55,12 +57,14 @@ const pages = name => ({
     <span style="position:absolute;left:448px;top:556px;width:26px;height:26px;border-radius:50%;background:${C.ivory};box-shadow:0 8px 18px rgba(40,30,20,.2)"></span>
     <p class="hand" style="position:absolute;right:80px;bottom:150px;font-size:54px;color:${C.ivory};transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,.35)">a question I hear often</p>
     ${W(true, name)}</body>`,
-  ...Object.fromEntries([0, 1, 2].map(k => [k + 2, `<body class="paper">
-    <p class="lab" style="position:absolute;left:90px;top:110px">[ In my sessions ]</p>
-    <div style="position:absolute;left:70px;right:70px;top:${k === 2 ? 250 : 380}px;display:flex;flex-direction:column;gap:90px">
-      ${bubble(answers[k * 2], 0)}${bubble(answers[k * 2 + 1], 1)}</div>
-    ${k === 2 ? `<p class="serif" style="position:absolute;left:90px;right:90px;bottom:150px;font-size:38px;font-weight:400;line-height:1.35;color:${C.forest}">Book a discovery call on <i>www.withinworksleadership.com</i></p>` : ''}
-    ${W(false, name)}</body>`])),
+  ...Object.fromEntries([0, 1, 2].map(k => [k + 2, `<body style="background:#333">
+    <img src="${ST(BG[k][0])}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${BG[k][1]}">
+    <div style="position:absolute;inset:0;background:rgba(25,22,18,.28)"></div>
+    <p style="position:absolute;left:90px;top:100px;font:500 22px Jost;letter-spacing:.24em;text-transform:uppercase;color:${C.forest};background:${C.gold};padding:10px 18px">In my sessions</p>
+    <div style="position:absolute;left:110px;right:90px;top:${k === 2 ? 270 : 340}px;display:flex;flex-direction:column;gap:96px">
+      ${card(answers[k * 2], k * 2, 0)}${card(answers[k * 2 + 1], k * 2 + 1, 1)}</div>
+    ${k === 2 ? `<p style="position:absolute;left:90px;bottom:150px;background:${C.forest};color:${C.ivory};font:400 32px/1.4 Jost;padding:22px 30px;border-radius:12px;box-shadow:10px 10px 0 ${C.gold}">Book a discovery call on <span style="color:${C.gold}">www.withinworksleadership.com</span></p>` : ''}
+    ${W(true, name)}</body>`])),
 });
 
 const b = await chromium.launch();
