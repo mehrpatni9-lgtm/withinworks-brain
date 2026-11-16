@@ -39,7 +39,7 @@ const steps = [
 const ST = n => `file://${path.join(HERE, 'stock', n + '.jpg')}`;
 const BG = [['coffeehand', 'center 50%'], ['pen', 'center 45%'], ['roadwalk', 'center 60%']];  // everyday photos, Pexels; never reused in another post
 const SHADOW = [C.mocha, C.lsage, C.gold];
-const avatar = `<div style="position:absolute;left:-34px;top:-44px;width:104px;height:104px;border-radius:50%;overflow:hidden;border:4px solid ${C.ivory};box-shadow:0 6px 16px rgba(0,0,0,.25)"><img src="${FACE}" style="width:100%;height:100%;object-fit:cover;object-position:58% 36%;transform:scale(2.3);transform-origin:58% 36%"></div>`;
+const avatar = `<div style="position:absolute;left:-34px;top:-44px;width:104px;height:104px;border-radius:50%;overflow:hidden;border:4px solid ${C.ivory};box-shadow:0 6px 16px rgba(0,0,0,.25)"><img src="${FACE}" style="width:100%;height:100%;object-fit:cover;object-position:58% 46%;transform:scale(2.3);transform-origin:58% 46%"></div>`;
 const card = ([h, t], i, side, li) => { h = li ? (LI_SWAP[h] || h) : h; return `<div style="position:relative;align-self:${side ? 'flex-end' : 'flex-start'};width:780px;background:${C.ivory};border-radius:14px;padding:50px 54px 46px 74px;box-shadow:14px 14px 0 ${SHADOW[i % 3]}">
   ${avatar}
   <p class="serif" style="font-size:58px;font-weight:500;line-height:1.08;color:${C.forest}">${h}</p>

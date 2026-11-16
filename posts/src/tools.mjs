@@ -25,7 +25,10 @@ body { width: 1080px; height: 1350px; overflow: hidden; position: relative; font
 .serif { font-family: Fraunces, serif; } .hand { font-family: Caveat, cursive; }
 .lab { font: 500 20px Jost; letter-spacing: .28em; text-transform: uppercase; }
 `;
-const series = (li, col) => `<p class="lab" style="position:absolute;left:90px;top:100px;color:${col}">${li ? 'A coaching tool we use' : 'A coaching tool I use'}</p>`;
+const ST = n => `file://${path.join(HERE, 'stock', n + '.jpg')}`;
+const ICON = col => `<svg width="34" height="34" viewBox="0 0 34 34" style="flex:none"><circle cx="17" cy="17" r="15" fill="none" stroke="${col}" stroke-width="1.8"/><path d="M17 7 L19.2 14.8 L27 17 L19.2 19.2 L17 27 L14.8 19.2 L7 17 L14.8 14.8 Z" fill="${col}"/></svg>`;
+const series = (li, col) => `<div style="position:absolute;left:90px;top:94px;display:flex;align-items:center;gap:14px">${ICON(col)}<p class="lab" style="color:${col}">${li ? 'A coaching tool we use' : 'A coaching tool I use'}</p></div>`;
+const photo = (img, pos, shade) => `<img src="${ST(img)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${pos}"><div style="position:absolute;inset:0;background:${shade}"></div>`;
 const cta = (li, dark) => `<div style="position:absolute;left:90px;right:90px;bottom:140px;background:${dark ? C.ivory : C.forest};color:${dark ? C.forest : C.ivory};border-radius:14px;padding:26px 34px;box-shadow:10px 10px 0 ${C.gold}">
   <p class="serif" style="font-size:36px;line-height:1.2">${li ? 'Want to use this with a coach?' : 'Want to work through this together?'}</p>
   <p style="font:400 25px/1.4 Jost;margin-top:8px">Book a complimentary discovery call${li ? ' with Megha Bhalla' : ''} on <span style="color:${dark ? C.mocha : C.gold}">www.withinworksleadership.com</span></p></div>`;
@@ -48,11 +51,11 @@ const TYPES = [
 ];
 
 const t1 = li => ({
-  1: `<body class="paper">${series(li, C.mocha)}
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:100px;font-weight:400;line-height:1;color:${C.forest}">The Wheel <i style="color:${C.mocha}">of Life</i></p>
-    <p style="position:absolute;left:90px;right:120px;top:290px;font:400 30px/1.45 Jost">${li ? 'One of the first exercises Megha Bhalla does with new clients.' : 'One of the first exercises I do with new clients.'} Fifteen minutes, one page, and a whole year at a glance.</p>
-    <div style="position:absolute;left:170px;top:470px">${wheel([8, 6, 4, 7, 5, 6, 8, 3], 740, { ring: 'rgba(47,58,50,.18)', fill: 'rgba(176,141,111,.25)', line: C.mocha, labels: AREAS, labelCol: C.forest, fs: 30 })}</div>
-    ${W(false, li)}</body>`,
+  1: `<body style="background:#1e1a16;color:${C.ivory}">${photo('sunchair', '62% 50%', 'linear-gradient(180deg,rgba(24,20,16,.86) 0%,rgba(24,20,16,.5) 40%,rgba(24,20,16,.66) 100%)')}${series(li, C.gold)}
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:100px;font-weight:400;line-height:1;color:${C.ivory}">The Wheel <i style="color:${C.gold}">of Life</i></p>
+    <p style="position:absolute;left:90px;right:120px;top:290px;font:400 30px/1.45 Jost;color:rgba(250,248,245,.92)">${li ? 'One of the first exercises Megha Bhalla does with new clients.' : 'One of the first exercises I do with new clients.'} Fifteen minutes, one page, and a whole year at a glance.</p>
+    <div style="position:absolute;left:170px;top:470px">${wheel([8, 6, 4, 7, 5, 6, 8, 3], 740, { ring: 'rgba(250,248,245,.3)', fill: 'rgba(227,196,156,.28)', line: C.gold, labels: AREAS, labelCol: 'rgba(250,248,245,.95)', fs: 30 })}</div>
+    ${W(true, li)}</body>`,
   2: `<body class="paper">
     <p class="serif" style="position:absolute;left:90px;right:90px;top:100px;font-size:70px;font-weight:400;line-height:1.05;color:${C.forest}">How it <i style="color:${C.mocha}">works</i></p>
     ${[['Choose eight areas of your life.', `<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px">${AREAS.map(a => `<span style="background:${C.ivory};border:1.5px solid rgba(47,58,50,.18);border-radius:99px;padding:8px 20px;font:400 24px Jost">${a}</span>`).join('')}</div><p style="font:400 25px/1.4 Jost;margin-top:14px;opacity:.75">Or your own words: spirituality, home, community.</p>`],
@@ -76,11 +79,11 @@ const t1 = li => ({
 const WORDS = ['Security', 'Freedom', 'Impact', 'Calm', 'Courage', 'Balance', 'Growth', 'Learning', 'Faith', 'Recognition', 'Honesty', 'Family', 'Adventure', 'Service', 'Wealth', 'Joy', 'Belonging', 'Legacy'];
 const CIRCLED = new Set(['Freedom', 'Family', 'Growth']);
 const t2 = li => ({
-  1: `<body class="grain" style="background:${C.forest};color:${C.ivory}">${series(li, C.gold)}
+  1: `<body style="background:${C.forest};color:${C.ivory}">${photo('blindsplant', '50% 40%', 'linear-gradient(180deg,rgba(30,36,32,.86) 0%,rgba(30,36,32,.45) 45%,rgba(30,36,32,.7) 100%)')}${series(li, C.gold)}
     <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:100px;font-weight:400;line-height:1">Your <i style="color:${C.gold}">values</i></p>
     <p style="position:absolute;left:90px;right:140px;top:290px;font:400 31px/1.45 Jost;opacity:.92">The few things that matter most to you. When work honours them, even hard weeks feel right. When it doesn’t, even a good job can feel wrong.</p>
     <div style="position:absolute;left:90px;right:90px;top:600px;display:flex;flex-wrap:wrap;gap:44px 58px;align-items:center">
-      ${WORDS.map((w, i) => `<span class="serif" style="position:relative;font-size:${[44, 38, 50, 36, 42][i % 5]}px;${CIRCLED.has(w) ? `color:${C.gold}` : 'color:rgba(250,248,245,.55)'}">${w}${CIRCLED.has(w) ? `<svg style="position:absolute;left:-18px;top:-12px;width:calc(100% + 36px);height:calc(100% + 24px)" viewBox="0 0 100 40" preserveAspectRatio="none"><ellipse cx="50" cy="20" rx="48" ry="18" fill="none" stroke="${C.gold}" stroke-width="1.6" transform="rotate(-3 50 20)"/></svg>` : ''}</span>`).join('')}</div>
+      ${WORDS.map((w, i) => `<span class="serif" style="position:relative;font-size:${[44, 38, 50, 36, 42][i % 5]}px;${CIRCLED.has(w) ? `color:${C.gold}` : 'color:rgba(250,248,245,.62)'}">${w}${CIRCLED.has(w) ? `<svg style="position:absolute;left:-18px;top:-12px;width:calc(100% + 36px);height:calc(100% + 24px)" viewBox="0 0 100 40" preserveAspectRatio="none"><ellipse cx="50" cy="20" rx="48" ry="18" fill="none" stroke="${C.gold}" stroke-width="1.6" transform="rotate(-3 50 20)"/></svg>` : ''}</span>`).join('')}</div>
     ${W(true, li)}</body>`,
   2: `<body class="paper">
     <p class="serif" style="position:absolute;left:90px;right:90px;top:100px;font-size:70px;font-weight:400;line-height:1.05;color:${C.forest}">Find yours in <i style="color:${C.mocha}">20 minutes</i></p>
@@ -107,8 +110,8 @@ const VOICES = [
   ['The one who can’t sit still', '“Fine. What’s next?”', 'Kept you moving and curious.'],
 ];
 const t3 = li => ({
-  1: `<body class="grain" style="background:${C.mocha};color:${C.ivory}">${series(li, C.forest)}
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:92px;font-weight:400;line-height:1.02">The inner <i style="color:${C.forest}">voices</i> at work</p>
+  1: `<body style="background:#151515;color:${C.ivory}">${photo('windowfigure', '50% 40%', 'linear-gradient(180deg,rgba(18,18,18,.82) 0%,rgba(18,18,18,.45) 45%,rgba(18,18,18,.55) 100%)')}${series(li, C.gold)}
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:92px;font-weight:400;line-height:1.02">The inner <i style="color:${C.gold}">voices</i> at work</p>
     <p style="position:absolute;left:90px;right:150px;top:390px;font:400 31px/1.45 Jost">Old habits of mind that once protected us. Over time, they start making our decisions for us.</p>
     ${VOICES.map(([, q], i) => `<div style="position:absolute;${i % 2 ? 'right:70px' : 'left:70px'};top:${590 + i * 150}px;max-width:640px;background:${C.ivory};color:${C.forest};border-radius:${i % 2 ? '30px 30px 6px 30px' : '30px 30px 30px 6px'};padding:24px 32px;box-shadow:0 10px 24px rgba(40,30,20,.18)"><p class="serif" style="font-size:33px;font-style:italic;line-height:1.25">${q}</p></div>`).join('')}
     ${W(true, li)}</body>`,

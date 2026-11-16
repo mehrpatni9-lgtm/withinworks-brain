@@ -26,3 +26,6 @@ parkpath: https://www.pexels.com/photo/autumn-park-walkway-17484623/
 sunrisemug: https://www.pexels.com/photo/person-holding-a-cup-of-coffee-7717295/ (Taryn Elliott)
 startline: https://www.pexels.com/photo/top-view-photo-of-shoes-1471880/
 deskwork: https://www.pexels.com/photo/hands-of-a-woman-writing-in-a-note-pad-in-front-of-a-laptop-26093502/
+sunchair: https://www.pexels.com/photo/empty-chair-in-light-in-room-in-shadow-15154651/
+blindsplant: https://www.pexels.com/photo/silhouette-of-plant-against-window-blinds-30546259/ (Lisa Fotios)
+windowfigure: https://www.pexels.com/photo/silhouette-of-a-person-staring-at-windows-20492225/
