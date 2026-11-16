@@ -43,18 +43,22 @@ const TYPES = [
 
 const pages = name => ({
   1: `<body style="background:${C.forest};color:${C.ivory}">
-    <p style="position:absolute;left:90px;top:100px;font:500 20px Jost;letter-spacing:.28em;text-transform:uppercase;color:${C.gold}">Year-end check-in</p>
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:86px;font-weight:400;line-height:1.05">What does your wheel say about <i style="color:${C.gold}">your 2026?</i></p>
-    <div style="position:absolute;left:150px;top:430px">${wheel([8, 6, 4, 7, 5, 6, 8, 3], 780, { ring: 'rgba(250,248,245,.22)', fill: 'rgba(227,196,156,.28)', line: C.gold, labels: ['Career', 'Money', 'Health', 'Family', 'Love', 'Friends', 'Growth', 'Fun'], labelCol: 'rgba(250,248,245,.85)' })}</div>
+    ${[[120, 140, 26], [930, 120, 18], [980, 420, 30], [70, 560, 16], [880, 640, 14], [160, 400, 12]].map(([x, y, r]) => `<svg style="position:absolute;left:${x}px;top:${y}px" width="${r * 2}" height="${r * 2}" viewBox="-10 -10 20 20"><path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z" fill="${C.gold}" opacity=".85"/></svg>`).join('')}
+    <p class="serif" style="position:absolute;left:0;right:0;top:120px;text-align:center;font-size:330px;font-weight:400;line-height:1;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:3px ${C.gold}">2026</p>
+    <p class="serif" style="position:absolute;left:0;right:0;top:420px;text-align:center;font-size:84px;font-style:italic;font-weight:400;color:${C.gold}">is almost over.</p>
+    <p class="serif" style="position:absolute;left:120px;right:120px;top:560px;text-align:center;font-size:52px;font-weight:400;line-height:1.2">What does your wheel say about it?</p>
+    <div style="position:absolute;left:110px;top:760px;text-align:center"><img src="file://${path.join(HERE, 'stock', 'megha-face.png')}" style="width:270px;height:270px;border-radius:50%;border:5px solid ${C.gold};display:block"><p class="serif" style="font-size:34px;color:${C.ivory};margin-top:14px">Megha Bhalla</p><p style="font:500 16px Jost;letter-spacing:.24em;text-transform:uppercase;color:${C.gold};margin-top:4px">Leadership coach</p></div>
+    <div style="position:absolute;left:470px;top:720px">${wheel([8, 6, 4, 7, 5, 6, 8, 3], 460, { ring: 'rgba(250,248,245,.22)', fill: 'rgba(227,196,156,.28)', line: C.gold, dots: true })}</div>
+    <p class="hand" style="position:absolute;right:90px;bottom:70px;font-size:48px;color:${C.gold};transform:rotate(-3deg)">swipe to find your type &rarr;</p>
     ${W(true, name)}</body>`,
   2: `<body class="paper">
     <p class="serif" style="position:absolute;left:90px;right:90px;top:100px;font-size:70px;font-weight:400;line-height:1.08;color:${C.forest}">Score 8 areas. <i style="color:${C.mocha}">Find your type.</i></p>
     <div style="position:absolute;left:90px;right:90px;top:250px;display:grid;grid-template-columns:1fr 1fr;gap:26px">
       ${TYPES.map(([h, t, sc], i) => `<div style="background:${C.ivory};border-radius:20px;padding:26px 20px 24px;text-align:center;box-shadow:0 10px 24px rgba(60,50,40,.08)">
         ${wheel(sc, 210, { ring: 'rgba(47,58,50,.16)', fill: i === 1 ? 'rgba(176,141,111,.3)' : 'rgba(147,168,148,.3)', line: i === 1 ? C.mocha : C.sage })}
-        <p class="serif" style="font-size:38px;font-weight:500;color:${C.forest};margin-top:12px">${h}</p>
-        <p style="font:400 24px Jost;margin-top:4px;opacity:.75">${t}</p></div>`).join('')}</div>
-    <p style="position:absolute;left:90px;right:90px;top:1115px;text-align:center"><span style="display:inline-block;background:${C.forest};color:${C.ivory};font:500 34px Jost;letter-spacing:.04em;padding:22px 40px;border-radius:14px;box-shadow:10px 10px 0 ${C.gold}">Comment <b style="color:${C.gold};letter-spacing:.12em">WHEEL</b> ${name ? 'and we’ll send it to you' : 'and I’ll send it to you'}</span></p>
+        <p class="serif" style="font-size:40px;font-weight:500;color:${C.forest};margin-top:14px">${h}</p>
+</div>`).join('')}</div>
+    <div style="position:absolute;left:90px;right:90px;top:1095px;display:flex;align-items:center;justify-content:center;gap:26px"><span style="display:inline-block;background:${C.forest};color:${C.ivory};font:500 34px Jost;letter-spacing:.04em;padding:22px 40px;border-radius:14px;box-shadow:10px 10px 0 ${C.gold}">Comment <b style="color:${C.gold};letter-spacing:.12em">WHEEL</b> ${name ? 'and we’ll send it to you' : 'and I’ll send it to you'}</span></div>
     ${W(false, name)}</body>`,
 });
 
