@@ -69,18 +69,18 @@ const analogies = [
 const blobs = `<div style="position:absolute;left:-260px;top:-180px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(147,168,148,.55),rgba(147,168,148,0) 65%)"></div>
   <div style="position:absolute;right:-300px;top:380px;width:1000px;height:1000px;border-radius:50%;background:radial-gradient(circle,rgba(176,141,111,.45),rgba(176,141,111,0) 65%)"></div>`;
 const analogy = ([ic, h, t], n) => `<div style="display:flex;gap:40px;align-items:flex-start">
-  <svg width="130" height="130" viewBox="0 0 100 100" style="flex:none;color:${C.mocha}" fill="none" stroke="${C.forest}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">${ICON[ic]}</svg>
-  <div><p class="serif" style="font-size:76px;font-weight:400;line-height:1.05;color:${C.forest}">${h}</p>
-  <p style="font:400 33px/1.45 Jost;margin-top:16px">${t}</p></div></div>`;
+  <svg width="104" height="104" viewBox="0 0 100 100" style="flex:none;color:${C.mocha}" fill="none" stroke="${C.forest}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">${ICON[ic]}</svg>
+  <div><p class="serif" style="font-size:60px;font-weight:400;line-height:1.05;color:${C.forest}">${h}</p>
+  <p style="font:400 30px/1.4 Jost;margin-top:10px">${t}</p></div></div>`;
 const d2 = name => ({
   1: `<body class="paper">${blobs}
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:96px;font-weight:400;line-height:1.02;color:${C.forest}">A coach is like…</p>
-    <div style="position:absolute;left:90px;right:90px;top:430px;display:flex;flex-direction:column;gap:100px">${analogy(analogies[0])}${analogy(analogies[1])}</div>${W(false, name)}</body>`,
-  2: `<body class="paper">${blobs}<div style="position:absolute;left:90px;right:90px;top:110px;display:flex;flex-direction:column;gap:80px">${analogy(analogies[2])}${analogy(analogies[3])}</div>
-    <div style="position:absolute;left:90px;right:90px;top:690px;border-top:1.5px solid rgba(47,58,50,.25);padding-top:44px">
-      <p class="serif" style="font-size:44px;font-weight:400;line-height:1.25;color:${C.forest}"><span style="font-size:64px;font-weight:500;color:${C.mocha}">84%</span> of people who have been coached were satisfied with it.</p>
-      <p class="serif" style="font-size:44px;font-style:italic;font-weight:400;line-height:1.25;color:${C.forest};margin-top:26px">Want to give Executive &amp; Transformational Coaching a try?</p>
-      <p style="font:400 18px Jost;letter-spacing:.04em;color:rgba(61,58,53,.7);margin-top:22px">Source: ICF and PwC, 2026 Global Consumer Awareness Study</p></div>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:110px;font-size:88px;font-weight:400;line-height:1.02;color:${C.forest}">A coach is like…</p>
+    <div style="position:absolute;left:90px;right:90px;top:310px;display:flex;flex-direction:column;gap:72px">${analogies.map(x => analogy(x)).join('')}</div>${W(false, name)}</body>`,
+  2: `<body class="paper">${blobs}
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:250px;font-size:210px;font-weight:500;line-height:1;color:${C.mocha}">84%</p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:490px;font-size:58px;font-weight:400;line-height:1.2;color:${C.forest}">of people who have been coached were satisfied with it.</p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:720px;font-size:54px;font-style:italic;font-weight:400;line-height:1.22;color:${C.forest}">Want to give Executive &amp; Transformational Coaching a try?</p>
+    <p style="position:absolute;left:90px;right:90px;top:905px;font:400 19px Jost;letter-spacing:.04em;color:rgba(61,58,53,.7)">Source: ICF and PwC, 2026 Global Consumer Awareness Study</p>
     ${CTA}${W(false, name)}</body>`,
 });
 
