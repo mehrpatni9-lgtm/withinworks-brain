@@ -49,16 +49,19 @@ const pages = name => ({
     <p style="position:absolute;left:90px;top:100px;font:500 20px Jost;letter-spacing:.28em;text-transform:uppercase;color:${C.gold}">Year-end check-in</p>
     <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:88px;font-weight:400;line-height:1.04">2026 is almost over.</p>
     <p class="serif" style="position:absolute;left:90px;right:300px;top:262px;font-size:54px;font-weight:400;line-height:1.15;color:${C.gold}"><i>What does your wheel say about it?</i></p>
-    <div style="position:absolute;left:10px;top:520px">${wheel([8, 6, 4, 7, 5, 6, 8, 3], 680, { ring: 'rgba(250,248,245,.28)', fill: 'rgba(227,196,156,.3)', line: C.gold, labels: ['Career', 'Money', 'Health', 'Family', 'Love', 'Friends', 'Growth', 'Fun'], labelCol: 'rgba(250,248,245,.92)' })}</div>
+    <p style="position:absolute;left:90px;right:440px;top:420px;font:400 27px/1.45 Jost;color:rgba(250,248,245,.88)">The Wheel of Life is a simple coaching tool. Score eight areas of your life from 1 to 10, and the shape shows where your year really went.</p>
+    <div style="position:absolute;left:10px;top:600px">${wheel([8, 6, 4, 7, 5, 6, 8, 3], 640, { ring: 'rgba(250,248,245,.28)', fill: 'rgba(227,196,156,.3)', line: C.gold, labels: ['Career', 'Money', 'Health', 'Family', 'Love', 'Friends', 'Growth', 'Fun'], labelCol: 'rgba(250,248,245,.92)' })}</div>
     ${W(true, name)}</body>`,
   2: `<body class="paper">
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:100px;font-size:70px;font-weight:400;line-height:1.08;color:${C.forest}">Score 8 areas. <i style="color:${C.mocha}">Find your type.</i></p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:100px;font-size:70px;font-weight:400;line-height:1.08;color:${C.forest}">Which wheel is <i style="color:${C.mocha}">yours?</i></p>
     <div style="position:absolute;left:90px;right:90px;top:250px;display:grid;grid-template-columns:1fr 1fr;gap:26px">
       ${TYPES.map(([h, t, sc], i) => `<div style="background:${C.ivory};border-radius:20px;padding:26px 20px 24px;text-align:center;box-shadow:0 10px 24px rgba(60,50,40,.08)">
         ${wheel(sc, 210, { ring: 'rgba(47,58,50,.16)', fill: i === 1 ? 'rgba(176,141,111,.3)' : 'rgba(147,168,148,.3)', line: i === 1 ? C.mocha : C.sage })}
         <p class="serif" style="font-size:40px;font-weight:500;color:${C.forest};margin-top:14px">${h}</p>
 </div>`).join('')}</div>
-    <div style="position:absolute;left:90px;right:90px;top:1095px;display:flex;align-items:center;justify-content:center;gap:26px"><span style="display:inline-block;background:${C.forest};color:${C.ivory};font:500 34px Jost;letter-spacing:.04em;padding:22px 40px;border-radius:14px;box-shadow:10px 10px 0 ${C.gold}">Comment <b style="color:${C.gold};letter-spacing:.12em">WHEEL</b> ${name ? 'and we’ll send it to you' : 'and I’ll send it to you'}</span></div>
+    <div style="position:absolute;left:90px;right:90px;top:1060px;text-align:center">
+      <span style="display:inline-block;background:${C.forest};color:${C.ivory};font:500 34px Jost;letter-spacing:.04em;padding:22px 40px;border-radius:14px;box-shadow:10px 10px 0 ${C.gold}">Comment <b style="color:${C.gold};letter-spacing:.12em">WHEEL</b> for the free worksheet</span>
+      <p style="font:400 25px/1.4 Jost;margin-top:26px;color:${C.charcoal}">The wheel to fill in, plus what your type means. Sent to your DMs.</p></div>
     ${W(false, name)}</body>`,
 });
 
