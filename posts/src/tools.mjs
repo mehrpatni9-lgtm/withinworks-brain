@@ -26,8 +26,8 @@ body { width: 1080px; height: 1350px; overflow: hidden; position: relative; font
 .lab { font: 500 20px Jost; letter-spacing: .28em; text-transform: uppercase; }
 `;
 const ST = n => `file://${path.join(HERE, 'stock', n + '.jpg')}`;
-const ICON = col => `<svg width="34" height="34" viewBox="0 0 34 34" style="flex:none"><circle cx="17" cy="17" r="15" fill="none" stroke="${col}" stroke-width="1.8"/><path d="M17 7 L19.2 14.8 L27 17 L19.2 19.2 L17 27 L14.8 19.2 L7 17 L14.8 14.8 Z" fill="${col}"/></svg>`;
-const series = (li, col) => `<div style="position:absolute;left:90px;top:94px;display:flex;align-items:center;gap:14px">${ICON(col)}<p class="lab" style="color:${col}">${li ? 'A coaching tool we use' : 'A coaching tool I use'}</p></div>`;
+const ICON = col => `<svg width="48" height="48" viewBox="0 0 24 24" style="flex:none" fill="none" stroke="${col}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/><path d="M3 3l1.2 2.8L11 12.6"/><rect x="11.6" y="13.1" width="8" height="3.4" rx="1.4" transform="rotate(45 15.6 14.8)" fill="${col}" stroke="none"/></svg>`;
+const series = (li, col) => `<div style="position:absolute;left:90px;top:88px;display:flex;align-items:center;gap:16px">${ICON(col)}<p class="lab" style="color:${col}">${li ? 'A coaching tool we use' : 'A coaching tool I use'}</p></div>`;
 const photo = (img, pos, shade) => `<img src="${ST(img)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${pos}"><div style="position:absolute;inset:0;background:${shade}"></div>`;
 const cta = (li, dark) => `<div style="position:absolute;left:90px;right:90px;bottom:140px;background:${dark ? C.ivory : C.forest};color:${dark ? C.forest : C.ivory};border-radius:14px;padding:26px 34px;box-shadow:10px 10px 0 ${C.gold}">
   <p class="serif" style="font-size:36px;line-height:1.2">${li ? 'Want to use this with a coach?' : 'Want to work through this together?'}</p>
