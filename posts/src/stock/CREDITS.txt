@@ -30,5 +30,5 @@ sunchair: https://www.pexels.com/photo/empty-chair-in-light-in-room-in-shadow-15
 blindsplant: https://www.pexels.com/photo/silhouette-of-plant-against-window-blinds-30546259/ (Lisa Fotios)
 windowfigure: https://www.pexels.com/photo/silhouette-of-a-person-staring-at-windows-20492225/
 Pexels free licence photos (20 Nov 2026)
-office: https://www.pexels.com/photo/380768/ (an open office with plants)
+tower: https://www.pexels.com/photo/323705/ (a glass office tower from below)
 laptopwoman: https://www.pexels.com/photo/3756679/ (a woman at a laptop by the window)
