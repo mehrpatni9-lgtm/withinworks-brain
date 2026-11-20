@@ -62,7 +62,7 @@ export default (C, PH, ST, W) => ({
 
   // 12 · Three people in the room · carousel 2 · diagram
   'c1-12a': `<body class="grain" style="background:${C.wash}">
-    <p class="lab" style="position:absolute;left:100px;top:110px;color:${C.forest}">When your company pays for coaching</p>
+    <p class="lab" style="position:absolute;left:100px;top:110px;color:${C.forest}">When your company sponsors coaching</p>
     <p class="serif" style="position:absolute;left:100px;right:100px;top:175px;font-weight:400;font-size:58px;line-height:1.18">Three people in the room: you, your company, and your coach, <i style="color:${C.forest}">each with a part to play.</i></p>
     <svg style="position:absolute;left:0;top:0" width="1080" height="1350"><line x1="540" y1="640" x2="275" y2="1000" stroke="${C.sage}" stroke-width="2"/><line x1="540" y1="640" x2="805" y2="1000" stroke="${C.sage}" stroke-width="2"/><line x1="275" y1="1000" x2="805" y2="1000" stroke="${C.sage}" stroke-width="2" stroke-dasharray="8 10"/></svg>
     ${[['You', 'the client', 540, 640, 290, ST('laptopwoman'), '55% 30%', C.forest], ['Your company', 'the sponsor', 275, 1000, 250, ST('tower'), '50% 40%', C.mocha], ['Your coach', 'that’s me', 805, 1000, 250, PH('06'), '50% 0%;transform:scale(1.9);transform-origin:47% 62%', C.sage]]
