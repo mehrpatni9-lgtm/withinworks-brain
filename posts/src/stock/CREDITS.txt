@@ -29,3 +29,6 @@ deskwork: https://www.pexels.com/photo/hands-of-a-woman-writing-in-a-note-pad-in
 sunchair: https://www.pexels.com/photo/empty-chair-in-light-in-room-in-shadow-15154651/
 blindsplant: https://www.pexels.com/photo/silhouette-of-plant-against-window-blinds-30546259/ (Lisa Fotios)
 windowfigure: https://www.pexels.com/photo/silhouette-of-a-person-staring-at-windows-20492225/
+Pexels free licence photos (20 Nov 2026)
+office: https://www.pexels.com/photo/380768/ (an open office with plants)
+laptopwoman: https://www.pexels.com/photo/3756679/ (a woman at a laptop by the window)
