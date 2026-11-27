@@ -1,5 +1,5 @@
-// "Megha says" quote stories (Mehr, 27 Nov). Each quote is two story frames: the quote alone, then the same
-// quote with Megha's two-line take in a bubble beside her photo. Quotes verified in research/quotes-simple-2026-11-27.md.
+// "Megha says" quote stories (Mehr, 27 Nov). One story frame per quote (Mehr: one story, not two): the
+// quote card, then Megha's two-line take in a bubble beside her photo. Quotes verified in research/quotes-simple-2026-11-27.md.
 // 1080x1920. Text stays out of the top 250px and bottom 340px (Instagram bars). Run: node quotes.mjs
 import fs from 'fs';
 import path from 'path';
@@ -70,7 +70,7 @@ const b = await chromium.launch();
 const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
 const tmp = path.join(HERE, '_tmp_q.html');
 for (const Q of QUOTES) {
-  for (const [suffix, withMegha] of [['a', false], ['b', true]]) {
+  for (const [suffix, withMegha] of [['', true]]) {
     fs.writeFileSync(tmp, `<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head>${frame(Q, withMegha)}</html>`);
     await p.goto('file://' + tmp); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(300);
     // Megha's bubble sits under the card, wherever the card ends.
