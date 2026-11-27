@@ -158,5 +158,3 @@ S4 | Megha says: Susan David
 S5 | Megha says: Rainer Maria Rilke
 
 S6 | Megha says: Rabindranath Tagore
-
-S7 | Megha says: Kahlil Gibran

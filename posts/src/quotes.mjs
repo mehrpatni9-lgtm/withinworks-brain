@@ -24,9 +24,6 @@ const QUOTES = [
   { id: 'q4', img: 'skybird.jpg', pos: '50% 30%', block: C.lsage, size: 68,
     q: 'The bird wishes it were a cloud. The cloud wishes it were a bird.', by: 'Rabindranath Tagore',
     m: 'We often long for the life we are not living.' },
-  { id: 'q5', img: 'clayhands.jpg', pos: '58% 40%', block: C.mocha, size: 96,
-    q: 'Work is love made visible.', by: 'Kahlil Gibran',
-    m: 'Where do you feel most yourself at work?' },
 ];
 
 const W = `<div style="position:absolute;left:96px;bottom:300px;display:flex;align-items:center;gap:16px">
@@ -35,7 +32,7 @@ const W = `<div style="position:absolute;left:96px;bottom:300px;display:flex;ali
   <text x="4" y="88" font-family="Fraunces" font-size="104" font-weight="600" fill="${C.mocha}" clip-path="url(#r)">W</text></svg>
   <span style="font:400 19px Jost;letter-spacing:.3em;text-transform:uppercase;color:${C.charcoal};opacity:.85">WithinWorks Leadership</span></div>`;
 
-const sign = (name, col) => `<p style="display:flex;align-items:center;gap:16px;font:500 21px Jost;letter-spacing:.28em;text-transform:uppercase;color:${col}"><span style="width:34px;height:2px;background:${col}"></span>${name}</p>`;
+const sign = (name, col) => `<p style="display:flex;align-items:center;font:500 21px Jost;letter-spacing:.28em;text-transform:uppercase;color:${col}">${name}</p>`;
 
 const css = `
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Jost:wght@400;500&display=swap');
