@@ -61,7 +61,7 @@ const pages = name => ({
     <p style="position:absolute;left:90px;top:100px;font:500 22px Jost;letter-spacing:.2em;text-transform:uppercase;color:${C.forest};background:${C.gold};padding:10px 18px">0${k + 1} &middot; ${steps[k][0]}</p>
     <div style="position:absolute;left:110px;right:90px;top:${k === 2 ? 270 : 340}px;display:flex;flex-direction:column;gap:96px">
       ${card(steps[k][1], k * 2, 0, name)}${card(steps[k][2], k * 2 + 1, 1, name)}</div>
-    ${k === 2 ? `<p style="position:absolute;left:90px;bottom:150px;background:${C.forest};color:${C.ivory};font:400 32px/1.4 Jost;padding:22px 30px;border-radius:12px;box-shadow:10px 10px 0 ${C.gold}">Book a discovery call on <span style="color:${C.gold}">www.withinworksleadership.com</span></p>` : ''}
+    ${k === 2 ? `<p style="position:absolute;left:90px;bottom:150px;background:${C.forest};color:${C.ivory};font:400 32px/1.4 Jost;padding:22px 30px;border-radius:12px;box-shadow:10px 10px 0 ${C.gold}">Reach out at <span style="color:${C.gold}">www.withinworksleadership.com</span></p>` : ''}
     ${W(true, name)}</body>`])),
 });
 
