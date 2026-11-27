@@ -8,7 +8,7 @@ import { execFileSync } from 'child_process';
 import { chromium } from '/Users/mehrpatni/mehr-portfolio/node_modules/playwright/index.mjs';
 
 const HERE = path.dirname(new URL(import.meta.url).pathname);
-const OUT = path.resolve(HERE, '..');
+const OUT = process.env.OUT || path.resolve(HERE, '..');  // OUT=dir renders a preview without touching the Brain
 const C = { forest: '#2F3A32', ivory: '#FAF8F5', paper: '#F3EEE6', mocha: '#B08D6F', gold: '#E3C49C', sage: '#5D6E5E', lsage: '#93A894', charcoal: '#3D3A35', line: 'rgba(47,58,50,.22)', track: 'rgba(47,58,50,.09)' };
 const GRAIN = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.2 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`;
 const W = (dark, name) => `<div style="position:absolute;left:90px;bottom:60px;display:flex;align-items:center;gap:14px">
@@ -64,13 +64,18 @@ const pages = name => ({
       return grid + `<div style="position:absolute;left:${X0 - 60}px;right:90px;top:${base}px;border-top:2.5px solid ${C.forest}"></div>` + cols; })()}
     ${SRC(false)}${W(false, false)}</body>`,
 
+  // 3 · Megha, 25 Nov: "last page feels very salesy... build on page 2 with ICF benefits or UAE data". No CTA on the slide.
   3: `<body class="green">
-    <p class="lab" style="position:absolute;left:90px;top:110px;color:${C.gold}">[ In the UAE ]</p>
-    <div style="position:absolute;left:90px;top:220px;display:flex;gap:34px">
-      ${[1, 1, 0].map(f => `<span style="width:96px;height:96px;border-radius:50%;border:3px solid ${C.gold};background:${f ? C.gold : 'transparent'}"></span>`).join('')}</div>
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:400px;font-size:74px;font-weight:400;line-height:1.14">Nearly <i style="color:${C.gold}">2 in 3</i> people who get a coach pay for it themselves.</p>
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:745px;font-size:46px;font-style:italic;font-weight:400;line-height:1.25;opacity:.92">They didn’t wait to be sent.</p>
-    <p style="position:absolute;left:90px;right:90px;top:960px;font:400 32px/1.45 Jost;color:${C.ivory}">Book a discovery call on<br><span style="color:${C.gold}">www.withinworksleadership.com</span></p>
+    <p class="lab" style="position:absolute;left:90px;top:100px;color:${C.gold}">[ In the UAE ]</p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:64px;font-weight:400;line-height:1.12">Most of us are curious. <i style="color:${C.gold}">Fewer take the first step.</i></p>
+    <div style="position:absolute;left:90px;right:90px;top:420px;display:flex;justify-content:space-between">
+    ${[[85, 'have heard of coaching'], [78, 'have a positive view of it'], [62, 'intend to try it']].map(([n, t]) => `
+      <div style="width:250px;text-align:center">
+        <div style="width:250px;height:250px;border-radius:50%;border:3px solid ${C.gold};overflow:hidden;position:relative">
+          <div style="position:absolute;left:0;right:0;bottom:0;height:${({85:79.3,78:72.8,62:59.5})[n]}%;background:${C.gold}"></div></div>
+        <p class="serif" style="margin-top:34px;font-size:70px;font-weight:500;line-height:1;color:${C.gold}">${n}<span style="font-size:34px">%</span></p>
+        <p style="margin-top:14px;font:400 27px/1.3 Jost;color:${C.ivory}">${t}</p></div>`).join('')}</div>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:960px;font-size:40px;font-style:italic;font-weight:400;line-height:1.3;opacity:.92">What would your first step be?</p>
     <p style="position:absolute;left:90px;right:90px;bottom:150px;font:400 17px Jost;letter-spacing:.04em;color:rgba(250,248,245,.7)">Source: ICF and PwC, 2026 Global Consumer Awareness Study</p>
     ${W(true, name)}</body>`,
 });
