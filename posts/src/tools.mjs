@@ -1,7 +1,7 @@
 // "A coaching tool I use" series (Mehr, 16 Nov), built from Megha's worksheets. Fresh page: explain everything,
 // assume nothing, one CTA on the last slide. Instagram t1/t2/t3 (Megha, first person); LinkedIn u1/u2/u3
 // (page voice: "a coaching tool we use", Megha in third person) + vector PDFs u1.pdf, u2.pdf, u3.pdf.
-// t1 Wheel of Life · t2 Values · t3 Inner voices (from the Saboteurs worksheet, in our own words: the Positive
+// t1 The Within Map (Wheel of Life, renamed by Megha 25 Nov) · t2 Within Core (values session, Megha 25 Nov) · t3 Inner voices (from the Saboteurs worksheet, in our own words: the Positive
 // Intelligence names are not used). Run: node tools.mjs
 import fs from 'fs';
 import path from 'path';
@@ -31,7 +31,7 @@ const series = (li, col) => `<div style="position:absolute;left:90px;top:88px;di
 const photo = (img, pos, shade) => `<img src="${ST(img)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${pos}"><div style="position:absolute;inset:0;background:${shade}"></div>`;
 const cta = (li, dark) => `<div style="position:absolute;left:90px;right:90px;bottom:140px;background:${dark ? C.ivory : C.forest};color:${dark ? C.forest : C.ivory};border-radius:14px;padding:26px 34px;box-shadow:10px 10px 0 ${C.gold}">
   <p class="serif" style="font-size:36px;line-height:1.2">${li ? 'Want to use this with a coach?' : 'Want to work through this together?'}</p>
-  <p style="font:400 25px/1.4 Jost;margin-top:8px">Book a complimentary discovery call${li ? ' with Megha Bhalla' : ''} on <span style="color:${dark ? C.mocha : C.gold}">www.withinworksleadership.com</span></p></div>`;
+  <p style="font:400 25px/1.4 Jost;margin-top:8px">Reach out${li ? ' to Megha Bhalla' : ''} at <span style="color:${dark ? C.mocha : C.gold}">www.withinworksleadership.com</span></p></div>`;
 
 // ---- wheel helper
 const wheel = (scores, size, { ring, fill, line, labels, labelCol, fs = 28 }) => {
@@ -52,8 +52,8 @@ const TYPES = [
 
 const t1 = li => ({
   1: `<body style="background:#1e1a16;color:${C.ivory}">${photo('sunchair', '62% 50%', 'linear-gradient(180deg,rgba(24,20,16,.86) 0%,rgba(24,20,16,.5) 40%,rgba(24,20,16,.66) 100%)')}${series(li, C.gold)}
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:100px;font-weight:400;line-height:1;color:${C.ivory}">The Wheel <i style="color:${C.gold}">of Life</i></p>
-    <p style="position:absolute;left:90px;right:120px;top:290px;font:400 30px/1.45 Jost;color:rgba(250,248,245,.92)">${li ? 'One of the first exercises Megha Bhalla does with new clients.' : 'One of the first exercises I do with new clients.'} Fifteen minutes, one page, and a whole year at a glance.</p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:100px;font-weight:400;line-height:1;color:${C.ivory}">The Within <i style="color:${C.gold}">Map</i></p>
+    <p style="position:absolute;left:90px;right:120px;top:290px;font:400 30px/1.45 Jost;color:rgba(250,248,245,.92)">A clear, simple picture of your life today. Fifteen minutes, one page, and a whole year at a glance.</p>
     <div style="position:absolute;left:170px;top:470px">${wheel([8, 6, 4, 7, 5, 6, 8, 3], 740, { ring: 'rgba(250,248,245,.3)', fill: 'rgba(227,196,156,.28)', line: C.gold, labels: AREAS, labelCol: 'rgba(250,248,245,.95)', fs: 30 })}</div>
     ${W(true, li)}</body>`,
   2: `<body class="paper">
@@ -80,8 +80,8 @@ const WORDS = ['Security', 'Freedom', 'Impact', 'Calm', 'Courage', 'Balance', 'G
 const CIRCLED = new Set(['Freedom', 'Family', 'Growth']);
 const t2 = li => ({
   1: `<body style="background:${C.forest};color:${C.ivory}">${photo('blindsplant', '50% 40%', 'linear-gradient(180deg,rgba(30,36,32,.86) 0%,rgba(30,36,32,.45) 45%,rgba(30,36,32,.7) 100%)')}${series(li, C.gold)}
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:100px;font-weight:400;line-height:1">Your <i style="color:${C.gold}">values</i></p>
-    <p style="position:absolute;left:90px;right:140px;top:290px;font:400 31px/1.45 Jost;opacity:.92">The few things that matter most to you. When work honours them, even hard weeks feel right. When it doesn’t, even a good job can feel wrong.</p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:100px;font-weight:400;line-height:1">Within <i style="color:${C.gold}">Core</i></p>
+    <p style="position:absolute;left:90px;right:140px;top:290px;font:400 31px/1.45 Jost;opacity:.92">A values session to find the few things that matter most to you. When work honours them, even hard weeks feel right. When it doesn’t, even a good job can feel wrong.</p>
     <div style="position:absolute;left:90px;right:90px;top:600px;display:flex;flex-wrap:wrap;gap:44px 58px;align-items:center">
       ${WORDS.map((w, i) => `<span class="serif" style="position:relative;font-size:${[44, 38, 50, 36, 42][i % 5]}px;${CIRCLED.has(w) ? `color:${C.gold}` : 'color:rgba(250,248,245,.62)'}">${w}${CIRCLED.has(w) ? `<svg style="position:absolute;left:-18px;top:-12px;width:calc(100% + 36px);height:calc(100% + 24px)" viewBox="0 0 100 40" preserveAspectRatio="none"><ellipse cx="50" cy="20" rx="48" ry="18" fill="none" stroke="${C.gold}" stroke-width="1.6" transform="rotate(-3 50 20)"/></svg>` : ''}</span>`).join('')}</div>
     ${W(true, li)}</body>`,
