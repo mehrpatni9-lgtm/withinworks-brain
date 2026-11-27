@@ -158,3 +158,9 @@ S4 | Megha says: Susan David
 S5 | Megha says: Satya Nadella
 
 S6 | Megha says: Rabindranath Tagore
+
+S7 | Megha says: Indra Nooyi
+
+S8 | Megha says: Marshall Goldsmith
+
+S9 | Megha says: Jeff Bezos

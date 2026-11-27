@@ -24,6 +24,15 @@ const QUOTES = [
   { id: 'q4', img: 'skybird.jpg', pos: '50% 30%', block: C.lsage, size: 68,
     q: 'The bird wishes it were a cloud. The cloud wishes it were a bird.', by: 'Rabindranath Tagore',
     m: 'We often long for the life we are not living.' },
+  { id: 'q5', img: 'carkeys.jpg', pos: '45% 60%', block: C.sage, size: 84,
+    q: 'Leave the crown in the garage.', by: 'Indra Nooyi',
+    m: 'Who are you when the title stays at the door?' },
+  { id: 'q6', img: 'clayhands.jpg', pos: '58% 40%', block: C.gold, size: 76,
+    q: 'Try feedforward instead of feedback.', by: 'Marshall Goldsmith',
+    m: 'The past can’t change. The next conversation can.' },
+  { id: 'q7', img: 'orangechairs.jpg', pos: '50% 50%', block: C.lsage, size: 96,
+    q: 'Disagree and commit.', by: 'Jeff Bezos',
+    m: 'When did you last back a decision you argued against?' },
 ];
 
 const W = `<div style="position:absolute;left:96px;bottom:300px;display:flex;align-items:center;gap:16px">
