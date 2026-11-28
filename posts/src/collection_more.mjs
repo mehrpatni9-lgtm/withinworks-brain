@@ -32,10 +32,11 @@ export default (C, PH, ST, W) => ({
 
   // 05 · A book on my table · a real photo, left alone
   'c1-8a': `<body style="background:#cfd6dc">
-    <img src="${ST('blankbook')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%">
+    <img src="${ST('blankbook')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%">
     <p class="lab" style="position:absolute;left:84px;top:96px;font-size:19px;color:${C.charcoal}">On my reading table</p>
-    <p class="serif" style="position:absolute;left:84px;right:84px;bottom:190px;font-size:54px;font-weight:400;line-height:1.1;color:${C.forest}">Breaking the Habit of Being Yourself</p>
-    <p style="position:absolute;left:84px;bottom:150px;font:400 28px Jost;color:${C.charcoal}">Joe Dispenza</p>
+    <div style="position:absolute;left:84px;right:84px;bottom:150px;background:${C.ivory};padding:40px 48px;box-shadow:12px 12px 0 ${C.sage}">
+      <p class="serif" style="font-size:52px;font-weight:400;line-height:1.1;color:${C.forest}">Breaking the Habit of Being Yourself</p>
+      <p style="font:400 28px Jost;margin-top:12px;color:${C.mocha}">Joe Dispenza</p></div>
     ${W()}</body>`,
 
   // 11 · How coaching with me works · carousel 3 · cream cards on one colour field
