@@ -123,68 +123,71 @@ L4 | Sound familiar?
 L5 | Discipline over timing (Jupiter Wealth)
   Text: Our founder on what her banking years taught her about discipline, and why careers work the same way.
 
-L6 | What’s my session all about?
-  Text: People often ask @Megha Bhalla what actually happens in a coaching session. / Here is one, from start to finish.
-
-L7 | What can I help you through?
-  Text: Coming back after a career break, changing direction, a new role, a new country. Starting again takes courage. / These are the moments we see most often at WithinWorks Leadership, and where coaching helps most.
-
-L8 | Capital, classrooms and conviction (Ladies Who Lead)
-  Text: A room worth being in. Coach Megha Bhalla at the Ladies Who Lead Leaders Lounge.
-
-L9 | The Within Compass
-  Text: See where you stand, decide where you go. / The Within Compass is one of the first tools @Megha Bhalla uses with new clients at WithinWorks Leadership: a clear, simple picture of your life today. / You choose eight areas of your life, score each one from 1 to 10 for how satisfied you feel right now, and join the dots. In fifteen minutes you can see what a whole year has looked like. / The shape matters more than the numbers. A steady wheel, a lopsided one, one sitting in the middle, or one that needs rebuilding: each tells a different story, and none of them is wrong.
-
-L10 | A coach is like
-  Text: Coaching can be hard to explain until you have tried it. These four comparisons come closest. / Which one feels closest to what you need right now?
-
-L11 | An introduction to stillness (Stilltone at Sohum)
-  Text: This is what we have been up to: an afternoon of stillness. / Stilltone hosted An Introduction to Stillness at Sohum Wellness Sanctuary, with sound, breathwork in the garden, and a panel of naturopathy and yoga doctors from India. / At WithinWorks Leadership, we believe clear thinking needs somewhere to land. A few minutes of stillness before a big decision is rarely wasted time. More often, it is where the decision begins. / How do you make space to think?
-
-L12 | Within Core
-  Text: Within Core is the values session used at WithinWorks Leadership. Values are the few things that matter most to us. When work honours them, even hard weeks feel right. When it doesn’t, even a good job can feel wrong. / Most professionals have never written theirs down. It takes about twenty minutes: circle the words that pull you, narrow them to five, then keep three and define each in your own words. / Planning a restart or a new role? Start here. Your top three make a very good filter.
-
-L13 | What does your wheel say?
-  Text: 2026 is almost over. Before you plan the next year, take fifteen honest minutes to see where this one really went. / The Wheel of Life is one of the simplest tools @Megha Bhalla uses with clients at WithinWorks Leadership. You choose eight areas of your life, like career, money, health, family and fun, and score each one from 1 to 10 for how satisfied you feel right now. Join the dots and you get a shape. / That shape says a lot. Some wheels are steady. Some are lopsided, with one area carrying the rest. Some sit in the middle, and some need rebuilding after a heavy year. There is no good or bad wheel, only a clearer picture. / Comment WHEEL and we’ll send you the free worksheet. It has: • The Wheel of Life, which you can fill in on your phone • What your wheel says: the four wheel types, a question to sit with, and one small step for each / Know which area you want to move in 2027? Reach out to Megha at www.withinworksleadership.com
-
-L14 | Leadership that starts before you speak (EO Dubai, Bala Kishore)
-  Text: Most meetings begin before anyone speaks. / At an EO Dubai day with Bala Kishore, From Overthinking to Inner Mastery, coach Megha Bhalla spent time with the idea of leadership that starts before you speak. / We see it in our work every week. The worry, the rehearsal and the story a leader tells themselves walk into the room long before they do. / What do you rehearse before the conversations that matter?
-
-L15 | The inner voices at work
-  Text: We all carry inner voices that once helped us. The one that holds on kept things from going wrong. The one that keeps the peace kept us liked. The one that has to win got us noticed. / Over time they start making decisions for us. In coaching at WithinWorks Leadership, we don’t fight them. We get curious: what is this voice protecting me from, and what would my calm, steady self do instead? / Which one do you hear most at work?
-
-L16 | Two questions for a hard season (Nick Santonastasso)
-  Text: Two questions for the start of a new year, from Nick Santonastasso’s talk at EO Dubai: / What’s the gift in this? Who am I going to become because I am going through this? / At WithinWorks Leadership, we believe the quality of your questions shapes the quality of your year. These two keep a hard season honest and still point you forward.
-
-L17 | The Within series
+L6 | The Within series
   Text: Every coaching journey at WithinWorks Leadership rests on three questions. / Where am I now? The Within Compass, a clear picture of your life today across the areas that matter. What matters most to me? The Within Core, a values session. Where do I go from here? Within Direction, your next step, chosen by you. / Let’s have a conversation. Reach out at www.withinworksleadership.com
 
-L18 | The Worry Tree
+L7 | Capital, classrooms and conviction (Ladies Who Lead)
+  Text: A room worth being in. Coach @Megha Bhalla at the @Ladies Who Lead Leaders Lounge.
+
+L8 | What’s my session all about?
+  Text: People often ask @Megha Bhalla what actually happens in a coaching session. / Here is one, from start to finish.
+
+L9 | The Worry Tree
   Text: Most leaders carry worries they cannot act on, as if carrying them were a form of responsibility. / The Worry Tree, from Gillian Butler and Tony Hope’s Manage Your Mind, offers a simpler path. If you can do something useful now, decide the next step. If you cannot, park it and return to today. / A tool coach @Megha Bhalla has been revisiting this season. Which worry would you park today?
 
-L19 | Effective does not mean certain
-  Text: Effective does not mean certain. / Leaders are asked for as many decisions as ever, with far less certainty behind them. Waiting for the full picture has quietly become a decision of its own. / Control your actions. Influence your conversations. Accept what is unknown. / Which decision are you waiting to feel sure about?
+L10 | An introduction to stillness (Stilltone at Sohum)
+  Text: This is what we have been up to: an afternoon of stillness with @Stilltone.
 
-L20 | The window of tolerance
+L11 | The Within Compass
+  Text: See where you stand, decide where you go. / The Within Compass is one of the first tools @Megha Bhalla uses with new clients at WithinWorks Leadership: a clear, simple picture of your life today. / You choose eight areas of your life, score each one from 1 to 10 for how satisfied you feel right now, and join the dots. In fifteen minutes you can see what a whole year has looked like. / The shape matters more than the numbers. A steady wheel, a lopsided one, one sitting in the middle, or one that needs rebuilding: each tells a different story, and none of them is wrong.
+
+L12 | Leadership that starts before you speak (EO Dubai, Bala Kishore)
+  Text: Leadership that starts before you speak: coach @Megha Bhalla’s reflection from a day with @Bala Kishore at @EO Dubai.
+
+L13 | Within Core
+  Text: Within Core is the values session used at WithinWorks Leadership. Values are the few things that matter most to us. When work honours them, even hard weeks feel right. When it doesn’t, even a good job can feel wrong. / Most professionals have never written theirs down. It takes about twenty minutes: circle the words that pull you, narrow them to five, then keep three and define each in your own words. / Planning a restart or a new role? Start here. Your top three make a very good filter.
+
+L14 | The window of tolerance
   Text: Why do capable leaders make poor decisions under pressure? / Dr Dan Siegel’s window of tolerance offers one answer. When we are pushed too far, we either race or shut down. Good decisions live in the workable middle. / The skill is not to stay in the window all the time. It is to notice when you have left it, and to know what brings you back.
 
-L21 | The stress bucket
+L15 | What does your wheel say?
+  Text: 2026 is almost over. Before you plan the next year, take fifteen honest minutes to see where this one really went. / The Wheel of Life is one of the simplest tools @Megha Bhalla uses with clients at WithinWorks Leadership. You choose eight areas of your life, like career, money, health, family and fun, and score each one from 1 to 10 for how satisfied you feel right now. Join the dots and you get a shape. / That shape says a lot. Some wheels are steady. Some are lopsided, with one area carrying the rest. Some sit in the middle, and some need rebuilding after a heavy year. There is no good or bad wheel, only a clearer picture. / Comment WHEEL and we’ll send you the free worksheet. It has: • The Wheel of Life, which you can fill in on your phone • What your wheel says: the four wheel types, a question to sit with, and one small step for each / Know which area you want to move in 2027? Reach out to Megha at www.withinworksleadership.com
+
+L16 | Two questions for a hard season (Nick Santonastasso)
+  Text: Two questions for the start of a new year, from @Nick Santonastasso’s talk at @EO Dubai: / What’s the gift in this? Who am I going to become because I am going through this? / At WithinWorks Leadership, we believe the quality of your questions shapes the quality of your year. These two keep a hard season honest and still point you forward.
+
+L17 | Effective does not mean certain
+  Text: Effective does not mean certain. / Leaders are asked for as many decisions as ever, with far less certainty behind them. Waiting for the full picture has quietly become a decision of its own. / Control your actions. Influence your conversations. Accept what is unknown. / Which decision are you waiting to feel sure about?
+
+L18 | “Where do you feel it?”
+  Text: A question you may hear in a WithinWorks session, and why we ask it.
+
+L19 | What can I help you through?
+  Text: Coming back after a career break, changing direction, a new role, a new country. Starting again takes courage. / These are the moments we see most often at WithinWorks Leadership, and where coaching helps most.
+
+L20 | The stress bucket
   Text: Leaders rarely run out of capacity in a single moment. The bucket fills quietly, week after week. / The stress bucket, an idea from Alison Brabban and Douglas Turkington, reminds us that the aim is not an empty bucket. It is noticing the level before it overflows, and keeping the taps open: sleep, movement, conversation, rest. / Which tap have you closed this month?
+
+L21 | A coach is like
+  Text: Coaching can be hard to explain until you have tried it. These four comparisons come closest. / Which one feels closest to what you need right now?
 
 L22 | PERMA, a wellbeing check
   Text: What makes a life feel well lived? / Martin Seligman, the founder of positive psychology, offers five parts in his PERMA model: positive emotion, engagement, relationships, meaning and accomplishment. / Many high achievers score well on accomplishment and quietly neglect the rest. At WithinWorks Leadership, we use it alongside the Within Compass as a simple wellbeing check. / Which of the five needs your attention this quarter?
 
-L23 | Responding to good news
+L23 | The inner voices at work
+  Text: We all carry inner voices that once helped us. The one that holds on kept things from going wrong. The one that keeps the peace kept us liked. The one that has to win got us noticed. / Over time they start making decisions for us. In coaching at WithinWorks Leadership, we don’t fight them. We get curious: what is this voice protecting me from, and what would my calm, steady self do instead? / Which one do you hear most at work?
+
+L24 | Responding to good news
   Text: How you respond to good news says more about your leadership than how you respond to bad news. / Shelly Gable’s research, brought into positive psychology by Martin Seligman, describes four ways to respond when someone shares a win. Only one builds the relationship: active and constructive. / “Well done, next item” is not quite enough. / When your team last shared a success, how did you respond?
 
-L24 | Puddles and wells
-  Text: Some people are puddles: a mile wide and an inch deep. Others are wells: an inch wide and a mile deep. / An image from Nick Santonastasso’s talk at EO Dubai, and a good question for any leader. / Breadth gets you noticed. Depth is what people return to. / Let’s have a conversation. Reach out at www.withinworksleadership.com
-
-L25 | “Where do you feel it?”
-  Text: “Where do you feel it?” / It is a question coach Megha Bhalla may ask in a session, drawn from her Co-Active training. Our bodies often know before our minds are ready to say it. / Coaching at WithinWorks Leadership stays in the present and goes slowly. Sometimes the most useful insight arrives in a pause, not an answer. / Let’s have a conversation. Reach out at www.withinworksleadership.com
+L25 | Puddles and wells
+  Text: Some people are puddles: a mile wide and an inch deep. Others are wells: an inch wide and a mile deep. / An image from @Nick Santonastasso’s talk at @EO Dubai, and a good question for any leader. / Breadth gets you noticed. Depth is what people return to. / Let’s have a conversation. Reach out at www.withinworksleadership.com
 
 L26 | A breath before a hard meeting
-  Text: A one-minute practice from our founder for the minute before a hard conversation.
+  Text: Prepare yourself as carefully as your slides. / A practice coach @Megha Bhalla shares often, for the minute before a difficult conversation: take a deep breath, take one more, then release slowly through the mouth. / It takes less than a minute, and it changes the person who walks into the room.
+
+L27 | Learning in public
+  Text: Learning in public: what our founder has been studying this season.
 
 STORIES
 
