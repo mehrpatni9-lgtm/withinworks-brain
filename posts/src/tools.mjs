@@ -1,7 +1,7 @@
 // "A coaching tool I use" series (Mehr, 16 Nov), built from Megha's worksheets. Fresh page: explain everything,
 // assume nothing, one CTA on the last slide. Instagram t1/t2/t3 (Megha, first person); LinkedIn u1/u2/u3
 // (page voice: "a coaching tool we use", Megha in third person) + vector PDFs u1.pdf, u2.pdf, u3.pdf.
-// t1 The Within Map (Wheel of Life, renamed by Megha 25 Nov) · t2 Within Core (values session, Megha 25 Nov) · t3 Inner voices (from the Saboteurs worksheet, in our own words: the Positive
+// t1 The Within Compass (Wheel of Life, renamed by Megha 25 Nov) · t2 Within Core (values session, Megha 25 Nov) · t3 Inner voices (from the Saboteurs worksheet, in our own words: the Positive
 // Intelligence names are not used). Run: node tools.mjs
 import fs from 'fs';
 import path from 'path';
@@ -52,7 +52,7 @@ const TYPES = [
 
 const t1 = li => ({
   1: `<body style="background:#1e1a16;color:${C.ivory}">${photo('sunchair', '62% 50%', 'linear-gradient(180deg,rgba(24,20,16,.86) 0%,rgba(24,20,16,.5) 40%,rgba(24,20,16,.66) 100%)')}${series(li, C.gold)}
-    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:100px;font-weight:400;line-height:1;color:${C.ivory}">The Within <i style="color:${C.gold}">Map</i></p>
+    <p class="serif" style="position:absolute;left:90px;right:90px;top:150px;font-size:100px;font-weight:400;line-height:1;color:${C.ivory}">The Within <i style="color:${C.gold}">Compass</i></p>
     <p style="position:absolute;left:90px;right:120px;top:290px;font:400 30px/1.45 Jost;color:rgba(250,248,245,.92)">A clear, simple picture of your life today. Fifteen minutes, one page, and a whole year at a glance.</p>
     <div style="position:absolute;left:170px;top:470px">${wheel([8, 6, 4, 7, 5, 6, 8, 3], 740, { ring: 'rgba(250,248,245,.3)', fill: 'rgba(227,196,156,.28)', line: C.gold, labels: AREAS, labelCol: 'rgba(250,248,245,.95)', fs: 30 })}</div>
     ${W(true, li)}</body>`,
