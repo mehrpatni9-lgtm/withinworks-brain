@@ -24,13 +24,9 @@
 <textarea name="text" placeholder="What&rsquo;s on your mind?" required></textarea>
 <input name="link" type="url" placeholder="Link, if there is one">
 <div class="act"><button class="btn ok" type="submit">Add</button><span class="status" id="fstatus"></span></div></form>
-<div class="card"><h3>So far</h3><ul class="clean feedlist" id="ideas"></ul></div></div></div></section><section><div class="shell"><div class="card tint"><h3>Feedback by voice</h3>
-<p>Review by voice with your own assistant. Paste this once into its instructions. Then open the Brain beside it and talk through the posts. It emails your feedback to Mehr and files it here, so both always match.</p>
-<div class="copyrow" style="padding:6px 0 10px"><button class="btn copy-ins" type="button" style="min-height:36px;padding:6px 16px;font-size:.85rem">Copy instructions</button></div>
-<textarea class="ins-src" hidden>WithinWorks: when I want to review my WithinWorks posts, first read https://mehrpatni9-lgtm.github.io/withinworks-brain/agent.txt and follow it. Walk me through the posts by voice, then send my feedback as a reply to Mehr's email thread and give me the one link that files it in the Brain.</textarea>
-<p style="font-size:.9rem;color:var(--text-faint)">It arrives here within a few minutes, and Mehr is told by email.</p></div></div></section>
-<div class="shell"><nav class="doors"><a href="./">Brain</a><a href="content/">Instagram</a><a href="linkedin/">WithinWorks LinkedIn</a><a href="linkedin-megha/">Megha’s LinkedIn</a><a href="stories/">Stories</a><a href="reel-cuts/">Reels</a><a href="scripts.html">Scripts</a><a href="printables.html">Printables</a><a href="working-material.html">Working material</a><a href="strategy.html">Strategy</a><a href="linkedin-strategy.html">LinkedIn strategy</a><a href="megha.html">Megha</a><a href="voice.html">Voice</a><a href="audience.html">Audience</a><a href="brand.html">Brand</a><a href="offers.html">Offers</a><a href="tech.html">Tech</a><a href="photos.html">Photos</a><a href="research.html">Research</a><a href="ideas.html" class="here">Ideas</a></nav></div>
-<footer><div class="shell">WithinWorks Leadership &middot; Kept by Mehr Patni &middot; Private working page</div></footer>
+<div class="card"><h3>So far</h3><ul class="clean feedlist" id="ideas"></ul></div></div></div></section>
+<div class="shell"><nav class="doors"><a href="./">Brain</a><a href="content/">Instagram</a><a href="linkedin/">LinkedIn</a><a href="strategy.html">Strategy and voice</a><a href="brand.html">Brand kit</a><a href="printables.html">Print</a><a href="working-material.html">Working material</a><a href="research.html">Research</a><a href="ideas.html" class="here">Ideas</a></nav></div>
+<footer><div class="shell">WithinWorks Leadership &middot; Social media backend &middot; Kept by Mehr Patni</div></footer>
 <script src="assets/brain.js?v=11"></script><script>
 function draw(entries) {
   const ideas = entries.filter(e => ['Idea', 'Resource', 'Review'].includes(e.kind)).reverse();
@@ -48,7 +44,6 @@ document.getElementById('feedform').addEventListener('submit', async e => {
   catch (err) { st.className = 'status err'; st.textContent = 'Not sent. Try again.'; }
   btn.disabled = false;
 });
-document.querySelectorAll('.copy-ins').forEach(b => b.onclick = async () => { const t = document.querySelector('.ins-src').value; try { await navigator.clipboard.writeText(t); } catch (e) {} b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy instructions', 1800); });
 </script>
 </body>
 </html>
