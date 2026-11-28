@@ -37,3 +37,4 @@ skybird: https://www.pexels.com/photo/solitary-bird-flying-in-cloudy-sky-2974304
 clayhands: https://www.pexels.com/photo/person-forming-clay-pot-357428/
 carkeys: https://www.pexels.com/photo/car-keys-on-white-surface-842528/
 orangechairs: https://www.pexels.com/photo/modern-conference-room-with-orange-chairs-36149083/
+blankbook: https://www.pexels.com/photo/book-with-blank-cover-and-cup-of-coffee-6373354/

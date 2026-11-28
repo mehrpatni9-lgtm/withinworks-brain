@@ -31,10 +31,11 @@ export default (C, PH, ST, W) => ({
     ${W()}</body>`,
 
   // 05 · A book on my table · a real photo, left alone
-  'c1-8a': `<body style="background:#eee">
-    <img src="${ST('book2')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:46% center">
+  'c1-8a': `<body style="background:#cfd6dc">
+    <img src="${ST('blankbook')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%">
     <p class="lab" style="position:absolute;left:84px;top:96px;font-size:19px;color:${C.charcoal}">On my reading table</p>
-    <p class="serif" style="position:absolute;left:84px;bottom:150px;font-size:46px;font-weight:400;color:${C.charcoal}">Time to Think <span style="font-weight:300;font-size:32px">&middot; Nancy Kline</span></p>
+    <p class="serif" style="position:absolute;left:84px;right:84px;bottom:190px;font-size:54px;font-weight:400;line-height:1.1;color:${C.forest}">Breaking the Habit of Being Yourself</p>
+    <p style="position:absolute;left:84px;bottom:150px;font:400 28px Jost;color:${C.charcoal}">Joe Dispenza</p>
     ${W()}</body>`,
 
   // 11 · How coaching with me works · carousel 3 · cream cards on one colour field

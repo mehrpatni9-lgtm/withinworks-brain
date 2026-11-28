@@ -137,10 +137,10 @@ const slides = {
     ${W(true)}</body>`,
   'c1-8b': `<body class="grain" style="background:${C.paper}">
     <p class="serif" style="position:absolute;left:110px;top:110px;font-size:260px;line-height:1;color:${C.mocha};opacity:.5">“</p>
-    <p class="serif" style="position:absolute;left:110px;right:110px;top:330px;font-weight:400;font-style:italic;font-size:70px;line-height:1.25;color:${C.forest}">Everything we do depends for its quality on the thinking we do first.</p>
-    <p class="lab" style="position:absolute;left:110px;top:720px;font-size:18px">Nancy Kline</p>
-    <div style="position:absolute;left:110px;right:110px;top:830px;border-top:1.5px solid rgba(61,58,53,.3);padding-top:44px">
-      <p style="font-size:38px;font-weight:300;line-height:1.45">As a leader I rarely gave people the room to think. Now it’s most of my job.</p></div>
+    <p class="serif" style="position:absolute;left:110px;right:110px;top:330px;font-weight:400;font-style:italic;font-size:60px;line-height:1.25;color:${C.forest}">To break the habit of being yourself, you have to think greater than the circumstances of your life.</p>
+    <p class="lab" style="position:absolute;left:110px;top:760px;font-size:18px">Joe Dispenza</p>
+    <div style="position:absolute;left:110px;right:110px;top:860px;border-top:1.5px solid rgba(61,58,53,.3);padding-top:44px">
+      <p style="font-size:38px;font-weight:300;line-height:1.45">We often try to change our results without changing who we are being. This book is a reminder to start within.</p></div>
     ${W()}</body>`,
 
   // 09 · Who I work with · single · design, after Sageform's grid

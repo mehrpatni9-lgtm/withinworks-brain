@@ -29,9 +29,9 @@ const ST = n => `file://${path.join(HERE, 'stock', n + '.jpg')}`;
 const ICON = col => `<svg width="48" height="48" viewBox="0 0 24 24" style="flex:none" fill="none" stroke="${col}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/><path d="M3 3l1.2 2.8L11 12.6"/><rect x="11.6" y="13.1" width="8" height="3.4" rx="1.4" transform="rotate(45 15.6 14.8)" fill="${col}" stroke="none"/></svg>`;
 const series = (li, col) => `<div style="position:absolute;left:90px;top:88px;display:flex;align-items:center;gap:16px">${ICON(col)}<p class="lab" style="color:${col}">${li ? 'A coaching tool we use' : 'A coaching tool I use'}</p></div>`;
 const photo = (img, pos, shade) => `<img src="${ST(img)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${pos}"><div style="position:absolute;inset:0;background:${shade}"></div>`;
-const cta = (li, dark) => `<div style="position:absolute;left:90px;right:90px;bottom:140px;background:${dark ? C.ivory : C.forest};color:${dark ? C.forest : C.ivory};border-radius:14px;padding:26px 34px;box-shadow:10px 10px 0 ${C.gold}">
-  <p class="serif" style="font-size:36px;line-height:1.2">${li ? 'Want to use this with a coach?' : 'Want to work through this together?'}</p>
-  <p style="font:400 25px/1.4 Jost;margin-top:8px">Reach out${li ? ' to Megha Bhalla' : ''} at <span style="color:${dark ? C.mocha : C.gold}">www.withinworksleadership.com</span></p></div>`;
+const cta = (li, dark) => `<div style="position:absolute;left:90px;right:90px;bottom:150px">
+  <p class="serif" style="font-size:44px;font-style:italic;line-height:1.2;color:${dark ? C.ivory : C.forest}">Let’s have a conversation.</p>
+  <p style="font:400 26px/1.4 Jost;margin-top:10px;color:${dark ? C.gold : C.mocha}">Reach out${li ? ' to Megha Bhalla' : ''} at www.withinworksleadership.com</p></div>`;
 
 // ---- wheel helper
 const wheel = (scores, size, { ring, fill, line, labels, labelCol, fs = 28 }) => {

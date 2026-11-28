@@ -26,7 +26,8 @@ body { width: 1080px; height: 1350px; overflow: hidden; position: relative; font
 .serif { font-family: Fraunces, serif; } .hand { font-family: Caveat, cursive; }
 `;
 const tag = (t, top = 100) => `<p style="position:absolute;left:90px;top:${top}px;font:500 22px Jost;letter-spacing:.24em;text-transform:uppercase;color:${C.forest};background:${C.gold};padding:10px 18px">${t}</p>`;
-const CTA = `<p style="position:absolute;left:90px;bottom:150px;background:${C.forest};color:${C.ivory};font:400 32px/1.4 Jost;padding:22px 30px;border-radius:12px;box-shadow:10px 10px 0 ${C.gold}">Reach out at <span style="color:${C.gold}">www.withinworksleadership.com</span></p>`;
+const CTA = `<div style="position:absolute;left:90px;right:90px;bottom:150px"><p class="serif" style="font-size:44px;font-style:italic;line-height:1.2;color:${C.forest}">Let’s have a conversation.</p>
+  <p style="font:400 26px/1.4 Jost;margin-top:10px;color:${C.mocha}">Reach out at www.withinworksleadership.com</p></div>`;
 const photo = (img, pos, shade = .3) => `<img src="${ST(img)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${pos}"><div style="position:absolute;inset:0;background:rgba(25,22,18,${shade})"></div>`;
 
 // ---- d1: What can I help you through? Restart and reinvention first (Mehr, 16 Nov), two moments per slide, half and half.
@@ -41,7 +42,7 @@ const half = ([img, pos, sh, h, t], top, last) => `<div style="position:absolute
     <div style="position:absolute;left:70px;right:70px;${top ? 'bottom:150px' : 'bottom:60px'};background:${C.ivory};border-radius:14px;padding:38px 46px 36px;box-shadow:12px 12px 0 ${sh}">
       <p class="serif" style="font-size:50px;font-weight:500;line-height:1.08;color:${C.forest}">${h}</p>
       <p style="font:400 30px/1.42 Jost;margin-top:14px">${t}</p>
-      ${last ? `<p style="font:500 24px Jost;margin-top:18px;color:${C.mocha}">Reach out at www.withinworksleadership.com</p>` : ''}</div></div>`;
+      ${last ? `<p style="font:400 24px Jost;margin-top:18px;color:${C.mocha}"><i class="serif">Let’s have a conversation.</i> Reach out at www.withinworksleadership.com</p>` : ''}</div></div>`;
 const d1 = name => ({
   1: `<body style="background:#333">${photo('parkpath', 'center 55%', .34)}
     ${tag('Starting again')}

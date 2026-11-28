@@ -61,7 +61,9 @@ const pages = name => ({
     <p style="position:absolute;left:90px;top:100px;font:500 22px Jost;letter-spacing:.2em;text-transform:uppercase;color:${C.forest};background:${C.gold};padding:10px 18px">0${k + 1} &middot; ${steps[k][0]}</p>
     <div style="position:absolute;left:110px;right:90px;top:${k === 2 ? 270 : 340}px;display:flex;flex-direction:column;gap:96px">
       ${card(steps[k][1], k * 2, 0, name)}${card(steps[k][2], k * 2 + 1, 1, name)}</div>
-    ${k === 2 ? `<p style="position:absolute;left:90px;bottom:150px;background:${C.forest};color:${C.ivory};font:400 32px/1.4 Jost;padding:22px 30px;border-radius:12px;box-shadow:10px 10px 0 ${C.gold}">Reach out at <span style="color:${C.gold}">www.withinworksleadership.com</span></p>` : ''}
+    ${k === 2 ? `<div style="position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(180deg,rgba(20,18,15,0),rgba(20,18,15,.7))"></div>
+    <div style="position:absolute;left:90px;right:90px;bottom:150px"><p class="serif" style="font-size:44px;font-style:italic;line-height:1.2;color:${C.ivory}">Let’s have a conversation.</p>
+    <p style="font:400 26px/1.4 Jost;margin-top:10px;color:${C.gold}">Reach out at www.withinworksleadership.com</p></div>` : ''}
     ${W(true, name)}</body>`])),
 });
 
